@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/hejar/OneDrive/Bureau/Rendu2Synthese/MLPCppLib/library.cpp
+library.h
+C:/Users/hejar/OneDrive/Bureau/Rendu2Synthese/MLPCppLib/library.h
+iostream
+-
+cstdlib
+-
+random
+-
+
+C:/Users/hejar/OneDrive/Bureau/Rendu2Synthese/MLPCppLib/library.h
+
