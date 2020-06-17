@@ -5,9 +5,12 @@ import ctypes
 import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
-    path_to_dll = "../LinearModelCppLib/cmake-build-debug" \
+    path_to_dll = "../../Lib/LinearModelCppLib/cmake-build-debug" \
                   "/LinearModelCppLib.dll "
-
+    """
+    path_to_dll = "C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Lib/LinearModelCppLib/cmake-build-debug" \
+                  "/LinearModelCppLib.dll "
+ """
     my_lib = ctypes.CDLL(path_to_dll)
 
     my_lib.linear_create_model.argtypes = [ctypes.c_int]
@@ -51,14 +54,14 @@ if __name__ == "__main__":
     ]
     my_lib.linear_predict_model_regression.restype = ctypes.c_double
 
-im = Image.open("C:/Users/hejar/OneDrive/Bureau/ESGI/PA/Dataset_resized/Happy/1.jpg")
-im2 = Image.open("C:/Users/hejar/OneDrive/Bureau/ESGI/PA/Dataset_resized/Happy/2.jpg")
-im3 = Image.open("C:/Users/hejar/OneDrive/Bureau/ESGI/PA/Dataset_resized/Happy/3.jpg")
-im4 = Image.open("C:/Users/hejar/OneDrive/Bureau/ESGI/PA/Dataset_resized/Happy/4.jpg")
-im9 = Image.open("C:/Users/hejar/OneDrive/Bureau/ESGI/PA/Dataset_resized/Angry/1.jpg")
-im10 = Image.open("C:/Users/hejar/OneDrive/Bureau/ESGI/PA/Dataset_resized/Angry/2.jpg")
-im11 = Image.open("C:/Users/hejar/OneDrive/Bureau/ESGI/PA/Dataset_resized/Neutral/1.jpg")
-im12 = Image.open("C:/Users/hejar/OneDrive/Bureau/ESGI/PA/Dataset_resized/Neutral/2.jpg")
+im = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/1.jpg")
+im2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/2.jpg")
+im3 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/3.jpg")
+im4 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/4.jpg")
+im9 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/1.jpg")
+im10 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/2.jpg")
+im11 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/1.jpg")
+im12 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/2.jpg")
 
 im_arr1 = np.array(im) / 255.0
 im_arr2 = np.array(im2) / 255.0
@@ -108,7 +111,7 @@ my_lib.linear_train_model_classification(
     10000
 )
 
-print("After Training...")
+print("After Training......")
 
 for inputs_k in dataset:
     print(my_lib.linear_predict_model_classification(
