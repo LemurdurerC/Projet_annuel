@@ -35,6 +35,34 @@ void ClusterRepresentative::initialise(int dataset_samples_count,int dataset_sam
     finalPlace = false;
 }
 
+
+//juste for test in C++
+double *getPartsOfTab(int start, int stop, double *tab) {
+    //start and stop are in newTab (inclus)
+    auto newTab = new double[(stop - start) + 1];
+
+    int j = 0;
+    for (int i = start; i <= stop; i++) {
+        newTab[j] = tab[i];
+        j++;
+    }
+
+    return newTab;
+
+}
+
+
+
+double distanceBetween2Points(double *coordsA, double *coordsB, int numberOfCoordsAandB){
+    double result = 0.0;
+
+    for(int i = 0; i<numberOfCoordsAandB;i++){
+        result += fabs(coordsB[i] - coordsA[i]);
+    }
+
+    return result;
+}
+
 //Algo de LLoyd
 /*
 Parameter :
@@ -49,7 +77,7 @@ Step :
     -> Assing to this cluster
 */
 
-ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dataset_samples_count){
+ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
     ClusterRepresentative *tabCluster = new ClusterRepresentative[numberOfCluster];
     bool stop = false;
 
@@ -69,6 +97,13 @@ ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dat
             int theCluster = 0;
             for(int j =0; j<numberOfCluster;j++){
                 //find the nearest cluster
+                double *coordsA = ;
+                double *coordsB = ;
+                if(distanceBetween2Points(coordsA,coordsB,dataset_sample_features_count)<distMin){
+                    distMin = distanceBetween2Points(coordsA,coordsB,dataset_sample_features_count);
+                    theCluster = j;
+                }
+                //assign the inputs to the cluster
                 theCluster = ;
             }
 
@@ -92,5 +127,14 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
 
 
+    double X[2] = {2.0
+                 ,2.0};
+
+
+    double Y[2] = {1.0
+            ,7.0};
+
+    double  result = distanceBetween2Points(X,Y,2);
+    printf("%f \n",result);
     return 0;
 }
