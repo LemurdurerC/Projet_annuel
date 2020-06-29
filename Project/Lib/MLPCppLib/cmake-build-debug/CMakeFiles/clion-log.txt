@@ -1,4 +1,4 @@
-C:\Users\hejar\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.6668.126\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\hejar\OneDrive\Bureau\Rendu2Synthese\MLPCppLib
+C:\Users\hejar\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.6668.126\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\hejar\OneDrive\Bureau\PA_Git\Projet_annuel\Project\Lib\MLPCppLib
 -- The C compiler identification is MSVC 19.25.28614.0
 -- The CXX compiler identification is MSVC 19.25.28614.0
 -- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/bin/Hostx64/x64/cl.exe
@@ -15,4 +15,4 @@ C:\Users\hejar\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.6668.126\bin\
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/hejar/OneDrive/Bureau/Rendu2Synthese/MLPCppLib/cmake-build-debug
+-- Build files have been written to: C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Lib/MLPCppLib/cmake-build-debug
