@@ -87,6 +87,12 @@ void copyCoordAtoCoordB(double *coordsA, double *coordsB, int numberOfCoordsAand
     }
 }
 
+void initialiseTabTo0(double *tab,int tabSize){
+    for(int i = 0;i<tabSize;i++){
+        tab[i] = 0.0;
+    }
+}
+
 //Algo de LLoyd
 /*
 Parameter :
@@ -138,9 +144,23 @@ ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dat
         //ALGO STEP 2 : check cluster
         for(int i =0; i<numberOfCluster;i++) {
             copyCoordAtoCoordB(tabCluster[i].coord, tabCluster[i].formerCoord,dataset_sample_features_count);
-            tabCluster[i].coord = ...;
 
+            //mean of all point assigned to cluster i
+            double *newCoord = new double[dataset_sample_features_count];
+            initialiseTabTo0(newCoord,dataset_sample_features_count);
 
+            for(int j = 0;j<tabCluster[i].countClusterMember;j++){
+                //sum of all coord of point in cluster i
+                for(int k = 0; k<dataset_sample_features_count;k++){
+                    newCoord[k] = newCoord[k] + tabCluster[i].memberOfCluster[j][k];
+                }
+            }
+
+            for(int k = 0; k<dataset_sample_features_count;k++){
+                newCoord[k] = newCoord[k] / tabCluster[i].countClusterMember;
+            }
+
+            copyCoordAtoCoordB(newCoord, tabCluster[i].coord,dataset_sample_features_count);
 
             if(checkEquality2Points(tabCluster[i].formerCoord,tabCluster[i].coord, dataset_sample_features_count)){
                 tabCluster[i].finalPlace = true;
