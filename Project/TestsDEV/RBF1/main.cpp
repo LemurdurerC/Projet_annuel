@@ -102,6 +102,14 @@ void showPoint(double *coords, int sizeCoord){
 }
 
 
+void addTabAtoTabB(double *coordsA, double *coordsB, int numberOfCoordsAandB){
+
+    for(int i =0; i<numberOfCoordsAandB;i++){
+        coordsA[i] += coordsB[i];
+    }
+}
+
+
 //Algo de LLoyd
 /*
 Parameter :
@@ -118,30 +126,45 @@ Step :
 
 
 
-ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
-    ClusterRepresentative *tabCluster = new ClusterRepresentative[numberOfCluster];
+ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
+    ClusterRepresentative **tabCluster = new ClusterRepresentative*[numberOfCluster];
 
     for(int i = 0; i<numberOfCluster;i++){
-        tabCluster[i].initialise(dataset_samples_count,dataset_sample_features_count);
+        ClusterRepresentative *c = new ClusterRepresentative();
+        c->initialise(dataset_samples_count,dataset_sample_features_count);
+        tabCluster[i] = c;
     }
     bool stop = false;
 
-    int count = 0;
 
     while(stop == false) {
+
+
+        //Set all to 0 except coordinate of cluster
+        for(int i = 0; i<numberOfCluster;i++) {
+            tabCluster[i]->memberOfCluster = new double*[dataset_samples_count];
+            for(int j = 0; j<dataset_samples_count;j++){
+                tabCluster[i]->memberOfCluster[j] = new double[dataset_sample_features_count];
+            }
+            tabCluster[i]->countClusterMember = 0;
+
+        }
+
+
         //ALGO STEP 1 : check each point in dataset
-        for(int i = 0;i+dataset_sample_features_count<dataset_samples_count;i=i+dataset_sample_features_count){
+        for (int i = 0;
+             i + dataset_sample_features_count <= dataset_samples_count*dataset_sample_features_count;
+             i = i + dataset_sample_features_count) {
+
             //POTENTIAL ERROR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            double distMin = 1000000000.0;
+            double distMin = 1000000000000.0;
             int theCluster = -1;
-            for(int j =0; j<numberOfCluster;j++){
+            for (int j = 0; j < numberOfCluster; j++) {
                 //find the nearest cluster
                 //just for C++ test
-                double *coordsA = getPartsOfTab(i,i+dataset_sample_features_count-1,dataset);
-                //showPoint(coordsA,dataset_sample_features_count);
-                //showPoint(tabCluster[j].coord,dataset_sample_features_count);
-                if(distanceBetween2Points(coordsA,tabCluster[j].coord,dataset_sample_features_count)<distMin){
-                    distMin = distanceBetween2Points(coordsA,tabCluster[j].coord,dataset_sample_features_count);
+                double *coordsA = getPartsOfTab(i, i + dataset_sample_features_count - 1, dataset);
+                if (distanceBetween2Points(coordsA, tabCluster[j]->coord, dataset_sample_features_count) < distMin) {
+                    distMin = distanceBetween2Points(coordsA, tabCluster[j]->coord, dataset_sample_features_count);
                     theCluster = j;
                 }
 
@@ -149,37 +172,40 @@ ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dat
             }
 
             //assign the inputs to the right cluster
-            double *dataInCluster = getPartsOfTab(i,i+dataset_sample_features_count-1,dataset);
+            double *dataInCluster = getPartsOfTab(i, i + dataset_sample_features_count - 1, dataset);
 
-            tabCluster[theCluster].memberOfCluster[tabCluster[theCluster].countClusterMember] = dataInCluster;
-            tabCluster[theCluster].countClusterMember++;
+            tabCluster[theCluster]->memberOfCluster[tabCluster[theCluster]->countClusterMember] = dataInCluster;
+            tabCluster[theCluster]->countClusterMember++;
+
 
         }
 
 
         //ALGO STEP 2 : check cluster
-        for(int i =0; i<numberOfCluster;i++) {
-            copyCoordAtoCoordB(tabCluster[i].coord, tabCluster[i].formerCoord,dataset_sample_features_count);
+        for (int i = 0; i < numberOfCluster; i++) {
 
-            //mean of all point assigned to cluster i
-            double *newCoord = new double[dataset_sample_features_count];
-            initialiseTabTo0(newCoord,dataset_sample_features_count);
+            if(!tabCluster[i]->finalPlace && (tabCluster[i]->countClusterMember > 0)) {
+                copyCoordAtoCoordB(tabCluster[i]->coord, tabCluster[i]->formerCoord, dataset_sample_features_count);
 
-            for(int j = 0;j<tabCluster[i].countClusterMember;j++){
-                //sum of all coord of point in cluster i
-                for(int k = 0; k<dataset_sample_features_count;k++){
-                    newCoord[k] = newCoord[k] + tabCluster[i].memberOfCluster[j][k];
+                //mean of all point assigned to cluster i
+                double *newCoord = new double[dataset_sample_features_count];
+                initialiseTabTo0(newCoord, dataset_sample_features_count);
+
+                for (int j = 0; j < tabCluster[i]->countClusterMember; j++) {
+                    addTabAtoTabB(newCoord, tabCluster[i]->memberOfCluster[j], dataset_sample_features_count);
                 }
-            }
 
-            for(int k = 0; k<dataset_sample_features_count;k++){
-                newCoord[k] = newCoord[k] / tabCluster[i].countClusterMember;
-            }
+                for (int k = 0; k < dataset_sample_features_count; k++) {
+                    newCoord[k] = newCoord[k] / tabCluster[i]->countClusterMember;
+                }
 
-            copyCoordAtoCoordB(newCoord, tabCluster[i].coord,dataset_sample_features_count);
+                copyCoordAtoCoordB(newCoord, tabCluster[i]->coord, dataset_sample_features_count);
 
-            if(checkEquality2Points(tabCluster[i].formerCoord,tabCluster[i].coord, dataset_sample_features_count)){
-                tabCluster[i].finalPlace = true;
+                if (checkEquality2Points(tabCluster[i]->formerCoord, tabCluster[i]->coord,
+                                         dataset_sample_features_count)) {
+                    tabCluster[i]->finalPlace = true;
+                    break;
+                }
             }
 
         }
@@ -190,17 +216,17 @@ ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dat
         //ALGO STOP check if we stop
         int finishCluster = 0;
         for (int i = 0; i < numberOfCluster; i++) {
-            if (tabCluster[i].finalPlace) {
+            if (tabCluster[i]->finalPlace) {
                 finishCluster++;
             }
         }
-        if(finishCluster == numberOfCluster){
+
+
+        if (finishCluster == numberOfCluster) {
             stop = true;
         }
 
-        count ++;
-        printf("Go");
-        printf("%d\n",count);
+
 
     }
 
@@ -211,7 +237,10 @@ ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dat
 
 
 
-void disposeAllCluster(ClusterRepresentative *allCluster){
+void disposeAllCluster(ClusterRepresentative **allCluster,int numberOfCluster){
+    for(int i = 0; i<numberOfCluster;i++){
+        delete allCluster[i];
+    }
     delete allCluster;
 }
 
@@ -236,11 +265,23 @@ int main() {
                     9.0,8.0
                     };
 
-    //ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
 
-    ClusterRepresentative *tabCluster = algoOfLLoyd(2,X,nbreEnter,nbreFeature);
+    ClusterRepresentative **tabCluster = algoOfLLoyd(2,X,nbreEnter,nbreFeature);
 
-    disposeAllCluster(tabCluster);
+    for(int i = 0;i<2;i++){
+        printf("( ");
+        for(int j = 0; j<nbreFeature;j++) {
+            printf("%f ", tabCluster[i]->coord[j]);
+        }
+        printf(")");
+        printf("\n");
+
+    }
+
+
+    disposeAllCluster(tabCluster,2);
+
+
 
     return 0;
 }
