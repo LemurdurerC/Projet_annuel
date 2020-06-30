@@ -29,9 +29,8 @@ void ClusterRepresentative::initialise(int dataset_samples_count,int dataset_sam
         formerCoord[i] = coord[i];
     }
 
-
-    *memberOfCluster = new double[dataset_samples_count/dataset_sample_features_count];
-    for(int i = 0; i<dataset_samples_count/dataset_sample_features_count;i++){
+    memberOfCluster = new double*[dataset_samples_count];
+    for(int i = 0; i<dataset_samples_count;i++){
         memberOfCluster[i] = new double[dataset_sample_features_count];
     }
 
@@ -93,6 +92,16 @@ void initialiseTabTo0(double *tab,int tabSize){
     }
 }
 
+
+void showPoint(double *coords, int sizeCoord){
+    printf("(");
+    for(int i =0;i<sizeCoord;i++){
+        printf("%f ",coords[i]);
+    }
+    printf(")\n");
+}
+
+
 //Algo de LLoyd
 /*
 Parameter :
@@ -111,25 +120,32 @@ Step :
 
 ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
     ClusterRepresentative *tabCluster = new ClusterRepresentative[numberOfCluster];
+
+    for(int i = 0; i<numberOfCluster;i++){
+        tabCluster[i].initialise(dataset_samples_count,dataset_sample_features_count);
+    }
     bool stop = false;
 
+    int count = 0;
 
-    while(!stop) {
-
+    while(stop == false) {
         //ALGO STEP 1 : check each point in dataset
-        for(int i = 0;i<dataset_samples_count;i=i+dataset_sample_features_count){
+        for(int i = 0;i+dataset_sample_features_count<dataset_samples_count;i=i+dataset_sample_features_count){
             //POTENTIAL ERROR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            int distMin = 1000000000;
-            int theCluster = 0;
+            double distMin = 1000000000.0;
+            int theCluster = -1;
             for(int j =0; j<numberOfCluster;j++){
                 //find the nearest cluster
                 //just for C++ test
                 double *coordsA = getPartsOfTab(i,i+dataset_sample_features_count-1,dataset);
-                double *coordsB = tabCluster[j].coord;
-                if(distanceBetween2Points(coordsA,coordsB,dataset_sample_features_count)<distMin){
-                    distMin = distanceBetween2Points(coordsA,coordsB,dataset_sample_features_count);
+                //showPoint(coordsA,dataset_sample_features_count);
+                //showPoint(tabCluster[j].coord,dataset_sample_features_count);
+                if(distanceBetween2Points(coordsA,tabCluster[j].coord,dataset_sample_features_count)<distMin){
+                    distMin = distanceBetween2Points(coordsA,tabCluster[j].coord,dataset_sample_features_count);
                     theCluster = j;
                 }
+
+
             }
 
             //assign the inputs to the right cluster
@@ -182,15 +198,22 @@ ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dat
             stop = true;
         }
 
-
+        count ++;
+        printf("Go");
+        printf("%d\n",count);
 
     }
 
+    printf("FINISH\n");
 
     return tabCluster;
 }
 
 
+
+void disposeAllCluster(ClusterRepresentative *allCluster){
+    delete allCluster;
+}
 
 
 
@@ -198,14 +221,26 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
 
 
-    double X[2] = {2.0
-                 ,2.0};
+    int nbreFeature = 2;
+    int nbreEnter  = 10;
 
+    double X[20] = {1.0,3.0,
+                    1.0,4.0,
+                    2.0,2.0,
+                    2.0,5.0,
+                    3.0,3.0,
+                    6.0,7.0,
+                    7.0,8.0,
+                    8.0,9.0,
+                    8.0,5.0,
+                    9.0,8.0
+                    };
 
-    double Y[2] = {1.0
-            ,7.0};
+    //ClusterRepresentative* algoOfLLoyd(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
 
-    double  result = distanceBetween2Points(X,Y,2);
-    printf("%f \n",result);
+    ClusterRepresentative *tabCluster = algoOfLLoyd(2,X,nbreEnter,nbreFeature);
+
+    disposeAllCluster(tabCluster);
+
     return 0;
 }
