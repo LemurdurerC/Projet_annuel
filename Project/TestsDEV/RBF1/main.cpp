@@ -210,7 +210,22 @@ ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int da
 
         }
 
+        /*
+        //case when 2 cluster have same coord
+        for(int i = 0;i<numberOfCluster-1;i++){
+            if((checkEquality2Points(tabCluster[i]->coord,tabCluster[i+1]->coord,dataset_sample_features_count)
+                && checkEquality2Points(tabCluster[i]->coord,tabCluster[i]->formerCoord,dataset_sample_features_count))
 
+               ||
+               (checkEquality2Points(tabCluster[i]->coord,tabCluster[i+1]->coord,dataset_sample_features_count)
+                && checkEquality2Points(tabCluster[i+1]->coord,tabCluster[i+1]->formerCoord,dataset_sample_features_count))
+
+                    ){
+                tabCluster[i]->finalPlace = true;
+                tabCluster[i+1]->finalPlace = true;
+            }
+        }
+        */
 
 
         //ALGO STOP check if we stop
@@ -220,11 +235,11 @@ ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int da
                 finishCluster++;
             }
         }
-
-
         if (finishCluster == numberOfCluster) {
             stop = true;
         }
+
+
 
 
 
@@ -250,25 +265,35 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
 
 
-    int nbreFeature = 2;
-    int nbreEnter  = 10;
+    const int nbreFeature = 2;
+    const int nbreEnter  = 10;
 
-    double X[20] = {1.0,3.0,
+    int numberOfCluser = 2;
+
+    double X[nbreFeature*nbreEnter] = {
+                    /*1.0,3.0,
                     1.0,4.0,
                     2.0,2.0,
                     2.0,5.0,
                     3.0,3.0,
+*/
                     6.0,7.0,
                     7.0,8.0,
                     8.0,9.0,
                     8.0,5.0,
-                    9.0,8.0
+                    9.0,8.0,
+
+                    4.0,13.0,
+                    3.0,14.0,
+                    5.0,18.0,
+                    2.0,10.0,
+                    3.0,17.0
                     };
 
 
-    ClusterRepresentative **tabCluster = algoOfLLoyd(2,X,nbreEnter,nbreFeature);
+    ClusterRepresentative **tabCluster = algoOfLLoyd(numberOfCluser,X,nbreEnter,nbreFeature);
 
-    for(int i = 0;i<2;i++){
+    for(int i = 0;i<numberOfCluser;i++){
         printf("( ");
         for(int j = 0; j<nbreFeature;j++) {
             printf("%f ", tabCluster[i]->coord[j]);
@@ -279,7 +304,7 @@ int main() {
     }
 
 
-    disposeAllCluster(tabCluster,2);
+    disposeAllCluster(tabCluster,numberOfCluser);
 
 
 
