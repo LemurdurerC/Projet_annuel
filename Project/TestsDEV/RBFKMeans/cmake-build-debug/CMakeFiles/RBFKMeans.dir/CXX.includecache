@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/RBFKMeans/main.cpp
+iostream
+-
+
