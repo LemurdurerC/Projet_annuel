@@ -23,7 +23,7 @@ void ClusterRepresentative::initialise(int dataset_samples_count,int dataset_sam
         std::random_device rd;
         std::mt19937 mt(rd());
         //POTENTIAL ERROR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        std::uniform_int_distribution<int> dist(0, 20);
+        std::uniform_int_distribution<int> dist(5, 15);
         auto randNumber = dist(mt);
         coord[i] = randNumber;
         formerCoord[i] = coord[i];
@@ -132,6 +132,7 @@ ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int da
     for(int i = 0; i<numberOfCluster;i++){
         ClusterRepresentative *c = new ClusterRepresentative();
         c->initialise(dataset_samples_count,dataset_sample_features_count);
+        showPoint(c->coord,dataset_sample_features_count);
         tabCluster[i] = c;
     }
     bool stop = false;
@@ -183,7 +184,7 @@ ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int da
 
         //ALGO STEP 2 : check cluster
         for (int i = 0; i < numberOfCluster; i++) {
-
+            printf("%Il ya %d membres\n",tabCluster[i]->countClusterMember);
             if(!tabCluster[i]->finalPlace && (tabCluster[i]->countClusterMember > 0)) {
                 copyCoordAtoCoordB(tabCluster[i]->coord, tabCluster[i]->formerCoord, dataset_sample_features_count);
 
@@ -206,26 +207,17 @@ ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int da
                     tabCluster[i]->finalPlace = true;
                     break;
                 }
+
+                /* }else if(tabCluster[i]->countClusterMember == 0){
+                     tabCluster[i]->finalPlace = true;
+                 }*/
             }
 
         }
+        printf("\n");
 
-        /*
-        //case when 2 cluster have same coord
-        for(int i = 0;i<numberOfCluster-1;i++){
-            if((checkEquality2Points(tabCluster[i]->coord,tabCluster[i+1]->coord,dataset_sample_features_count)
-                && checkEquality2Points(tabCluster[i]->coord,tabCluster[i]->formerCoord,dataset_sample_features_count))
 
-               ||
-               (checkEquality2Points(tabCluster[i]->coord,tabCluster[i+1]->coord,dataset_sample_features_count)
-                && checkEquality2Points(tabCluster[i+1]->coord,tabCluster[i+1]->formerCoord,dataset_sample_features_count))
 
-                    ){
-                tabCluster[i]->finalPlace = true;
-                tabCluster[i+1]->finalPlace = true;
-            }
-        }
-        */
 
 
         //ALGO STOP check if we stop
@@ -238,7 +230,6 @@ ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int da
         if (finishCluster == numberOfCluster) {
             stop = true;
         }
-
 
 
 
@@ -266,28 +257,29 @@ int main() {
 
 
     const int nbreFeature = 2;
-    const int nbreEnter  = 10;
+    const int nbreEnter  = 15;
 
-    int numberOfCluser = 2;
+    int numberOfCluser = 3;
 
     double X[nbreFeature*nbreEnter] = {
-                    /*1.0,3.0,
+                    1.0,3.0,
                     1.0,4.0,
                     2.0,2.0,
                     2.0,5.0,
                     3.0,3.0,
-*/
+
                     6.0,7.0,
                     7.0,8.0,
                     8.0,9.0,
                     8.0,5.0,
                     9.0,8.0,
 
-                    4.0,13.0,
-                    3.0,14.0,
-                    5.0,18.0,
-                    2.0,10.0,
-                    3.0,17.0
+                    13.0,13.0,
+                    13.0,14.0,
+                    15.0,18.0,
+                    19.0,11.0,
+                    16.0,17.0
+
                     };
 
 
