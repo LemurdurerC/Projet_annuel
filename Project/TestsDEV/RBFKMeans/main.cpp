@@ -1,6 +1,9 @@
 #include <iostream>
 #include <random>
 
+#include <Eigen/Dense>
+using Eigen::MatrixXd;
+
 struct ClusterRepresentative{
     double *formerCoord;
     double *coord;
@@ -92,14 +95,6 @@ void initialiseTabTo0(double *tab,int tabSize){
     }
 }
 
-
-void showPoint(double *coords, int sizeCoord){
-    printf("(");
-    for(int i =0;i<sizeCoord;i++){
-        printf("%f ",coords[i]);
-    }
-    printf(")\n");
-}
 
 
 void addTabAtoTabB(double *coordsA, double *coordsB, int numberOfCoordsAandB){
@@ -268,6 +263,60 @@ double **KMeans(int numberOfCluster, double *dataset, int dataset_samples_count,
 
 
 
+MatrixXd tabToMatrix( double *tab, int tabSize, int exampleCount_or_ROW, int inputsSize_or_COL) {
+
+    MatrixXd m(exampleCount_or_ROW, inputsSize_or_COL);
+    int i = 0;
+    int j = 0;
+    while (i < tabSize) {
+
+        for (int k = 0; k < inputsSize_or_COL - 1; k++) {
+            m(j, k) = tab[i];
+            i++;
+        }
+        m(j, inputsSize_or_COL - 1) = tab[i];
+        i++;
+        j++;
+
+
+    }
+
+
+    return m;
+
+}
+
+
+
+double *create_RBF_model(int nbrKMeans){
+    std::random_device rd;
+    std::mt19937 mt(rd());
+    std::uniform_real_distribution<double> dist(-1.0, 1.0);
+    auto w = new double[nbrKMeans];
+    for (auto i = 0; i < nbrKMeans; i++) {
+        w[i] = dist(mt);
+    }
+    return w;
+}
+
+
+
+double RBF_predict_model_InCommon(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize){
+    auto sum = 0;
+    MatrixXd matInputs = tabToMatrix(inputs,inputSize,1,inputSize);
+    std::cout << matInputs << std::endl;
+    for(int i =0;i<numberKMeans;i++){
+        MatrixXd  matKMean = tabToMatrix(KMeans[i],inputSize,1,inputSize);
+        std::cout << "This" << std::endl;
+        std::cout << matKMean << std::endl;
+
+    }
+
+    return sum;
+}
+
+
+
 int main() {
     std::cout << "Hello, World!" << std::endl;
 
@@ -293,23 +342,6 @@ int main() {
 
     };
 
-/*
-    ClusterRepresentative **tabCluster = algoOfLLoyd(numberOfCluser,X,nbreEnter,nbreFeature);
-
-    for(int i = 0;i<numberOfCluser;i++){
-        printf("( ");
-        for(int j = 0; j<nbreFeature;j++) {
-            printf("%f ", tabCluster[i]->coord[j]);
-        }
-        printf(")");
-        printf("\n");
-
-    }
-
-
-    disposeAllCluster(tabCluster,numberOfCluser);
-
-    */
 
     double **MyKMeans = KMeans(numberOfCluser,X,nbreEnter,nbreFeature);
 
@@ -322,6 +354,10 @@ int main() {
         printf("\n");
 
     }
+
+    double in[3]= {98.0,12.0};
+    double *w = create_RBF_model(2);
+    double z = RBF_predict_model_InCommon(w,MyKMeans,2,1,in,2);
 
 
     return 0;
