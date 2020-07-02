@@ -341,8 +341,9 @@ void RBF_train_model(double *model,double **KMeans,int numberKMeans,double* inpu
 
     //fill the matrix
     MatrixXd phi(dataset_samples_count,numberKMeans);
+    int k = 0;
     for(int i = 0;
-    i + dataset_sample_features_count <= dataset_samples_count*dataset_sample_features_count;
+    i + dataset_sample_features_count <= dataset_samples_count * dataset_sample_features_count;
     i = i + dataset_sample_features_count){
         for(int j = 0;j<numberKMeans;j++){
             //double *getPartsOfTab(int start, int stop, double *tab)
@@ -353,15 +354,24 @@ void RBF_train_model(double *model,double **KMeans,int numberKMeans,double* inpu
             auto norm = diff.norm();
             auto calc1 = -gamma * pow(norm,2);
             auto calc2 = exp(calc1);
-            phi(i,j) = calc2;
+            phi(k,j) = calc2;
         }
+        k++;
     }
 
-    //vérifier la consittuion de phi
 
-    //calcul des matrice
 
-    //copier dans le model la matrice W trouvée
+    MatrixXd A = (phi.transpose()*phi).inverse();
+    MatrixXd Y = tabToMatrix(outputExpected,dataset_samples_count,dataset_samples_count,1);
+    MatrixXd B = phi.transpose()*Y;
+    MatrixXd W  =A*B;
+
+    //std::cout << W << std::endl;
+
+
+    for(int i = 0; i<numberKMeans;i++){
+        model[i] = W(i,0);
+    }
 
 
 }
@@ -410,7 +420,7 @@ int main() {
             1
     };
 
-
+    double a[2] = {2.0,2.0};
 
 
     double **MyKMeans = KMeans(numberOfCluser,X,nbreEnter,nbreFeature);
@@ -428,10 +438,30 @@ int main() {
 
     double *w = create_RBF_model(numberOfCluser);
 
-    double exit1 = RBF_predict_model_Classification(w,MyKMeans,numberOfCluser,1,X,20);
 
-    printf("First exit %f\n",exit1);
+    //PREDICT
 
+    for(int i = 0;
+        i + nbreFeature <= nbreEnter * nbreFeature;
+        i = i + nbreFeature) {
+        double *temp = getPartsOfTab(i, i + nbreFeature - 1, X);
+        double exit = RBF_predict_model_Classification(w,MyKMeans,numberOfCluser,1,temp,2);
+        printf("%f\n",exit);
+    }
+    printf("\n");
+
+    RBF_train_model(w,MyKMeans,numberOfCluser,X,Y,nbreEnter,nbreFeature,1);
+
+    for(int i = 0;
+        i + nbreFeature <= nbreEnter * nbreFeature;
+        i = i + nbreFeature) {
+        double *temp = getPartsOfTab(i, i + nbreFeature - 1, X);
+        double exit = RBF_predict_model_Classification(w,MyKMeans,numberOfCluser,1,temp,2);
+        printf("%f\n",exit);
+    }
+    printf("\n");
+    //double exit2 = RBF_predict_model_Classification(w,MyKMeans,numberOfCluser,1,a,2);
+    //printf("Last exit %f\n",exit2);
 
     disposeRBF(w,MyKMeans);
 
