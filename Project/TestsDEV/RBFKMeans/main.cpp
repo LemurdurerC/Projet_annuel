@@ -225,7 +225,7 @@ ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int da
 
     }
 
-    printf("FINISH\n");
+    printf("FINISH ALGO\n");
 
     return tabCluster;
 }
@@ -257,7 +257,6 @@ double **KMeans(int numberOfCluster, double *dataset, int dataset_samples_count,
     }
 
     disposeAllCluster(tabCluster,numberOfCluster);
-    printf("Have tab of Kmeans\n");
     return KMeans;
 }
 
@@ -304,9 +303,9 @@ double *create_RBF_model(int nbrKMeans){
 
 double RBF_predict_model_InCommon(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize,bool classif_or_not){
     auto sum = 0;
-    MatrixXd matInputs = tabToMatrix(inputs,inputSize,1,inputSize);
+    MatrixXd matInputs = tabToMatrix(inputs,inputSize,inputSize,1);
     for(int i =0;i<numberKMeans;i++){
-        MatrixXd  matKMean = tabToMatrix(KMeans[i],inputSize,1,inputSize);
+        MatrixXd  matKMean = tabToMatrix(KMeans[i],inputSize,inputSize,1);
         MatrixXd diff = matInputs - matKMean;
         auto norm = diff.norm();
         auto calc1 = -gamma * pow(norm,2);
@@ -326,16 +325,27 @@ double RBF_predict_model_InCommon(double *model,double **KMeans,int numberKMeans
 
 
 double RBF_predict_model_Regression(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize) {
-    RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize, false);
+    return RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize, false);
 }
 
 
 
 double RBF_predict_model_Classification(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize) {
-    RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize, true);
+    return RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize, true);
 }
 
 
+
+
+void RBF_train_model(double *model,double **KMeans,int numberKMeans,double* inputs,double *outputExpected,int inputSize){
+    //copier dans le model la matrice W trouvée
+    
+}
+
+void disposeRBF(double *model, double **KMeans){
+    delete model;
+    delete KMeans;
+}
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -362,6 +372,22 @@ int main() {
 
     };
 
+    double Y[nbreEnter] = {
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+
+            1,
+            1,
+            1,
+            1,
+            1
+    };
+
+
+
 
     double **MyKMeans = KMeans(numberOfCluser,X,nbreEnter,nbreFeature);
 
@@ -374,6 +400,16 @@ int main() {
         printf("\n");
 
     }
+
+
+    double *w = create_RBF_model(numberOfCluser);
+
+    double exit1 = RBF_predict_model_Classification(w,MyKMeans,numberOfCluser,1,X,20);
+
+    printf("First exit %f\n",exit1);
+
+
+    disposeRBF(w,MyKMeans);
 
     return 0;
 }
