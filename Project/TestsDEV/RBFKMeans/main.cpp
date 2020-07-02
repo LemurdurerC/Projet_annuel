@@ -301,18 +301,38 @@ double *create_RBF_model(int nbrKMeans){
 
 
 
-double RBF_predict_model_InCommon(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize){
+
+double RBF_predict_model_InCommon(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize,bool classif_or_not){
     auto sum = 0;
     MatrixXd matInputs = tabToMatrix(inputs,inputSize,1,inputSize);
-    std::cout << matInputs << std::endl;
     for(int i =0;i<numberKMeans;i++){
         MatrixXd  matKMean = tabToMatrix(KMeans[i],inputSize,1,inputSize);
-        std::cout << "This" << std::endl;
-        std::cout << matKMean << std::endl;
-
+        MatrixXd diff = matInputs - matKMean;
+        auto norm = diff.norm();
+        auto calc1 = -gamma * pow(norm,2);
+        auto calc2 = exp(calc1);
+        sum = sum + model[i]*calc2;
     }
 
-    return sum;
+    if(!classif_or_not) {
+        return sum;
+    }else{
+        auto return_val =  sum >= 0 ? 1.0 : -1.0;
+        return return_val;
+    }
+
+}
+
+
+
+double RBF_predict_model_Regression(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize) {
+    RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize, false);
+}
+
+
+
+double RBF_predict_model_Classification(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize) {
+    RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize, true);
 }
 
 
@@ -354,11 +374,6 @@ int main() {
         printf("\n");
 
     }
-
-    double in[3]= {98.0,12.0};
-    double *w = create_RBF_model(2);
-    double z = RBF_predict_model_InCommon(w,MyKMeans,2,1,in,2);
-
 
     return 0;
 }
