@@ -337,9 +337,33 @@ double RBF_predict_model_Classification(double *model,double **KMeans,int number
 
 
 
-void RBF_train_model(double *model,double **KMeans,int numberKMeans,double* inputs,double *outputExpected,int inputSize){
+void RBF_train_model(double *model,double **KMeans,int numberKMeans,double* inputs,double *outputExpected,int dataset_samples_count,int dataset_sample_features_count,int gamma){
+
+    //fill the matrix
+    MatrixXd phi(dataset_samples_count,numberKMeans);
+    for(int i = 0;
+    i + dataset_sample_features_count <= dataset_samples_count*dataset_sample_features_count;
+    i = i + dataset_sample_features_count){
+        for(int j = 0;j<numberKMeans;j++){
+            //double *getPartsOfTab(int start, int stop, double *tab)
+            double *temp = getPartsOfTab(i, i + dataset_sample_features_count - 1, inputs);
+            MatrixXd matInputs = tabToMatrix(temp,dataset_sample_features_count,dataset_sample_features_count,1);
+            MatrixXd  matKMean = tabToMatrix(KMeans[j],dataset_sample_features_count,dataset_sample_features_count,1);
+            MatrixXd diff = matInputs - matKMean;
+            auto norm = diff.norm();
+            auto calc1 = -gamma * pow(norm,2);
+            auto calc2 = exp(calc1);
+            phi(i,j) = calc2;
+        }
+    }
+
+    //vérifier la consittuion de phi
+
+    //calcul des matrice
+
     //copier dans le model la matrice W trouvée
-    
+
+
 }
 
 void disposeRBF(double *model, double **KMeans){
