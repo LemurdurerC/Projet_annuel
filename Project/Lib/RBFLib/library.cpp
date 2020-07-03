@@ -144,7 +144,7 @@ ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int da
     }
     bool stop = false;
 
-
+    printf("DEBUG 3\n");
     while(stop == false) {
 
 
@@ -158,6 +158,7 @@ ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int da
 
         }
 
+        printf("DEBUG 4\n");
 
         //ALGO STEP 1 : check each point in dataset
         for (int i = 0;
@@ -221,6 +222,7 @@ ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int da
         printf("\n");
 
 
+        printf("DEBUG 5\n");
 
 
 
@@ -257,23 +259,6 @@ void disposeAllCluster(ClusterRepresentative **allCluster,int numberOfCluster){
 
 
 
-double **KMeans(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
-    double **KMeans = new double*[numberOfCluster];
-    for(int i = 0; i<numberOfCluster;i++){
-        KMeans[i] = new double[dataset_sample_features_count];
-    }
-
-    ClusterRepresentative **tabCluster = algoOfLLoyd(numberOfCluster,dataset,dataset_samples_count,dataset_sample_features_count);
-
-    for(int i = 0; i<numberOfCluster;i++){
-        for(int j = 0;j<dataset_sample_features_count;j++){
-            KMeans[i][j] = tabCluster[i]->coord[j] ;
-        }
-    }
-
-    disposeAllCluster(tabCluster,numberOfCluster);
-    return KMeans;
-}
 
 
 
@@ -302,11 +287,14 @@ MatrixXd tabToMatrix( double *tab, int tabSize, int exampleCount_or_ROW, int inp
 
 
 
-double RBF_predict_model_InCommon(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize,bool classif_or_not){
+double RBF_predict_model_InCommon(double *model,double *KMeans,int numberKMeans,int gamma,double *inputs,int inputSize,int dataset_sample_features_count,bool classif_or_not){
     auto sum = 0;
     MatrixXd matInputs = tabToMatrix(inputs,inputSize,inputSize,1);
-    for(int i =0;i<numberKMeans;i++){
-        MatrixXd  matKMean = tabToMatrix(KMeans[i],inputSize,inputSize,1);
+    for(int i =0;
+        i+dataset_sample_features_count <= numberKMeans*dataset_sample_features_count;
+        i = i+dataset_sample_features_count){
+        double *temp = getPartsOfTab(i,i+dataset_sample_features_count-1,KMeans);
+        MatrixXd  matKMean = tabToMatrix(temp,inputSize,inputSize,1);
         MatrixXd diff = matInputs - matKMean;
         auto norm = diff.norm();
         auto calc1 = -gamma * pow(norm,2);
@@ -341,63 +329,98 @@ extern  "C" {
 
 
 
+    DLLEXPORT double *KMeans(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
+        double **KMeans = new double*[numberOfCluster];
+        for(int i = 0; i<numberOfCluster;i++){
+            KMeans[i] = new double[dataset_sample_features_count];
+        }
 
+        printf("DEBUG1");
+        ClusterRepresentative **tabCluster = algoOfLLoyd(numberOfCluster,dataset,dataset_samples_count,dataset_sample_features_count);
+        printf("LAST DEBUG");
 
-    DLLEXPORT double RBF_predict_model_Regression(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize) {
-        return RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize, false);
-    }
-
-
-
-    DLLEXPORT double RBF_predict_model_Classification(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize) {
-        return RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize, true);
-    }
-
-
-
-
-    DLLEXPORT void RBF_train_model(double *model,double **KMeans,int numberKMeans,double* inputs,double *outputExpected,int dataset_samples_count,int dataset_sample_features_count,int gamma){
-
-        //fill the matrix
-        MatrixXd phi(dataset_samples_count,numberKMeans);
-        int k = 0;
-        for(int i = 0;
-            i + dataset_sample_features_count <= dataset_samples_count * dataset_sample_features_count;
-            i = i + dataset_sample_features_count){
-            for(int j = 0;j<numberKMeans;j++){
-                //double *getPartsOfTab(int start, int stop, double *tab)
-                auto temp = inputs + k * dataset_sample_features_count;
-                //double *temp = getPartsOfTab(i, i + dataset_sample_features_count - 1, inputs);
-                MatrixXd matInputs = tabToMatrix(temp,dataset_sample_features_count,dataset_sample_features_count,1);
-                MatrixXd  matKMean = tabToMatrix(KMeans[j],dataset_sample_features_count,dataset_sample_features_count,1);
-                MatrixXd diff = matInputs - matKMean;
-                auto norm = diff.norm();
-                auto calc1 = -gamma * pow(norm,2);
-                auto calc2 = exp(calc1);
-                phi(k,j) = calc2;
+        for(int i = 0; i<numberOfCluster;i++){
+            for(int j = 0;j<dataset_sample_features_count;j++){
+                KMeans[i][j] = tabCluster[i]->coord[j] ;
             }
-            k++;
         }
 
 
-        MatrixXd phiTransposed = phi.transpose();
-        MatrixXd A = phiTransposed*phi;
-        MatrixXd AInv = A.inverse();
-        MatrixXd Y = tabToMatrix(outputExpected,dataset_samples_count,dataset_samples_count,1);
-        MatrixXd B = phi.transpose()*Y;
-        MatrixXd W  =AInv*B;
-
-        //std::cout << W << std::endl;
-
-
-        for(int i = 0; i<numberKMeans;i++){
-            model[i] = W(i,0);
+        double *KMeansTab = new double[numberOfCluster*dataset_sample_features_count];
+        int k = 0;
+        for(int i = 0;i<numberOfCluster;i++){
+            for(int j = 0; j<dataset_sample_features_count;j++){
+                KMeansTab[k] = KMeans[i][j];
+                k++;
+            }
         }
+        disposeAllCluster(tabCluster,numberOfCluster);
 
-
+        return KMeansTab;
     }
 
-    DLLEXPORT void disposeRBF(double *model, double **KMeans){
+
+
+    DLLEXPORT double RBF_predict_model_Regression(double *model,double *KMeans,int numberKMeans,int gamma,double *inputs,int inputSize,int dataset_sample_features_count) {
+        return RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize,dataset_sample_features_count, false);
+    }
+
+
+
+    DLLEXPORT double RBF_predict_model_Classification(double *model,double *KMeans,int numberKMeans,int gamma,double *inputs,int inputSize,int dataset_sample_features_count) {
+        return RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize,dataset_sample_features_count, true);
+    }
+
+
+
+
+    DLLEXPORT void RBF_train_model(double *model,double *KMeans,int numberKMeans,double* inputs,double *outputExpected,int dataset_samples_count,int dataset_sample_features_count,int gamma){
+
+    //fill the matrix
+    MatrixXd phi(dataset_samples_count,numberKMeans);
+    int k = 0;
+    for(int i = 0;
+        i + dataset_sample_features_count <= dataset_samples_count * dataset_sample_features_count;
+        i = i + dataset_sample_features_count){
+        int l = 0;
+        for(int j = 0;
+            j+dataset_sample_features_count <= numberKMeans * dataset_sample_features_count
+                ;j = j+dataset_sample_features_count){
+            //double *getPartsOfTab(int start, int stop, double *tab)
+            double *temp = getPartsOfTab(i, i + dataset_sample_features_count - 1, inputs);
+            MatrixXd matInputs = tabToMatrix(temp,dataset_sample_features_count,dataset_sample_features_count,1);
+            double *temp2 = getPartsOfTab(j,j+dataset_sample_features_count-1,KMeans);
+            MatrixXd  matKMean = tabToMatrix(temp2,dataset_sample_features_count,dataset_sample_features_count,1);
+            MatrixXd diff = matInputs - matKMean;
+            auto norm = diff.norm();
+            auto calc1 = -gamma * pow(norm,2);
+            auto calc2 = exp(calc1);
+            phi(k,l) = calc2;
+            l++;
+        }
+        k++;
+    }
+
+
+    MatrixXd phiTransposed = phi.transpose();
+    MatrixXd A = phiTransposed*phi;
+    MatrixXd AInv = A.inverse();
+    MatrixXd Y = tabToMatrix(outputExpected,dataset_samples_count,dataset_samples_count,1);
+    MatrixXd B = phi.transpose()*Y;
+    MatrixXd W  =AInv*B;
+
+    //std::cout << W << std::endl;
+
+
+    for(int i = 0; i<numberKMeans;i++){
+        model[i] = W(i,0);
+    }
+
+
+}
+
+
+    DLLEXPORT void disposeRBF(double *model, double *KMeans){
         delete model;
         delete KMeans;
     }
