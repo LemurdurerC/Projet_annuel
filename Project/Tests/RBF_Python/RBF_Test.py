@@ -19,11 +19,11 @@ if __name__ == "__main__":
                               ctypes.POINTER(ctypes.c_double),
                               ctypes.c_int,
                               ctypes.c_int]
-    my_lib.KMeans.restype = ctypes.c_void_p
+    my_lib.KMeans.restype = ctypes.POINTER(ctypes.c_double)
 
     my_lib.RBF_predict_model_Regression.argtypes = [
         ctypes.c_void_p,
-        ctypes.c_void_p,
+        ctypes.POINTER(ctypes.c_double),
         ctypes.c_int,
         ctypes.c_int,
         ctypes.POINTER(ctypes.c_double),
@@ -33,7 +33,7 @@ if __name__ == "__main__":
 
     my_lib.RBF_predict_model_Classification.argtypes = [
         ctypes.c_void_p,
-        ctypes.c_void_p,
+        ctypes.POINTER(ctypes.c_double),
         ctypes.c_int,
         ctypes.c_int,
         ctypes.POINTER(ctypes.c_double),
@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     my_lib.RBF_train_model.argtypes = [
         ctypes.c_void_p,
-        ctypes.c_void_p,
+        ctypes.POINTER(ctypes.c_double),
         ctypes.c_int,
         ctypes.POINTER(ctypes.c_double),
         ctypes.POINTER(ctypes.c_double),
@@ -88,11 +88,11 @@ if __name__ == "__main__":
     numberOfCluser = 2
 
     print("Start")
-    myKmeans = my_lib.KMeans(numberOfCluser, X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), X.shape[0], X.shape[1])
+    KM = my_lib.KMeans(numberOfCluser, flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), X.shape[0], X.shape[1])
     print("Done 1")
     model = my_lib.create_RBF_model(ctypes.c_int(numberOfCluser))
     print("Done 2")
-
+"""
     print("Before Training the Modelco")
     for inputs_k in X:
         print(my_lib.RBF_predict_model_Classification(
@@ -125,3 +125,5 @@ if __name__ == "__main__":
             len(inputs_k)
         ))
 my_lib.disposeRBF(model,myKmeans)
+
+"""
