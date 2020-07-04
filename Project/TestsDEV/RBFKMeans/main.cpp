@@ -360,7 +360,7 @@ double RBF_predict_model_Classification(double *model,double *KMeans,int numberK
 
 
 
-void RBF_train_model(double *model,double *KMeans,int numberKMeans,double* inputs,double *outputExpected,int dataset_samples_count,int dataset_sample_features_count,int gamma){
+void RBF_train_model(double *model,double *KMeans,int numberKMeans,double* inputs,double *outputExpected,int dataset_samples_count,int dataset_sample_features_count,double gamma){
 
     //fill the matrix
     MatrixXd phi(dataset_samples_count,numberKMeans);
@@ -481,7 +481,7 @@ int main() {
     RBF_train_model(w,MyKMeans,numberOfCluser,X,Y,nbreEnter,nbreFeature,1);
 
 
-    printf("After train...\n");
+    printf("After train man...\n");
 
     for(int i = 0;
         i + nbreFeature <= nbreEnter * nbreFeature;
