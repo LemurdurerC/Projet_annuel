@@ -105,6 +105,14 @@ void addTabAtoTabB(double *coordsA, double *coordsB, int numberOfCoordsAandB){
 }
 
 
+void showTable(double *table,int tableSize){
+    for (int i =0; i<tableSize;i++){
+        printf("%f ",table[i]);
+    }
+    printf("\n");
+}
+
+
 //Algo de LLoyd
 /*
 Step :
@@ -242,7 +250,7 @@ void disposeAllCluster(ClusterRepresentative **allCluster,int numberOfCluster){
 
 
 
-double **KMeans(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
+double *KMeans(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
     double **KMeans = new double*[numberOfCluster];
     for(int i = 0; i<numberOfCluster;i++){
         KMeans[i] = new double[dataset_sample_features_count];
@@ -256,8 +264,17 @@ double **KMeans(int numberOfCluster, double *dataset, int dataset_samples_count,
         }
     }
 
+    double *KMeansTab = new double[numberOfCluster*dataset_sample_features_count];
+    int k = 0;
+    for(int i = 0;i<numberOfCluster;i++){
+        for(int j = 0; j<dataset_sample_features_count;j++){
+            KMeansTab[k] = KMeans[i][j];
+            k++;
+        }
+    }
+    delete KMeans;
     disposeAllCluster(tabCluster,numberOfCluster);
-    return KMeans;
+    return KMeansTab;
 }
 
 
@@ -301,16 +318,22 @@ double *create_RBF_model(int nbrKMeans){
 
 
 
-double RBF_predict_model_InCommon(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize,bool classif_or_not){
+double RBF_predict_model_InCommon(double *model,double *KMeans,int numberKMeans,double gamma,double *inputs,int inputSize,bool classif_or_not){
     auto sum = 0;
+    int k = 0;
     MatrixXd matInputs = tabToMatrix(inputs,inputSize,inputSize,1);
-    for(int i =0;i<numberKMeans;i++){
-        MatrixXd  matKMean = tabToMatrix(KMeans[i],inputSize,inputSize,1);
+    for(int i =0;
+        i+inputSize <= numberKMeans*inputSize;
+        i = i+inputSize){
+        double *temp = getPartsOfTab(i,i+inputSize-1,KMeans);
+        //showTable(temp,inputSize);
+        MatrixXd  matKMean = tabToMatrix(temp,inputSize,inputSize,1);
         MatrixXd diff = matInputs - matKMean;
         auto norm = diff.norm();
         auto calc1 = -gamma * pow(norm,2);
         auto calc2 = exp(calc1);
-        sum = sum + model[i]*calc2;
+        sum = sum + model[k]*calc2;
+        k++;
     }
 
     if(!classif_or_not) {
@@ -324,20 +347,20 @@ double RBF_predict_model_InCommon(double *model,double **KMeans,int numberKMeans
 
 
 
-double RBF_predict_model_Regression(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize) {
+double RBF_predict_model_Regression(double *model,double *KMeans,int numberKMeans,double gamma,double *inputs,int inputSize) {
     return RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize, false);
 }
 
 
 
-double RBF_predict_model_Classification(double *model,double **KMeans,int numberKMeans,int gamma,double *inputs,int inputSize) {
+double RBF_predict_model_Classification(double *model,double *KMeans,int numberKMeans,double gamma,double *inputs,int inputSize) {
     return RBF_predict_model_InCommon(model,KMeans,numberKMeans,gamma,inputs,inputSize, true);
 }
 
 
 
 
-void RBF_train_model(double *model,double **KMeans,int numberKMeans,double* inputs,double *outputExpected,int dataset_samples_count,int dataset_sample_features_count,int gamma){
+void RBF_train_model(double *model,double *KMeans,int numberKMeans,double* inputs,double *outputExpected,int dataset_samples_count,int dataset_sample_features_count,int gamma){
 
     //fill the matrix
     MatrixXd phi(dataset_samples_count,numberKMeans);
@@ -345,26 +368,33 @@ void RBF_train_model(double *model,double **KMeans,int numberKMeans,double* inpu
     for(int i = 0;
     i + dataset_sample_features_count <= dataset_samples_count * dataset_sample_features_count;
     i = i + dataset_sample_features_count){
-        for(int j = 0;j<numberKMeans;j++){
+        int l = 0;
+        for(int j = 0;
+            j+dataset_sample_features_count <= numberKMeans * dataset_sample_features_count
+            ;j = j+dataset_sample_features_count){
             //double *getPartsOfTab(int start, int stop, double *tab)
             double *temp = getPartsOfTab(i, i + dataset_sample_features_count - 1, inputs);
             MatrixXd matInputs = tabToMatrix(temp,dataset_sample_features_count,dataset_sample_features_count,1);
-            MatrixXd  matKMean = tabToMatrix(KMeans[j],dataset_sample_features_count,dataset_sample_features_count,1);
+            double *temp2 = getPartsOfTab(j,j+dataset_sample_features_count-1,KMeans);
+            MatrixXd  matKMean = tabToMatrix(temp2,dataset_sample_features_count,dataset_sample_features_count,1);
             MatrixXd diff = matInputs - matKMean;
             auto norm = diff.norm();
             auto calc1 = -gamma * pow(norm,2);
             auto calc2 = exp(calc1);
-            phi(k,j) = calc2;
+            phi(k,l) = calc2;
+            l++;
         }
         k++;
     }
 
 
 
-    MatrixXd A = (phi.transpose()*phi).inverse();
+    MatrixXd phiTransposed = phi.transpose();
+    MatrixXd A = phiTransposed*phi;
+    MatrixXd AInv = A.inverse();
     MatrixXd Y = tabToMatrix(outputExpected,dataset_samples_count,dataset_samples_count,1);
     MatrixXd B = phi.transpose()*Y;
-    MatrixXd W  =A*B;
+    MatrixXd W  =AInv*B;
 
     //std::cout << W << std::endl;
 
@@ -376,7 +406,8 @@ void RBF_train_model(double *model,double **KMeans,int numberKMeans,double* inpu
 
 }
 
-void disposeRBF(double *model, double **KMeans){
+
+void disposeRBF(double *model, double *KMeans){
     delete model;
     delete KMeans;
 }
@@ -387,8 +418,9 @@ int main() {
 
     const int nbreFeature = 2;
     const int nbreEnter  = 10;
-
+    double gamma = 0.1;
     int numberOfCluser = 2;
+
 
     double X[nbreFeature*nbreEnter] = {
             1.0,3.0,
@@ -423,45 +455,43 @@ int main() {
     double a[2] = {2.0,2.0};
 
 
-    double **MyKMeans = KMeans(numberOfCluser,X,nbreEnter,nbreFeature);
+    double *MyKMeans = KMeans(numberOfCluser,X,nbreEnter,nbreFeature);
 
-    for(int i = 0; i< numberOfCluser;i++){
-        printf("( ");
-        for(int j = 0;j<nbreFeature;j++){
-            printf("%f ",MyKMeans[i][j]);
-        }
-        printf(")");
-        printf("\n");
-
+    for(int i = 0; i< numberOfCluser*nbreFeature;i++){
+        printf("%f ",MyKMeans[i]);
     }
+    printf("\n");
 
 
     double *w = create_RBF_model(numberOfCluser);
 
 
     //PREDICT
-
+    printf("Before train \n");
     for(int i = 0;
         i + nbreFeature <= nbreEnter * nbreFeature;
         i = i + nbreFeature) {
         double *temp = getPartsOfTab(i, i + nbreFeature - 1, X);
-        double exit = RBF_predict_model_Classification(w,MyKMeans,numberOfCluser,1,temp,2);
+        //showTable(temp,nbreFeature);
+        double exit = RBF_predict_model_Classification(w,MyKMeans,numberOfCluser,gamma,temp,2);
         printf("%f\n",exit);
     }
     printf("\n");
 
     RBF_train_model(w,MyKMeans,numberOfCluser,X,Y,nbreEnter,nbreFeature,1);
 
+
+    printf("After train...\n");
+
     for(int i = 0;
         i + nbreFeature <= nbreEnter * nbreFeature;
         i = i + nbreFeature) {
         double *temp = getPartsOfTab(i, i + nbreFeature - 1, X);
-        double exit = RBF_predict_model_Classification(w,MyKMeans,numberOfCluser,1,temp,2);
+        showTable(temp,nbreFeature);
+        double exit = RBF_predict_model_Classification(w,MyKMeans,numberOfCluser,gamma,temp,2);
         printf("%f\n",exit);
     }
     printf("\n");
-    //double exit2 = RBF_predict_model_Classification(w,MyKMeans,numberOfCluser,1,a,2);
-    //printf("Last exit %f\n",exit2);
 
     disposeRBF(w,MyKMeans);
 
