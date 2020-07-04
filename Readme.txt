@@ -6,3 +6,9 @@ Il n'est pas à prendre en compte pour le test final. (sauf si le coté python n
 
 A SAVOIR SUE LE DATASET
 La taille des images du dataste est de 40*52 pixels.
+
+
+A SAVOIR SUR LE RBF
+Il faut bien choisir
+- le gamma
+- les bornes du random des KMeans !!!
