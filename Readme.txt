@@ -12,3 +12,7 @@ A SAVOIR SUR LE RBF
 Il faut bien choisir
 - le gamma
 - les bornes du random des KMeans !!!
+
+
+A SAVOIR SUR LE SVM
+- la matrice d'un exemple est de taille 2*1
