@@ -18,6 +18,8 @@ if __name__ == "__main__":
     my_lib.KMeans.argtypes = [ctypes.c_int,
                               ctypes.POINTER(ctypes.c_double),
                               ctypes.c_int,
+                              ctypes.c_int,
+                              ctypes.c_int,
                               ctypes.c_int]
     my_lib.KMeans.restype = ctypes.c_void_p
 
@@ -89,11 +91,11 @@ if __name__ == "__main__":
     numberOfCluser = 2
     gamma = 0.01
 
-    KM = my_lib.KMeans(numberOfCluser, flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), X.shape[0], X.shape[1])
+    KM = my_lib.KMeans(numberOfCluser, flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), X.shape[0], X.shape[1],1,9)
     model = my_lib.create_RBF_model(ctypes.c_int(numberOfCluser))
 
 
-    print("Before Training the Modelco")
+    print("Before Training the Model")
     for inputs_k in X:
         print(my_lib.RBF_predict_model_Classification(
             model,
