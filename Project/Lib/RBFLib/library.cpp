@@ -21,11 +21,11 @@ struct ClusterRepresentative{
 
     bool finalPlace;
 
-    void initialise(int,int);
+    void initialise(int,int,int,int);
 };
 
 
-void ClusterRepresentative::initialise(int dataset_samples_count,int dataset_sample_features_count){
+void ClusterRepresentative::initialise(int dataset_samples_count,int dataset_sample_features_count,int min, int max){
 
     formerCoord = new double[dataset_sample_features_count];
     coord = new double[dataset_sample_features_count];
@@ -34,7 +34,8 @@ void ClusterRepresentative::initialise(int dataset_samples_count,int dataset_sam
         std::random_device rd;
         std::mt19937 mt(rd());
         //POTENTIAL ERROR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        std::uniform_int_distribution<int> dist(1, 9);
+        //std::uniform_int_distribution<int> dist(1, 9);
+        std::uniform_int_distribution<int> dist(min, max);
         auto randNumber = dist(mt);
         coord[i] = randNumber;
         formerCoord[i] = coord[i];
@@ -135,12 +136,12 @@ Step :
 
 
 
-ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
+ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count,int min,int max){
     ClusterRepresentative **tabCluster = new ClusterRepresentative*[numberOfCluster];
 
     for(int i = 0; i<numberOfCluster;i++){
         ClusterRepresentative *c = new ClusterRepresentative();
-        c->initialise(dataset_samples_count,dataset_sample_features_count);
+        c->initialise(dataset_samples_count,dataset_sample_features_count,min,max);
         tabCluster[i] = c;
     }
     bool stop = false;
@@ -336,13 +337,13 @@ extern  "C" {
 
 
 
-    DLLEXPORT double *KMeans(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count){
+    DLLEXPORT double *KMeans(int numberOfCluster, double *dataset, int dataset_samples_count, int dataset_sample_features_count,int randMin, int randMax){
         double **KMeans = new double*[numberOfCluster];
         for(int i = 0; i<numberOfCluster;i++){
             KMeans[i] = new double[dataset_sample_features_count];
         }
 
-        ClusterRepresentative **tabCluster = algoOfLLoyd(numberOfCluster,dataset,dataset_samples_count,dataset_sample_features_count);
+        ClusterRepresentative **tabCluster = algoOfLLoyd(numberOfCluster,dataset,dataset_samples_count,dataset_sample_features_count,randMin,randMax);
 
         for(int i = 0; i<numberOfCluster;i++){
             for(int j = 0;j<dataset_sample_features_count;j++){
