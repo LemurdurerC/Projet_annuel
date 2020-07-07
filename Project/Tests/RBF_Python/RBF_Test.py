@@ -12,7 +12,8 @@ if __name__ == "__main__":
     my_lib.create_RBF_model.restype = ctypes.c_void_p
 
     my_lib.disposeRBF.argtypes = [ctypes.c_void_p,
-                                  ctypes.c_void_p]
+                                  ctypes.POINTER(ctypes.c_double)]
+                                  #ctypes.c_void_p]
     my_lib.disposeRBF.restype = None
 
     my_lib.KMeans.argtypes = [ctypes.c_int,
@@ -21,12 +22,13 @@ if __name__ == "__main__":
                               ctypes.c_int,
                               ctypes.c_int,
                               ctypes.c_int]
-    my_lib.KMeans.restype = ctypes.c_void_p
+    my_lib.KMeans.restype = ctypes.POINTER(ctypes.c_double)
+
 
     my_lib.RBF_predict_model_Regression.argtypes = [
         ctypes.c_void_p,
-        ctypes.c_void_p,
-        #ctypes.POINTER(ctypes.c_double),
+        #ctypes.c_void_p,
+        ctypes.POINTER(ctypes.c_double),
         ctypes.c_int,
         ctypes.c_double,
         ctypes.POINTER(ctypes.c_double),
@@ -36,7 +38,8 @@ if __name__ == "__main__":
 
     my_lib.RBF_predict_model_Classification.argtypes = [
         ctypes.c_void_p,
-        ctypes.c_void_p,
+        ctypes.POINTER(ctypes.c_double),
+        #ctypes.c_void_p,
         ctypes.c_int,
         ctypes.c_double,
         ctypes.POINTER(ctypes.c_double),
@@ -46,7 +49,8 @@ if __name__ == "__main__":
 
     my_lib.RBF_train_model.argtypes = [
         ctypes.c_void_p,
-        ctypes.c_void_p,
+        ctypes.POINTER(ctypes.c_double),
+        #ctypes.c_void_p,
         ctypes.c_int,
         ctypes.POINTER(ctypes.c_double),
         ctypes.POINTER(ctypes.c_double),
@@ -56,7 +60,9 @@ if __name__ == "__main__":
     ]
     my_lib.RBF_train_model.restype = None
 
+"""
 
+#CAS OU CA MARCHE BIEN
     X = np.array([
         [1.0, 3.0],
         [1.0, 4.0],
@@ -85,14 +91,20 @@ if __name__ == "__main__":
         1,
         1
     ], dtype='float64')
-
     flattened_X = X.flatten()
+
 
     numberOfCluser = 2
     gamma = 0.01
 
-    KM = my_lib.KMeans(numberOfCluser, flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), X.shape[0], X.shape[1],1,9)
+    KM = my_lib.KMeans(numberOfCluser, flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), X.shape[0],
+                       X.shape[1], 0, 9)
+
+
     model = my_lib.create_RBF_model(ctypes.c_int(numberOfCluser))
+
+    for i in range(numberOfCluser*2):
+        print(KM[i])
 
 
     print("Before Training the Model")
@@ -129,3 +141,80 @@ if __name__ == "__main__":
 
 
 my_lib.disposeRBF(model,KM)
+
+"""
+
+
+
+
+
+
+
+
+
+
+"""
+#CAS DE TEST 1
+
+    A = np.array([
+        [1, 1],
+        [2, 3],
+        [3, 3]
+    ], dtype='float64')
+    B = np.array([
+        1,
+        -1,
+        -1
+    ], dtype='float64')
+
+    flattened_A = A.flatten()
+
+    numberOfCluser = 2
+    gamma = 0.1
+
+    KM = my_lib.KMeans(numberOfCluser, flattened_A.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), A.shape[0],
+                       A.shape[1], 0, 3)
+
+
+    model = my_lib.create_RBF_model(ctypes.c_int(numberOfCluser))
+
+    for i in range(numberOfCluser*2):
+        print("next")
+        print(KM[i])
+
+
+    print("Before Training the Model")
+    for inputs_k in A:
+        print(my_lib.RBF_predict_model_Classification(
+            model,
+            KM,
+            numberOfCluser,
+            gamma,
+            inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+            len(inputs_k)
+        ))
+    my_lib.RBF_train_model(
+        model,
+        KM,
+        numberOfCluser,
+        flattened_A.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+        B.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+        A.shape[0],
+        A.shape[1],
+        gamma
+    )
+
+    print("After Training the Model")
+    for inputs_k in A:
+        print(my_lib.RBF_predict_model_Classification(
+            model,
+            KM,
+            numberOfCluser,
+            gamma,
+            inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+            len(inputs_k)
+        ))
+
+
+my_lib.disposeRBF(model,KM)
+"""
