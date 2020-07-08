@@ -82,10 +82,10 @@ image11 = im_arr11.flatten()
 image12 = im_arr12.flatten()
 
 
-dataset = np.array([image1, image2, image3, image4, image9, image10, image11, image12], dtype='float64')
+dataset = np.array([image1, image12, image3, image4, image9, image10, image11, image2], dtype='float64')
 print(dataset.shape)
 
-dataset_expected_output = np.array([1, 1, 1, 1, -1, -1, -1, -1], dtype='float64')
+dataset_expected_output = np.array([1, -1, 1, 1, -1, -1, -1, 1], dtype='float64')
 
 
 model = my_lib.linear_create_model(ctypes.c_int(dataset.shape[1]))

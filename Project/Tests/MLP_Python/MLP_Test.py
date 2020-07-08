@@ -4,8 +4,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
-    path_to_dll = "../MLPCppLib/cmake-build-debug" \
-                  "/MLPCppLib.dll "
+    path_to_dll = "../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.dll"
 
     my_lib = ctypes.CDLL(path_to_dll)
 
@@ -59,13 +58,14 @@ if __name__ == "__main__":
 
     L = np.array([
         2,
-        3,
+        #2,
         1
     ], dtype='int32')
 
     model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
-    # OU EXCLUSIF
+    """
+    #CAS DE TEST : OU EXCLUSIF
     X = np.array([
         [1, 0],
         [0, 1],
@@ -103,6 +103,60 @@ if __name__ == "__main__":
         X.shape[1],
         0.1,
         100000
+    )
+
+    print("After Training the ...")
+    for inputs_k in X:
+        Exit2 = my_lib.predict_MLP_Classification(
+            model,
+            L.shape[0],
+            L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)),
+            inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
+        )
+        print(Exit2[0])
+
+    my_lib.dispose_MLP(model)
+    """
+
+
+
+
+# CAS DE TEST 1 : Linear Simple
+    X = np.array([
+        [1, 1],
+        [2, 3],
+        [3, 3]
+    ])
+    Y = np.array([
+        1,
+        -1,
+        -1
+    ])
+
+
+    flattened_X = X.flatten()
+
+    print("Before Training the Mannnn")
+    for inputs_k in X:
+        Exit1 = my_lib.predict_MLP_Classification(
+            model,
+            L.shape[0],
+            L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)),
+            inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
+        )
+        print(Exit1[0])
+
+
+    my_lib.train_MLP_Classification(
+        model,
+        L.shape[0],
+        L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)),
+        flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+        Y.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+        X.shape[0],
+        X.shape[1],
+        0.1,
+        10000
     )
 
     print("After Training the ...")

@@ -546,3 +546,74 @@ for inputs_k in X:
 
 my_lib.disposeRBF(model, KM)
 """
+
+
+
+
+
+#CAS DE TEST 3: Linear simple 3D (not work)
+"""
+X = np.array([
+      [1, 1],
+      [2, 2],
+      [3, 1]
+])
+Y = np.array([
+      2,
+      3,
+      2.5
+])
+
+flattened_X = X.flatten()
+
+numberOfCluser = 2
+gamma = 0.1
+
+KM = my_lib.KMeans(numberOfCluser, flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), X.shape[0],
+                   X.shape[1], 1, 3)
+
+model = my_lib.create_RBF_model(ctypes.c_int(numberOfCluser))
+
+
+for i in range(numberOfCluser * 2):
+    print("next")
+    print(KM[i])
+
+
+print("Before Training the Model")
+for inputs_k in X:
+    print(my_lib.RBF_predict_model_Classification(
+        model,
+        KM,
+        numberOfCluser,
+        gamma,
+        inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+        len(inputs_k)
+    ))
+my_lib.RBF_train_model(
+    model,
+    KM,
+    numberOfCluser,
+    flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+    Y.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+    X.shape[0],
+    X.shape[1],
+    gamma
+)
+
+
+print("After Training the Model")
+
+for inputs_k in X:
+    print(my_lib.RBF_predict_model_Classification(
+        model,
+        KM,
+        numberOfCluser,
+        gamma,
+        inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+        len(inputs_k)
+    ))
+
+
+my_lib.disposeRBF(model, KM)
+"""
