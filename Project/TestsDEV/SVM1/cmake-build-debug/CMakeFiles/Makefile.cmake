@@ -7,6 +7,9 @@ set(CMAKE_DEPENDS_GENERATOR "NMake Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "C:/Program Files (x86)/osqp/lib/cmake/osqp/osqp-config.cmake"
+  "C:/Program Files (x86)/osqp/lib/cmake/osqp/osqp-targets-noconfig.cmake"
+  "C:/Program Files (x86)/osqp/lib/cmake/osqp/osqp-targets.cmake"
   "C:/Users/hejar/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/201.6668.126/bin/cmake/win/share/cmake-3.16/Modules/CMakeCInformation.cmake"
   "C:/Users/hejar/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/201.6668.126/bin/cmake/win/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
   "C:/Users/hejar/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/201.6668.126/bin/cmake/win/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake"

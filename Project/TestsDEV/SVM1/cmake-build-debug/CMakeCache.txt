@@ -207,6 +207,9 @@ SVM1_BINARY_DIR:STATIC=C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Proje
 //Value Computed by CMake
 SVM1_SOURCE_DIR:STATIC=C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1
 
+//The directory containing a CMake configuration file for osqp.
+osqp_DIR:PATH=C:/Program Files (x86)/osqp/lib/cmake/osqp
+
 
 ########################
 # INTERNAL cache entries

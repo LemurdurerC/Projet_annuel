@@ -1,4 +1,5 @@
 #include <iostream>
+#include "osqp.h"
 #include <Eigen/Dense>
 using Eigen::MatrixXd;
 
@@ -122,7 +123,11 @@ int main() {
 
     MatrixXd m = buildBigMatrix(X,Y,nbreEnter,nbreFeature);
 
-    std::cout << m << std::endl;
+    // Workspace structures
+    OSQPWorkspace *work;
+    
+   // std::cout << m << std::endl;
+
 
     return 0;
 }

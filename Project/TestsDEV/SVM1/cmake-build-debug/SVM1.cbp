@@ -5,7 +5,7 @@
 		<Option title="SVM1"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="msvc8"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\..\Program Files (x86)\;CMake Files\..\..\..\..\..\..\..\..\..\Program Files (x86)\osqp\;CMake Files\..\..\..\..\..\..\..\..\..\Program Files (x86)\osqp\lib\;CMake Files\..\..\..\..\..\..\..\..\..\Program Files (x86)\osqp\lib\cmake\;CMake Files\..\..\..\..\..\..\..\..\..\Program Files (x86)\osqp\lib\cmake\osqp\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/cmake-build-debug"/>
@@ -25,6 +25,7 @@
 				<Option compiler="msvc8"/>
 				<Compiler>
 					<Add directory="C:/Users/hejar/Eigen"/>
+					<Add directory="C:/Program Files (x86)/osqp/include/osqp"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
@@ -48,6 +49,7 @@
 				<Option compiler="msvc8"/>
 				<Compiler>
 					<Add directory="C:/Users/hejar/Eigen"/>
+					<Add directory="C:/Program Files (x86)/osqp/include/osqp"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
@@ -89,6 +91,15 @@
 		</Unit>
 		<Unit filename="C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/../../../../../../../../../Program Files (x86)/osqp/lib/cmake/osqp/osqp-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\..\Program Files (x86)\osqp\lib\cmake\osqp\"/>
+		</Unit>
+		<Unit filename="C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/../../../../../../../../../Program Files (x86)/osqp/lib/cmake/osqp/osqp-targets-noconfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\..\Program Files (x86)\osqp\lib\cmake\osqp\"/>
+		</Unit>
+		<Unit filename="C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/../../../../../../../../../Program Files (x86)/osqp/lib/cmake/osqp/osqp-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\..\Program Files (x86)\osqp\lib\cmake\osqp\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
