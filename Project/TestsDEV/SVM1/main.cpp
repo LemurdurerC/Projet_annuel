@@ -125,7 +125,7 @@ int main() {
 
     // Workspace structures
     OSQPWorkspace *work;
-    
+
    // std::cout << m << std::endl;
 
 
