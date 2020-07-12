@@ -20,6 +20,13 @@ double *getPartsOfTab(int start, int stop, double *tab) {
 }
 
 
+void printTab(double *tab, int tablLength){
+    for(int i = 0; i<tablLength;i++){
+        printf("%f ",tab[i]);
+    }
+    printf("\n");
+}
+
 MatrixXd tabToMatrix( double *tab, int tabSize, int exampleCount_or_ROW, int inputsSize_or_COL) {
 
     MatrixXd m(exampleCount_or_ROW, inputsSize_or_COL);
@@ -42,6 +49,9 @@ MatrixXd tabToMatrix( double *tab, int tabSize, int exampleCount_or_ROW, int inp
     return m;
 
 }
+
+
+
 
 
 MatrixXd buildBigMatrix(double *inputs, double *expectedOutputs, int dataset_samples_count, int dataset_sample_features_count){
@@ -80,6 +90,87 @@ MatrixXd buildBigMatrix(double *inputs, double *expectedOutputs, int dataset_sam
     }
 
     return matrix;
+}
+
+
+
+
+
+
+MatrixXd getUpperTriangularPart(MatrixXd matrix, int dataset_samples_count){
+    for(int i = 0; i<dataset_samples_count;i++){
+        for(int j = 0; j<dataset_samples_count;j++){
+            if(i>j){
+                matrix(i,j) = 0.0;
+            }
+        }
+    }
+
+    return matrix;
+}
+
+
+
+int countNonZero(MatrixXd matrix, int dataset_samples_count){
+    int count = 0;
+    for(int i = 0; i<dataset_samples_count;i++){
+        for(int j = 0; j<dataset_samples_count;j++) {
+            if(matrix(i,j) != 0.0){
+                count++;
+            }
+        }
+    }
+    return count;
+
+}
+
+
+
+
+
+
+double *buildP_x(MatrixXd matrix, int dataset_samples_count){
+    int length = countNonZero(matrix,dataset_samples_count);
+    double *P_x = new double[length];
+    int k = 0;
+
+    for(int i = 0; i<dataset_samples_count;i++){
+        for(int j = 0; j<dataset_samples_count;j++) {
+            if(matrix(i,j) != 0.0){
+                P_x[k] = matrix(i,j);
+                k++;
+            }
+        }
+    }
+
+
+    return P_x;
+}
+
+
+
+double *buildP_i(MatrixXd matrix, int dataset_samples_count) {
+    int length = countNonZero(matrix, dataset_samples_count);
+    MatrixXd matrix2 = matrix.transpose();
+    double *P_i = new double[length];
+    int k = 0;
+    for (int i = 0; i < dataset_samples_count; i++) {
+        int l = 0;
+        for (int j = 0; j < dataset_samples_count; j++) {
+            if(matrix2(i,j) != 0){
+                P_i[k] = l;
+                k++;
+            }
+            l++;
+        }
+    }
+    return P_i;
+
+}
+
+
+
+double *buildP_p(MatrixXd matrix, int dataset_samples_count) {
 }
 
 
@@ -123,10 +214,23 @@ int main() {
 
     MatrixXd m = buildBigMatrix(X,Y,nbreEnter,nbreFeature);
 
-    // Workspace structures
-    OSQPWorkspace *work;
 
-   // std::cout << m << std::endl;
+    MatrixXd tm = getUpperTriangularPart(m,nbreEnter);
+
+//    std::cout << tm << std::endl;
+
+//    printf("Il y a %d non nuls\n",countNonZero(tm,nbreEnter));
+
+    double *tab = buildP_x(tm,nbreEnter);
+    double *tab2 = buildP_i(tm,nbreEnter);
+
+    printTab(tab2,countNonZero(tm,nbreEnter));
+
+
+
+
+// Workspace structures
+    OSQPWorkspace *work;
 
 
     return 0;

@@ -6,6 +6,70 @@
 
 #IncludeRegexTransform: 
 
+C:/Program Files (x86)/osqp/include/osqp/constants.h
+
+C:/Program Files (x86)/osqp/include/osqp/cs.h
+types.h
+C:/Program Files (x86)/osqp/include/osqp/types.h
+lin_alg.h
+C:/Program Files (x86)/osqp/include/osqp/lin_alg.h
+
+C:/Program Files (x86)/osqp/include/osqp/glob_opts.h
+osqp_configure.h
+C:/Program Files (x86)/osqp/include/osqp/osqp_configure.h
+mex.h
+C:/Program Files (x86)/osqp/include/osqp/mex.h
+Python.h
+-
+stdlib.h
+-
+math.h
+-
+stdio.h
+-
+string.h
+-
+Python.h
+-
+R_ext/Print.h
+-
+
+C:/Program Files (x86)/osqp/include/osqp/lin_alg.h
+types.h
+C:/Program Files (x86)/osqp/include/osqp/types.h
+
+C:/Program Files (x86)/osqp/include/osqp/osqp.h
+types.h
+C:/Program Files (x86)/osqp/include/osqp/types.h
+util.h
+C:/Program Files (x86)/osqp/include/osqp/util.h
+cs.h
+C:/Program Files (x86)/osqp/include/osqp/cs.h
+
+C:/Program Files (x86)/osqp/include/osqp/osqp_configure.h
+
+C:/Program Files (x86)/osqp/include/osqp/types.h
+glob_opts.h
+C:/Program Files (x86)/osqp/include/osqp/glob_opts.h
+constants.h
+C:/Program Files (x86)/osqp/include/osqp/constants.h
+
+C:/Program Files (x86)/osqp/include/osqp/util.h
+types.h
+C:/Program Files (x86)/osqp/include/osqp/types.h
+constants.h
+C:/Program Files (x86)/osqp/include/osqp/constants.h
+windows.h
+-
+mach/mach_time.h
+-
+time.h
+-
+sys/time.h
+-
+stdio.h
+-
+
 C:/Users/hejar/Eigen/Eigen/Cholesky
 Core
 C:/Users/hejar/Eigen/Eigen/Core
@@ -1055,6 +1119,8 @@ C:/Users/hejar/Eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/main.cpp
 iostream
 -
+osqp.h
+C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/osqp.h
 Eigen/Dense
 -
 
