@@ -30,6 +30,7 @@ void printTab(double *tab, int tablLength){
 
 
 
+
 MatrixXd tabToMatrix( double *tab, int tabSize, int exampleCount_or_ROW, int inputsSize_or_COL) {
 
     MatrixXd m(exampleCount_or_ROW, inputsSize_or_COL);
@@ -55,6 +56,7 @@ MatrixXd tabToMatrix( double *tab, int tabSize, int exampleCount_or_ROW, int inp
 
 
 
+
 bool firstNonNulInTabColumn(double *tab,int tabLength, double val){
     if(val == 0){
         return false;
@@ -64,6 +66,7 @@ bool firstNonNulInTabColumn(double *tab,int tabLength, double val){
             if(i == 0){
                 return true;
             }else{
+
                 int j = i-1;
                 while (j >= 0) {
                     if (tab[j] != 0) {
@@ -72,11 +75,27 @@ bool firstNonNulInTabColumn(double *tab,int tabLength, double val){
                     j--;
                 }
                 return true;
+
             }
         }
     }
     return true;
 }
+
+
+
+
+double *matrixRowToTab(MatrixXd matrix, int row, int column, int whichRow) {
+    double *tab = new double[column];
+
+
+    for(int i = 0; i<column;i++){
+        tab[i] = matrix(whichRow,i);
+    }
+
+    return tab;
+}
+
 
 
 
@@ -137,6 +156,7 @@ MatrixXd getUpperTriangularPart(MatrixXd matrix, int dataset_samples_count){
 
 
 
+
 int countNonZero(MatrixXd matrix, int dataset_samples_count){
     int count = 0;
     for(int i = 0; i<dataset_samples_count;i++){
@@ -149,8 +169,6 @@ int countNonZero(MatrixXd matrix, int dataset_samples_count){
     return count;
 
 }
-
-
 
 
 
@@ -175,6 +193,7 @@ double *buildP_x(MatrixXd matrix, int dataset_samples_count){
 
 
 
+
 double *buildP_i(MatrixXd matrix, int dataset_samples_count) {
     int length = countNonZero(matrix, dataset_samples_count);
     MatrixXd matrix2 = matrix.transpose();
@@ -196,14 +215,59 @@ double *buildP_i(MatrixXd matrix, int dataset_samples_count) {
 
 
 
+bool *buildBoolP_p(MatrixXd matrix, int dataset_samples_count) {
+    int length = countNonZero(matrix, dataset_samples_count);
+    bool *BP_p = new bool[length];
+    MatrixXd matrix2 = matrix.transpose();
+    int k = 0;
+
+    for(int i = 0; i<dataset_samples_count;i++){
+        double *tab;
+        tab = matrixRowToTab(matrix2,dataset_samples_count,dataset_samples_count,i);
+        int justOne = 0;
+        for(int j = 0; j<dataset_samples_count;j++){
+
+            if(tab[j] != 0 && justOne<1){
+                if(firstNonNulInTabColumn(tab,dataset_samples_count,tab[j])){
+                    justOne++;
+                }
+                BP_p[k] = firstNonNulInTabColumn(tab,dataset_samples_count,tab[j]);
+                k++;
+            }else{ // !!! if(tab[j] != 0){
+                BP_p[k] = false;
+                k++;
+            }
+
+        }
+    }
+    return BP_p;
+}
 
 
-/*
+
+
 double *buildP_p(MatrixXd matrix, int dataset_samples_count) {
     double *P_p = new double[dataset_samples_count+1];
+    int k = 0;
+
+    int lengthTab = dataset_samples_count*dataset_samples_count;
+    bool *tab = buildBoolP_p(matrix,dataset_samples_count);
+
+    int lengthP_i = countNonZero(matrix, dataset_samples_count);
+
+    for(int i = 0; i<lengthTab;i++){
+        if(tab[i]){
+            P_p[k] = k;
+            k++;
+        }
+    }
+    //dernière case
+    P_p[dataset_samples_count] = lengthP_i;
+
+    return P_p;
 
 }
-*/
+
 
 
 int main() {
@@ -243,7 +307,9 @@ int main() {
             1
     };
 
-/*
+
+
+
     MatrixXd m = buildBigMatrix(X,Y,nbreEnter,nbreFeature);
 
 
@@ -252,18 +318,46 @@ int main() {
 
     double *tab = buildP_x(tm,nbreEnter);
     double *tab2 = buildP_i(tm,nbreEnter);
+    bool *tab3 = buildBoolP_p(tm,nbreEnter);
+    double *tab4 = buildP_p(tm,nbreEnter);
 
-    printTab(tab2,countNonZero(tm,nbreEnter));
+    
+/*
+//REFERENCE
+    int p1 = 2;
+    int p2 = 2;
+
+    MatrixXd m2(2,2);
+    m2(0,0) = 4.0;
+    m2(0,1) = 1.0;
+    m2(1,0) = 1.0;
+    m2(1,1) = 2.0;
+
+
+
+    std::cout << "matrice" << std::endl;
+    std::cout << m2 << std::endl;
+
+    MatrixXd tm2 = getUpperTriangularPart(m2,p1);
+    std::cout << "matrice traingulaire" << std::endl;
+    std::cout << tm2 << std::endl;
+
+    int lengtNonZero = countNonZero(tm2,p1);
+
+    double *table = buildP_x(tm2,p1);
+    std::cout << "P_x" << std::endl;
+    printTab(table,lengtNonZero);
+
+    double *table2 = buildP_i(tm2,p1);
+    std::cout << "P_i" << std::endl;
+    printTab(table2,lengtNonZero);
+
+    double *table3 = buildP_p(tm2,p1);
+    std::cout << "P_p" << std::endl;
+    printTab(table3,p1+1);
+
+
 */
-
-    double tab[6] = {0,10.0,0,0,90.0,12.0};
-
-    if(firstNonNulInTabColumn(tab,6,90.0)){
-        printf("Oui c'est le premier non nul\n");
-    }else{
-        printf("Non ce n'est pas le premier non nul\n");
-    }
-
 
 
 
