@@ -20,12 +20,15 @@ double *getPartsOfTab(int start, int stop, double *tab) {
 }
 
 
+
 void printTab(double *tab, int tablLength){
     for(int i = 0; i<tablLength;i++){
         printf("%f ",tab[i]);
     }
     printf("\n");
 }
+
+
 
 MatrixXd tabToMatrix( double *tab, int tabSize, int exampleCount_or_ROW, int inputsSize_or_COL) {
 
@@ -51,6 +54,29 @@ MatrixXd tabToMatrix( double *tab, int tabSize, int exampleCount_or_ROW, int inp
 }
 
 
+
+bool firstNonNulInTabColumn(double *tab,int tabLength, double val){
+    if(val == 0){
+        return false;
+    }
+    for(int i = 0; i<tabLength;i++){
+        if(tab[i] == val){
+            if(i == 0){
+                return true;
+            }else{
+                int j = i-1;
+                while (j >= 0) {
+                    if (tab[j] != 0) {
+                        return false;
+                    }
+                    j--;
+                }
+                return true;
+            }
+        }
+    }
+    return true;
+}
 
 
 
@@ -170,8 +196,14 @@ double *buildP_i(MatrixXd matrix, int dataset_samples_count) {
 
 
 
+
+
+/*
 double *buildP_p(MatrixXd matrix, int dataset_samples_count) {
+    double *P_p = new double[dataset_samples_count+1];
+
 }
+*/
 
 
 int main() {
@@ -211,20 +243,27 @@ int main() {
             1
     };
 
-
+/*
     MatrixXd m = buildBigMatrix(X,Y,nbreEnter,nbreFeature);
 
 
     MatrixXd tm = getUpperTriangularPart(m,nbreEnter);
 
-//    std::cout << tm << std::endl;
-
-//    printf("Il y a %d non nuls\n",countNonZero(tm,nbreEnter));
 
     double *tab = buildP_x(tm,nbreEnter);
     double *tab2 = buildP_i(tm,nbreEnter);
 
     printTab(tab2,countNonZero(tm,nbreEnter));
+*/
+
+    double tab[6] = {0,10.0,0,0,90.0,12.0};
+
+    if(firstNonNulInTabColumn(tab,6,90.0)){
+        printf("Oui c'est le premier non nul\n");
+    }else{
+        printf("Non ce n'est pas le premier non nul\n");
+    }
+
 
 
 
