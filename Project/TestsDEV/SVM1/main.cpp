@@ -410,6 +410,7 @@ int main() {
     int *A_p = buildP_p(Ymat,row,column);
     c_int *A_p2 = reinterpret_cast<c_int *>(A_p);
 
+
     double *l =  buildTabOfNumber(nbreEnter,0);
     c_float *l2 = l;
     double *u =  buildTabOfNumber(nbreEnter,0);
