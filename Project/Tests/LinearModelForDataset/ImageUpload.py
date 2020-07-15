@@ -2,15 +2,13 @@ from PIL import Image
 import numpy as np
 import ctypes
 
+
 import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
     path_to_dll = "../../Lib/LinearModelCppLib/cmake-build-debug" \
                   "/LinearModelCppLib.dll "
-    """
-    path_to_dll = "C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Lib/LinearModelCppLib/cmake-build-debug" \
-                  "/LinearModelCppLib.dll "
- """
+
     my_lib = ctypes.CDLL(path_to_dll)
 
     my_lib.linear_create_model.argtypes = [ctypes.c_int]
@@ -977,6 +975,8 @@ imageN150 = im_arrN150.flatten()
 imageN151 = im_arrN151.flatten()
 imageN152 = im_arrN152.flatten()
 
+
+
 dataset = np.array([image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11,
                     image12, image13, image14, image15, image16, image17, image18, image19, image20, image21,
                     image22, image23, image24, image25, image26, image27, image28, image29, image30, image31,
@@ -992,9 +992,25 @@ dataset = np.array([image1, image2, image3, image4, image5, image6, image7, imag
                     image122, image123, image124, image125, image126, image127, image128, image129, image130, image131,
                     image132, image133, image134, image135, image136, image137, image138, image139, image140, image141,
                     image142, image143, image144, image145, image146, image147, image148, image149, image150, image151,
-                    image152,image153,
-                    imageN1, imageN2, imageN3, imageN4, imageN5, imageN6, imageN7, imageN8, imageN9, imageN10,
-                    imageN11, imageN12], dtype='float64')
+                    image152, image153,
+
+                    imageN1, imageN2, imageN3, imageN4, imageN5, imageN6, imageN7, imageN8, imageN9, imageN10, imageN11,
+                    imageN12, imageN13, imageN14, imageN15, imageN16, imageN17, imageN18, imageN19, imageN20,  imageN21,
+                    imageN22, imageN23, imageN24, imageN25, imageN26, imageN27, imageN28, imageN29, imageN30, imageN31,
+                    imageN32, imageN33, imageN34, imageN35, imageN36, imageN37, imageN38, imageN39, imageN40, imageN41,
+                    imageN42, imageN43, imageN44, imageN45, imageN46, imageN47, imageN48, imageN49, imageN50, imageN51,
+                    imageN52, imageN53, imageN54, imageN55, imageN56, imageN57, imageN58, imageN59, imageN60, imageN61,
+                    imageN62, imageN63, imageN64, imageN65, imageN66, imageN67, imageN68, imageN69, imageN70, imageN71,
+                    imageN72, imageN73, imageN74, imageN75, imageN76, imageN77, imageN78, imageN79, imageN80, imageN81,
+                    imageN82, imageN83, imageN84, imageN85, imageN86, imageN87, imageN88, imageN89, imageN90, imageN91,
+                    imageN92, imageN93, imageN94, imageN95, imageN96, imageN97, imageN98, imageN99, imageN100, imageN101,
+                    imageN102, imageN103, imageN104, imageN105, imageN106, imageN107, imageN108, imageN109, imageN110, imageN111,
+                    imageN112, imageN113, imageN114, imageN115, imageN116, imageN117, imageN118, imageN119, imageN120, imageN121,
+                    imageN122, imageN123, imageN124, imageN125, imageN126, imageN127, imageN128, imageN129, imageN130, imageN131,
+                    imageN132, imageN133, imageN134, imageN135, imageN136, imageN137, imageN138, imageN139, imageN140, imageN141,
+                    imageN142, imageN143, imageN144, imageN145, imageN146, imageN147, imageN148, imageN149, imageN150, imageN151,
+                    imageN152], dtype='float64')
+
 
 print(dataset.shape)
 
@@ -1008,12 +1024,17 @@ dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], dtype='float64')
 
-print(dataset_expected_output.shape)
 
 model = my_lib.linear_create_model(ctypes.c_int(dataset.shape[1]))
-
 
 flattened_Dataset = dataset.flatten()
 
@@ -1037,24 +1058,41 @@ my_lib.linear_train_model_classification(
     10000
 )
 
-print("After Training......")
 
+
+"""
 for inputs_k in dataset:
     print(my_lib.linear_predict_model_classification(
         model,
         inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
         len(inputs_k)
     ))
+"""
 
-my_lib.linear_dispose_model(model)
 
+print("Détection sous apprentissage:")
+
+k = 0
+total = 0
+for inputs_k in dataset:
+    output = my_lib.linear_predict_model_classification(
+        model,
+        inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+        len(inputs_k)
+    )
+    if output != dataset_expected_output[k]:
+        total = total + 1
+    k = k + 1
+
+percent = 100 - ((100*total)/dataset.shape[0])
+print(percent, "% de bonne prédiction")
 
 
 
 print("Et des photos non connnus ?")
 
 imTest = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/1.jpeg")
-imTest2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/10.jpeg")
+imTest2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/101.jpg")
 im_arrTest = np.array(imTest) / 255.0
 imageTest = im_arrTest.flatten()
 im_arrTest2 = np.array(imTest2) / 255.0
@@ -1069,5 +1107,9 @@ print(my_lib.linear_predict_model_classification(
         imageTest2.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
         len(imageTest2)
     ))
+
+
+
+my_lib.linear_dispose_model(model)
 
 
