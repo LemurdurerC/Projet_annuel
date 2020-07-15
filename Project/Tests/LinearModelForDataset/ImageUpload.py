@@ -207,7 +207,7 @@ im150 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/
 im151 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/151.jpg")
 im152 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/152.jpg")
 im153 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/153.jpg")
-#not happy
+#NOT HAPPY
 imN1 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/1.jpg")
 imN2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/2.jpg")
 imN3 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/3.jpg")
@@ -515,7 +515,7 @@ im_arr150 = np.array(im150) / 255.0
 im_arr151 = np.array(im151) / 255.0
 im_arr152 = np.array(im152) / 255.0
 im_arr153 = np.array(im153) / 255.0
-#not happy
+#NOT HAPPY
 im_arrN1 = np.array(imN1) / 255.0
 im_arrN2 = np.array(imN2) / 255.0
 im_arrN3 = np.array(imN3) / 255.0
@@ -528,6 +528,146 @@ im_arrN9 = np.array(imN9) / 255.0
 im_arrN10 = np.array(imN10) / 255.0
 im_arrN11 = np.array(imN11) / 255.0
 im_arrN12 = np.array(imN12) / 255.0
+im_arrN13 = np.array(imN13) / 255.0
+im_arrN14 = np.array(imN14) / 255.0
+im_arrN15 = np.array(imN15) / 255.0
+im_arrN16 = np.array(imN16) / 255.0
+im_arrN17 = np.array(imN17) / 255.0
+im_arrN18 = np.array(imN18) / 255.0
+im_arrN19 = np.array(imN19) / 255.0
+im_arrN20 = np.array(imN20) / 255.0
+im_arrN21 = np.array(imN21) / 255.0
+im_arrN22 = np.array(imN22) / 255.0
+im_arrN23 = np.array(imN23) / 255.0
+im_arrN24 = np.array(imN24) / 255.0
+im_arrN25 = np.array(imN25) / 255.0
+im_arrN26 = np.array(imN26) / 255.0
+im_arrN27 = np.array(imN27) / 255.0
+im_arrN28 = np.array(imN28) / 255.0
+im_arrN29 = np.array(imN29) / 255.0
+im_arrN30 = np.array(imN30) / 255.0
+im_arrN31 = np.array(imN31) / 255.0
+im_arrN32 = np.array(imN32) / 255.0
+im_arrN33 = np.array(imN33) / 255.0
+im_arrN34 = np.array(imN34) / 255.0
+im_arrN35 = np.array(imN35) / 255.0
+im_arrN36 = np.array(imN36) / 255.0
+im_arrN37 = np.array(imN37) / 255.0
+im_arrN38 = np.array(imN38) / 255.0
+im_arrN39 = np.array(imN39) / 255.0
+im_arrN40 = np.array(imN40) / 255.0
+im_arrN41 = np.array(imN41) / 255.0
+im_arrN42 = np.array(imN42) / 255.0
+im_arrN43 = np.array(imN43) / 255.0
+im_arrN44 = np.array(imN44) / 255.0
+im_arrN45 = np.array(imN45) / 255.0
+im_arrN46 = np.array(imN46) / 255.0
+im_arrN47 = np.array(imN47) / 255.0
+im_arrN48 = np.array(imN48) / 255.0
+im_arrN49 = np.array(imN49) / 255.0
+im_arrN50 = np.array(imN50) / 255.0
+im_arrN51 = np.array(imN51) / 255.0
+im_arrN52 = np.array(imN52) / 255.0
+im_arrN53 = np.array(imN53) / 255.0
+im_arrN54 = np.array(imN54) / 255.0
+im_arrN55 = np.array(imN55) / 255.0
+im_arrN56 = np.array(imN56) / 255.0
+im_arrN57 = np.array(imN57) / 255.0
+im_arrN58 = np.array(imN58) / 255.0
+im_arrN59 = np.array(imN59) / 255.0
+im_arrN60 = np.array(imN60) / 255.0
+im_arrN61 = np.array(imN61) / 255.0
+im_arrN62 = np.array(imN62) / 255.0
+im_arrN63 = np.array(imN63) / 255.0
+im_arrN64 = np.array(imN64) / 255.0
+im_arrN65 = np.array(imN65) / 255.0
+im_arrN66 = np.array(imN66) / 255.0
+im_arrN67 = np.array(imN67) / 255.0
+im_arrN68 = np.array(imN68) / 255.0
+im_arrN69 = np.array(imN69) / 255.0
+im_arrN70 = np.array(imN70) / 255.0
+im_arrN71 = np.array(imN71) / 255.0
+im_arrN72 = np.array(imN72) / 255.0
+im_arrN73 = np.array(imN73) / 255.0
+im_arrN74 = np.array(imN74) / 255.0
+im_arrN75 = np.array(imN75) / 255.0
+im_arrN76 = np.array(imN76) / 255.0
+im_arrN77 = np.array(imN77) / 255.0
+im_arrN78 = np.array(imN78) / 255.0
+im_arrN79 = np.array(imN79) / 255.0
+im_arrN80 = np.array(imN80) / 255.0
+im_arrN81 = np.array(imN81) / 255.0
+im_arrN82 = np.array(imN82) / 255.0
+im_arrN83 = np.array(imN83) / 255.0
+im_arrN84 = np.array(imN84) / 255.0
+im_arrN85 = np.array(imN85) / 255.0
+im_arrN86 = np.array(imN86) / 255.0
+im_arrN87 = np.array(imN87) / 255.0
+im_arrN88 = np.array(imN88) / 255.0
+im_arrN89 = np.array(imN89) / 255.0
+im_arrN90 = np.array(imN90) / 255.0
+im_arrN91 = np.array(imN91) / 255.0
+im_arrN92 = np.array(imN92) / 255.0
+im_arrN93 = np.array(imN93) / 255.0
+im_arrN94 = np.array(imN94) / 255.0
+im_arrN95 = np.array(imN95) / 255.0
+im_arrN96 = np.array(imN96) / 255.0
+im_arrN97 = np.array(imN97) / 255.0
+im_arrN98 = np.array(imN98) / 255.0
+im_arrN99 = np.array(imN99) / 255.0
+im_arrN100 = np.array(imN100) / 255.0
+im_arrN101 = np.array(imN101) / 255.0
+im_arrN102 = np.array(imN102) / 255.0
+im_arrN103 = np.array(imN103) / 255.0
+im_arrN104 = np.array(imN104) / 255.0
+im_arrN105 = np.array(imN105) / 255.0
+im_arrN106 = np.array(imN106) / 255.0
+im_arrN107 = np.array(imN107) / 255.0
+im_arrN108 = np.array(imN108) / 255.0
+im_arrN109 = np.array(imN109) / 255.0
+im_arrN110 = np.array(imN110) / 255.0
+im_arrN111 = np.array(imN111) / 255.0
+im_arrN112 = np.array(imN112) / 255.0
+im_arrN113 = np.array(imN113) / 255.0
+im_arrN114 = np.array(imN114) / 255.0
+im_arrN115 = np.array(imN115) / 255.0
+im_arrN116 = np.array(imN116) / 255.0
+im_arrN117 = np.array(imN117) / 255.0
+im_arrN118 = np.array(imN118) / 255.0
+im_arrN119 = np.array(imN119) / 255.0
+im_arrN120 = np.array(imN120) / 255.0
+im_arrN121 = np.array(imN121) / 255.0
+im_arrN122 = np.array(imN122) / 255.0
+im_arrN123 = np.array(imN123) / 255.0
+im_arrN124 = np.array(imN124) / 255.0
+im_arrN125 = np.array(imN125) / 255.0
+im_arrN126 = np.array(imN126) / 255.0
+im_arrN127 = np.array(imN127) / 255.0
+im_arrN128 = np.array(imN128) / 255.0
+im_arrN129 = np.array(imN129) / 255.0
+im_arrN130 = np.array(imN130) / 255.0
+im_arrN131 = np.array(imN131) / 255.0
+im_arrN132 = np.array(imN132) / 255.0
+im_arrN133 = np.array(imN133) / 255.0
+im_arrN134 = np.array(imN134) / 255.0
+im_arrN135 = np.array(imN135) / 255.0
+im_arrN136 = np.array(imN136) / 255.0
+im_arrN137 = np.array(imN137) / 255.0
+im_arrN138 = np.array(imN138) / 255.0
+im_arrN139 = np.array(imN139) / 255.0
+im_arrN140 = np.array(imN140) / 255.0
+im_arrN141 = np.array(imN141) / 255.0
+im_arrN142 = np.array(imN142) / 255.0
+im_arrN143 = np.array(imN143) / 255.0
+im_arrN144 = np.array(imN144) / 255.0
+im_arrN145 = np.array(imN145) / 255.0
+im_arrN146 = np.array(imN146) / 255.0
+im_arrN147 = np.array(imN147) / 255.0
+im_arrN148 = np.array(imN148) / 255.0
+im_arrN149 = np.array(imN149) / 255.0
+im_arrN150 = np.array(imN150) / 255.0
+im_arrN151 = np.array(imN151) / 255.0
+im_arrN152 = np.array(imN152) / 255.0
 
 
 image1 = im_arr1.flatten()
@@ -683,7 +823,7 @@ image150 = im_arr150.flatten()
 image151 = im_arr151.flatten()
 image152 = im_arr152.flatten()
 image153 = im_arr153.flatten()
-#not happy
+#NOT HAPPY
 imageN1 = im_arrN1.flatten()
 imageN2 = im_arrN2.flatten()
 imageN3 = im_arrN3.flatten()
@@ -696,23 +836,181 @@ imageN9 = im_arrN9.flatten()
 imageN10 = im_arrN10.flatten()
 imageN11 = im_arrN11.flatten()
 imageN12 = im_arrN12.flatten()
-
+imageN13 = im_arrN13.flatten()
+imageN14 = im_arrN14.flatten()
+imageN15 = im_arrN15.flatten()
+imageN16 = im_arrN16.flatten()
+imageN17 = im_arrN17.flatten()
+imageN18 = im_arrN18.flatten()
+imageN19 = im_arrN19.flatten()
+imageN20 = im_arrN20.flatten()
+imageN21 = im_arrN21.flatten()
+imageN22 = im_arrN22.flatten()
+imageN23 = im_arrN23.flatten()
+imageN24 = im_arrN24.flatten()
+imageN25 = im_arrN25.flatten()
+imageN26 = im_arrN26.flatten()
+imageN27 = im_arrN27.flatten()
+imageN28 = im_arrN28.flatten()
+imageN29 = im_arrN29.flatten()
+imageN30 = im_arrN30.flatten()
+imageN31 = im_arrN31.flatten()
+imageN32 = im_arrN32.flatten()
+imageN33 = im_arrN33.flatten()
+imageN34 = im_arrN34.flatten()
+imageN35 = im_arrN35.flatten()
+imageN36 = im_arrN36.flatten()
+imageN37 = im_arrN37.flatten()
+imageN38 = im_arrN38.flatten()
+imageN39 = im_arrN39.flatten()
+imageN40 = im_arrN40.flatten()
+imageN41 = im_arrN41.flatten()
+imageN42 = im_arrN42.flatten()
+imageN43 = im_arrN43.flatten()
+imageN44 = im_arrN44.flatten()
+imageN45 = im_arrN45.flatten()
+imageN46 = im_arrN46.flatten()
+imageN47 = im_arrN47.flatten()
+imageN48 = im_arrN48.flatten()
+imageN49 = im_arrN49.flatten()
+imageN50 = im_arrN50.flatten()
+imageN51 = im_arrN51.flatten()
+imageN52 = im_arrN52.flatten()
+imageN53 = im_arrN53.flatten()
+imageN54 = im_arrN54.flatten()
+imageN55 = im_arrN55.flatten()
+imageN56 = im_arrN56.flatten()
+imageN57 = im_arrN57.flatten()
+imageN58 = im_arrN58.flatten()
+imageN59 = im_arrN59.flatten()
+imageN60 = im_arrN60.flatten()
+imageN61 = im_arrN61.flatten()
+imageN62 = im_arrN62.flatten()
+imageN63 = im_arrN63.flatten()
+imageN64 = im_arrN64.flatten()
+imageN65 = im_arrN65.flatten()
+imageN66 = im_arrN66.flatten()
+imageN67 = im_arrN67.flatten()
+imageN68 = im_arrN68.flatten()
+imageN69 = im_arrN69.flatten()
+imageN70 = im_arrN70.flatten()
+imageN71 = im_arrN71.flatten()
+imageN72 = im_arrN72.flatten()
+imageN73 = im_arrN73.flatten()
+imageN74 = im_arrN74.flatten()
+imageN75 = im_arrN75.flatten()
+imageN76 = im_arrN76.flatten()
+imageN77 = im_arrN77.flatten()
+imageN78 = im_arrN78.flatten()
+imageN79 = im_arrN79.flatten()
+imageN80 = im_arrN80.flatten()
+imageN81 = im_arrN81.flatten()
+imageN82 = im_arrN82.flatten()
+imageN83 = im_arrN83.flatten()
+imageN84 = im_arrN84.flatten()
+imageN85 = im_arrN85.flatten()
+imageN86 = im_arrN86.flatten()
+imageN87 = im_arrN87.flatten()
+imageN88 = im_arrN88.flatten()
+imageN89 = im_arrN89.flatten()
+imageN90 = im_arrN90.flatten()
+imageN91 = im_arrN91.flatten()
+imageN92 = im_arrN92.flatten()
+imageN93 = im_arrN93.flatten()
+imageN94 = im_arrN94.flatten()
+imageN95 = im_arrN95.flatten()
+imageN96 = im_arrN96.flatten()
+imageN97 = im_arrN97.flatten()
+imageN98 = im_arrN98.flatten()
+imageN99 = im_arrN99.flatten()
+imageN100 = im_arrN100.flatten()
+imageN101 = im_arrN101.flatten()
+imageN102 = im_arrN102.flatten()
+imageN103 = im_arrN103.flatten()
+imageN104 = im_arrN104.flatten()
+imageN105 = im_arrN105.flatten()
+imageN106 = im_arrN106.flatten()
+imageN107 = im_arrN107.flatten()
+imageN108 = im_arrN108.flatten()
+imageN109 = im_arrN109.flatten()
+imageN110 = im_arrN110.flatten()
+imageN111 = im_arrN111.flatten()
+imageN112 = im_arrN112.flatten()
+imageN113 = im_arrN113.flatten()
+imageN114 = im_arrN114.flatten()
+imageN115 = im_arrN115.flatten()
+imageN116 = im_arrN116.flatten()
+imageN117 = im_arrN117.flatten()
+imageN118 = im_arrN118.flatten()
+imageN119 = im_arrN119.flatten()
+imageN120 = im_arrN120.flatten()
+imageN121 = im_arrN121.flatten()
+imageN122 = im_arrN122.flatten()
+imageN123 = im_arrN123.flatten()
+imageN124 = im_arrN124.flatten()
+imageN125 = im_arrN125.flatten()
+imageN126 = im_arrN126.flatten()
+imageN127 = im_arrN127.flatten()
+imageN128 = im_arrN128.flatten()
+imageN129 = im_arrN129.flatten()
+imageN130 = im_arrN130.flatten()
+imageN131 = im_arrN131.flatten()
+imageN132 = im_arrN132.flatten()
+imageN133 = im_arrN133.flatten()
+imageN134 = im_arrN134.flatten()
+imageN135 = im_arrN135.flatten()
+imageN136 = im_arrN136.flatten()
+imageN137 = im_arrN137.flatten()
+imageN138 = im_arrN138.flatten()
+imageN139 = im_arrN139.flatten()
+imageN140 = im_arrN140.flatten()
+imageN141 = im_arrN141.flatten()
+imageN142 = im_arrN142.flatten()
+imageN143 = im_arrN143.flatten()
+imageN144 = im_arrN144.flatten()
+imageN145 = im_arrN145.flatten()
+imageN146 = im_arrN146.flatten()
+imageN147 = im_arrN147.flatten()
+imageN148 = im_arrN148.flatten()
+imageN149 = im_arrN149.flatten()
+imageN150 = im_arrN150.flatten()
+imageN151 = im_arrN151.flatten()
+imageN152 = im_arrN152.flatten()
 
 dataset = np.array([image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11,
                     image12, image13, image14, image15, image16, image17, image18, image19, image20, image21,
                     image22, image23, image24, image25, image26, image27, image28, image29, image30, image31,
-                    image32, image33, image34, image35, image36, image37, image38, image39, image40, imageN1,
-                    imageN2, imageN3, imageN4, imageN5, imageN6,
-                    imageN7, imageN8, imageN9, imageN10, imageN11, imageN12], dtype='float64')
+                    image32, image33, image34, image35, image36, image37, image38, image39, image40, image41,
+                    image42, image43, image44, image45, image46, image47, image48, image49, image50, image51,
+                    image52, image53, image54, image55, image56, image57, image58, image59, image60, image61,
+                    image62, image63, image64, image65, image66, image67, image68, image69, image70, image71,
+                    image72, image73, image74, image75, image76, image77, image78, image79, image80, image81,
+                    image82, image83, image84, image85, image86, image87, image88, image89, image90, image91,
+                    image92, image93, image94, image95, image96, image97, image98, image99, image100, image101,
+                    image102, image103, image104, image105, image106, image107, image108, image109, image110, image111,
+                    image112, image113, image114, image115, image116, image117, image118, image119, image120, image121,
+                    image122, image123, image124, image125, image126, image127, image128, image129, image130, image131,
+                    image132, image133, image134, image135, image136, image137, image138, image139, image140, image141,
+                    image142, image143, image144, image145, image146, image147, image148, image149, image150, image151,
+                    image152,image153,
+                    imageN1, imageN2, imageN3, imageN4, imageN5, imageN6, imageN7, imageN8, imageN9, imageN10,
+                    imageN11, imageN12], dtype='float64')
 
 print(dataset.shape)
 
 
-dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1], dtype='float64')
 
+print(dataset_expected_output.shape)
 
 model = my_lib.linear_create_model(ctypes.c_int(dataset.shape[1]))
 
