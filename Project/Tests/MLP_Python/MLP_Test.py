@@ -55,7 +55,7 @@ if __name__ == "__main__":
         ctypes.c_int
     ]
     my_lib.train_MLP_Regression.restype = None
-
+    """
     L = np.array([
         2,
         2,
@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
     model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
-    """
+
 
     #CAS DE TEST : OU EXCLUSIF
     X = np.array([
@@ -118,23 +118,30 @@ if __name__ == "__main__":
 
     my_lib.dispose_MLP(model)
 
-
     """
 
-
 # CAS DE TEST 1 : Linear Simple
+    L = np.array([
+        2,
+        2,
+        1
+    ], dtype='int32')
+
+    model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
+
     X = np.array([
-        [1, 1],
-        [2, 2],
-        [3, 3],
-        [4, 4]
-    ])
+        [1, 0],
+        [0, 1],
+        [4, 7],
+        [11, 9]
+    ], dtype='float64')
+
     Y = np.array([
         1,
         1,
         -1,
         -1
-    ])
+    ], dtype='float64')
 
     flattened_X = X.flatten()
 
@@ -156,8 +163,8 @@ if __name__ == "__main__":
         Y.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
         X.shape[0],
         X.shape[1],
-        0.1,
-        100000
+        0.01,
+        10000
     )
 
     print("After Training the ...")
@@ -170,4 +177,6 @@ if __name__ == "__main__":
         )
         print(Exit2[0])
 
+
     my_lib.dispose_MLP(model)
+    
