@@ -5,6 +5,14 @@ import ctypes
 
 import matplotlib.pyplot as plt
 
+def percentOfGoodPrediction(all,part):
+    return 100 - ((100*part)/all)
+
+
+def percentOfBadPrediction(all,part):
+    return (100*part)/all
+
+
 if __name__ == "__main__":
     path_to_dll = "../../Lib/LinearModelCppLib/cmake-build-debug" \
                   "/LinearModelCppLib.dll "
@@ -1012,7 +1020,6 @@ dataset = np.array([image1, image2, image3, image4, image5, image6, image7, imag
                     imageN152], dtype='float64')
 
 
-print(dataset.shape)
 
 
 dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -1038,7 +1045,9 @@ model = my_lib.linear_create_model(ctypes.c_int(dataset.shape[1]))
 
 flattened_Dataset = dataset.flatten()
 
+"""
 print("Before Training")
+
 for inputs_k in dataset:
     print(my_lib.linear_predict_model_classification(
         model,
@@ -1046,7 +1055,7 @@ for inputs_k in dataset:
         len(inputs_k)
 
     ))
-
+"""
 
 my_lib.linear_train_model_classification(
     model,
@@ -1060,54 +1069,151 @@ my_lib.linear_train_model_classification(
 
 
 
-"""
-for inputs_k in dataset:
-    print(my_lib.linear_predict_model_classification(
-        model,
-        inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
-        len(inputs_k)
-    ))
-"""
-
-
 print("Détection sous apprentissage:")
 
-k = 0
-total = 0
+count = 0
+bad = 0
 for inputs_k in dataset:
     output = my_lib.linear_predict_model_classification(
         model,
         inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
         len(inputs_k)
     )
-    if output != dataset_expected_output[k]:
-        total = total + 1
-    k = k + 1
+    if output != dataset_expected_output[count]:
+        bad = bad + 1
+    count = count + 1
 
-percent = 100 - ((100*total)/dataset.shape[0])
-print(percent, "% de bonne prédiction")
+print(percentOfGoodPrediction(dataset.shape[0], bad), "% de bonne prédiction")
+print(percentOfBadPrediction(dataset.shape[0], bad), "% de mauvaise prédiction")
+
+
+
+
 
 
 
 print("Et des photos non connnus ?")
 
 imTest = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/1.jpeg")
-imTest2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/101.jpg")
-im_arrTest = np.array(imTest) / 255.0
-imageTest = im_arrTest.flatten()
-im_arrTest2 = np.array(imTest2) / 255.0
-imageTest2 = im_arrTest2.flatten()
-print(my_lib.linear_predict_model_classification(
-        model,
-        imageTest.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
-        len(imageTest)
-    ))
-print(my_lib.linear_predict_model_classification(
-        model,
-        imageTest2.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
-        len(imageTest2)
-    ))
+imTest2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/2.jpeg")
+imTest3 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/3.jpeg")
+imTest4 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/4.jpeg")
+imTest5 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/5.jpeg")
+imTest6 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/6.jpeg")
+imTest7 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/7.jpeg")
+imTest8 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/8.jpeg")
+imTest9 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/9.jpeg")
+imTest10 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/10.jpeg")
+imTest11 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/11.jpeg")
+imTest12 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/12.jpeg")
+imTest13 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/13.jpeg")
+imTest14 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/14.jpeg")
+imTest15 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/15.jpeg")
+imTest16 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/16.jpeg")
+imTest17 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/17.jpeg")
+imTest18 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/18.jpeg")
+imTest19 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/19.jpeg")
+imTest20 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/20.jpeg")
+imTest21 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/21.jpeg")
+imTest22 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/22.jpeg")
+imTest23 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/23.jpeg")
+imTest24 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/24.jpeg")
+imTest25 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/25.jpeg")
+imTest26 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/26.jpeg")
+imTest27 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/27.jpeg")
+imTest28 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/28.jpeg")
+imTest29 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/29.jpeg")
+imTest30 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/30.jpeg")
 
+
+im_arrTest = np.array(imTest) / 255.0
+im_arrTest2 = np.array(imTest2) / 255.0
+im_arrTest3 = np.array(imTest3) / 255.0
+im_arrTest4 = np.array(imTest4) / 255.0
+im_arrTest5 = np.array(imTest5) / 255.0
+im_arrTest6 = np.array(imTest6) / 255.0
+im_arrTest7 = np.array(imTest7) / 255.0
+im_arrTest8 = np.array(imTest8) / 255.0
+im_arrTest9 = np.array(imTest9) / 255.0
+im_arrTest10 = np.array(imTest10) / 255.0
+im_arrTest11 = np.array(imTest11) / 255.0
+im_arrTest12 = np.array(imTest12) / 255.0
+im_arrTest13 = np.array(imTest13) / 255.0
+im_arrTest14 = np.array(imTest14) / 255.0
+im_arrTest15 = np.array(imTest15) / 255.0
+im_arrTest16 = np.array(imTest16) / 255.0
+im_arrTest17 = np.array(imTest17) / 255.0
+im_arrTest18 = np.array(imTest18) / 255.0
+im_arrTest19 = np.array(imTest19) / 255.0
+im_arrTest20 = np.array(imTest20) / 255.0
+im_arrTest21 = np.array(imTest21) / 255.0
+im_arrTest22 = np.array(imTest22) / 255.0
+im_arrTest23 = np.array(imTest23) / 255.0
+im_arrTest24 = np.array(imTest24) / 255.0
+im_arrTest25 = np.array(imTest25) / 255.0
+im_arrTest26 = np.array(imTest26) / 255.0
+im_arrTest27 = np.array(imTest27) / 255.0
+im_arrTest28 = np.array(imTest28) / 255.0
+im_arrTest29 = np.array(imTest29) / 255.0
+im_arrTest30 = np.array(imTest30) / 255.0
+
+imageTest = im_arrTest.flatten()
+imageTest2 = im_arrTest2.flatten()
+imageTest3 = im_arrTest3.flatten()
+imageTest4 = im_arrTest4.flatten()
+imageTest5 = im_arrTest5.flatten()
+imageTest6 = im_arrTest6.flatten()
+imageTest7 = im_arrTest7.flatten()
+imageTest8 = im_arrTest8.flatten()
+imageTest9 = im_arrTest9.flatten()
+imageTest10 = im_arrTest10.flatten()
+imageTest11 = im_arrTest11.flatten()
+imageTest12 = im_arrTest12.flatten()
+imageTest13 = im_arrTest13.flatten()
+imageTest14 = im_arrTest14.flatten()
+imageTest15 = im_arrTest15.flatten()
+imageTest16 = im_arrTest16.flatten()
+imageTest17 = im_arrTest17.flatten()
+imageTest18 = im_arrTest18.flatten()
+imageTest19 = im_arrTest19.flatten()
+imageTest20 = im_arrTest20.flatten()
+imageTest21 = im_arrTest21.flatten()
+imageTest22 = im_arrTest22.flatten()
+imageTest23 = im_arrTest23.flatten()
+imageTest24 = im_arrTest24.flatten()
+imageTest25 = im_arrTest25.flatten()
+imageTest26 = im_arrTest26.flatten()
+imageTest27 = im_arrTest27.flatten()
+imageTest28 = im_arrTest28.flatten()
+imageTest29 = im_arrTest29.flatten()
+imageTest30 = im_arrTest30.flatten()
+
+
+
+datasetTest = np.array([imageTest, imageTest2, imageTest3, imageTest4, imageTest5, imageTest6, imageTest7, imageTest8, imageTest9, imageTest10,
+                        imageTest11, imageTest12, imageTest13, imageTest14, imageTest15, imageTest16, imageTest17, imageTest18,imageTest19, imageTest20,
+                        imageTest21, imageTest22, imageTest23, imageTest24, imageTest25, imageTest26, imageTest27, imageTest28,imageTest29, imageTest30], dtype='float64')
+
+
+dataset_expected_outputTest = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1], dtype='float64')
+
+
+
+count = 0
+bad = 0
+for inputs_k in datasetTest:
+    output = my_lib.linear_predict_model_classification(
+        model,
+        inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+        len(inputs_k)
+    )
+    if output != dataset_expected_outputTest[count]:
+        bad = bad + 1
+    count = count + 1
+
+print(percentOfGoodPrediction(dataset.shape[0], bad), "% de bonne prédiction")
+print(percentOfBadPrediction(dataset.shape[0], bad), "% de mauvaise prédiction")
 
 
 my_lib.linear_dispose_model(model)
