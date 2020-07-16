@@ -229,8 +229,12 @@ MLP* create_MLP_model(int nbLayers, int *nbNeuronPerLayers) {
 
  void dispose_MLP(MLP *mlp){//const double *model) {
     //delete[] model;
-    delete mlp;
-}
+    delete mlp->delta;
+     delete mlp->W;
+     delete mlp->X;
+     delete []mlp;
+
+ }
 
 
 
@@ -282,7 +286,7 @@ int main() {
     }
 
 
-    train_MLP_Classification(mlp,nbLayer,tabLayer,X,Y,nbreEnter,nbreFeature,0.01,50000);
+    train_MLP_Classification(mlp,nbLayer,tabLayer,X,Y,nbreEnter,nbreFeature,0.001,80000);
 
     printf("after training\n");
     for(int i = 0; i<nbreEnter*nbreFeature;i=i+nbreFeature) {
