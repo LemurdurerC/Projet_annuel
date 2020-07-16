@@ -14,6 +14,10 @@ C:/Program Files (x86)/osqp/include/osqp/types.h
 lin_alg.h
 C:/Program Files (x86)/osqp/include/osqp/lin_alg.h
 
+C:/Program Files (x86)/osqp/include/osqp/error.h
+types.h
+C:/Program Files (x86)/osqp/include/osqp/types.h
+
 C:/Program Files (x86)/osqp/include/osqp/glob_opts.h
 osqp_configure.h
 C:/Program Files (x86)/osqp/include/osqp/osqp_configure.h
@@ -1119,10 +1123,18 @@ C:/Users/hejar/Eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/main.cpp
 iostream
 -
+Eigen/Dense
+-
 osqp.h
 C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/osqp.h
 cs.h
 C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/cs.h
-Eigen/Dense
--
+osqp_configure.h
+C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/osqp_configure.h
+constants.h
+C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/constants.h
+error.h
+C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/error.h
+util.h
+C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/TestsDEV/SVM1/util.h
 

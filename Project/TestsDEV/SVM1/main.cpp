@@ -1,7 +1,12 @@
 #include <iostream>
+#include <Eigen/Dense>
 #include "osqp.h"
 #include "cs.h"
-#include <Eigen/Dense>
+#include "osqp_configure.h"
+#include "constants.h"
+#include "error.h"
+#include "util.h"
+
 using Eigen::MatrixXd;
 
 
@@ -215,7 +220,6 @@ double *buildP_x(MatrixXd matrix, int row, int column){
 int *buildP_i(MatrixXd matrix, int row, int column) {
     int length = countNonZero(matrix, row, column);
     MatrixXd matrix2 = matrix.transpose();
-    std::cout << matrix2 << std::endl;
     int *P_i = new int[length];
     int k = 0;
     int m = 0;
@@ -321,10 +325,12 @@ int *buildP_p(MatrixXd matrix, int row, int column) {
 
      if(row <=1){
         P_p[row] = countNonZero(matrix, row, column) + 1;
+
      }else {
          //dernière case
          P_p[column] = countNonZero(matrix, row, column) + 1;
      }
+
 
     return P_p;
 
@@ -341,6 +347,16 @@ double *buildTabOfNumber(int dataset_samples_count, int number){
     return tab;
 }
 
+
+
+c_int *tabIntToC_int(int *tab, int tabLength){
+    c_int *tab2;
+    tab2 = new c_int[tabLength];
+    for(int i = 0; i<tabLength;i++){
+        tab2[i] = tab[i];
+    }
+    return tab2;
+}
 
 
 int main() {
@@ -392,9 +408,9 @@ int main() {
     int P_nnz = countNonZero(transMatrix,nbreEnter,nbreEnter);
     c_int P_nnz2 = P_nnz;
     int *P_i = buildP_i(transMatrix,nbreEnter,nbreEnter);
-    c_int *P_i2 = reinterpret_cast<c_int *>(P_i);
+    c_int *P_i2 = tabIntToC_int(P_i,P_nnz);
     int *P_p = buildP_p(transMatrix,nbreEnter,nbreEnter);
-    c_int *P_p2 = reinterpret_cast<c_int *>(P_p);
+    c_int *P_p2 = tabIntToC_int(P_p,nbreEnter+1);
 
     double *q = buildTabOfNumber(nbreEnter,-1.0);
     c_float *q2 = q;
@@ -406,9 +422,11 @@ int main() {
     int A_nnz = countNonZero(Ymat,row,column);
     c_int A_nnz2 = A_nnz;
     int *A_i = buildP_i(Ymat,row,column);
-    c_int *A_i2 = reinterpret_cast<c_int *>(A_i);
+    c_int *A_i2 = tabIntToC_int(A_i,A_nnz);
     int *A_p = buildP_p(Ymat,row,column);
-    c_int *A_p2 = reinterpret_cast<c_int *>(A_p);
+    c_int *A_p2 = tabIntToC_int(A_p,row+1);
+
+
 
 
     double *l =  buildTabOfNumber(nbreEnter,0);
@@ -416,17 +434,19 @@ int main() {
     double *u =  buildTabOfNumber(nbreEnter,0);
     c_float *u2 = u;
 
+
     int n = 2;
     c_int n2 = n;
     int m = 3;
     c_int m2 = m;
+
 
     printf("Debug 1\n");
     // Exitflag
     c_int exitflag = 0;
 
     // Workspace structures
-    OSQPWorkspace *work;
+    OSQPWorkspace *work = (OSQPWorkspace *)c_malloc(sizeof(OSQPWorkspace));
     OSQPSettings  *settings = (OSQPSettings *)c_malloc(sizeof(OSQPSettings));
     OSQPData      *data     = (OSQPData *)c_malloc(sizeof(OSQPData));
 
@@ -452,6 +472,8 @@ int main() {
     printf("Debug 4\n");
     // Setup workspace
     exitflag = osqp_setup(&work, data, settings);
+
+
     c_int ret = exitflag;
     printf("%d\n",ret);
 
@@ -460,13 +482,13 @@ int main() {
     osqp_solve(work);
 
     printf("Debug 6\n");
-    /*
-    for(int i = 0; i<nbreEnter;i++){
-        printf("%f ",work->solution->x[i]);
-    }
-    printf("%s\n",work->info->status);
 
-    */
+    //for(int i = 0; i<nbreEnter;i++){
+    //    printf("%f ",work->solution->x[i]);
+    //}
+    //printf("%s\n",work->info->status);
+
+
 
     // Cleanup
     if (data) {
@@ -477,6 +499,8 @@ int main() {
     if (settings) c_free(settings);
 
     return exitflag;
+
+
 
 
 

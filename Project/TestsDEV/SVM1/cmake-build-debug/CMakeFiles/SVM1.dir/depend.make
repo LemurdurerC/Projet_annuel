@@ -3,6 +3,7 @@
 
 CMakeFiles\SVM1.dir\main.cpp.obj: "C:\Program Files (x86)\osqp\include\osqp\constants.h"
 CMakeFiles\SVM1.dir\main.cpp.obj: "C:\Program Files (x86)\osqp\include\osqp\cs.h"
+CMakeFiles\SVM1.dir\main.cpp.obj: "C:\Program Files (x86)\osqp\include\osqp\error.h"
 CMakeFiles\SVM1.dir\main.cpp.obj: "C:\Program Files (x86)\osqp\include\osqp\glob_opts.h"
 CMakeFiles\SVM1.dir\main.cpp.obj: "C:\Program Files (x86)\osqp\include\osqp\lin_alg.h"
 CMakeFiles\SVM1.dir\main.cpp.obj: "C:\Program Files (x86)\osqp\include\osqp\osqp.h"
