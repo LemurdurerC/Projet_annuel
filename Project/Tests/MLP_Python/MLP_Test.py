@@ -58,13 +58,14 @@ if __name__ == "__main__":
 
     L = np.array([
         2,
-        #2,
+        2,
         1
     ], dtype='int32')
 
     model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
     """
+
     #CAS DE TEST : OU EXCLUSIF
     X = np.array([
         [1, 0],
@@ -116,23 +117,24 @@ if __name__ == "__main__":
         print(Exit2[0])
 
     my_lib.dispose_MLP(model)
+
+
     """
-
-
 
 
 # CAS DE TEST 1 : Linear Simple
     X = np.array([
         [1, 1],
-        [2, 3],
-        [3, 3]
+        [2, 2],
+        [3, 3],
+        [4, 4]
     ])
     Y = np.array([
+        1,
         1,
         -1,
         -1
     ])
-
 
     flattened_X = X.flatten()
 
@@ -146,7 +148,6 @@ if __name__ == "__main__":
         )
         print(Exit1[0])
 
-
     my_lib.train_MLP_Classification(
         model,
         L.shape[0],
@@ -156,7 +157,7 @@ if __name__ == "__main__":
         X.shape[0],
         X.shape[1],
         0.1,
-        10000
+        100000
     )
 
     print("After Training the ...")

@@ -60,6 +60,7 @@ if __name__ == "__main__":
     ]
     my_lib.linear_predict_model_regression.restype = ctypes.c_double
 
+#region
 im = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/1.jpg")
 im2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/2.jpg")
 im3 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/3.jpg")
@@ -518,8 +519,9 @@ imA149 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project
 imA150 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/150.jpg")
 imA151 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/151.jpg")
 imA152 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/152.jpg")
+#endregion
 
-
+#region
 im_arr1 = np.array(im) / 255.0
 im_arr2 = np.array(im2) / 255.0
 im_arr3 = np.array(im3) / 255.0
@@ -978,8 +980,9 @@ im_arrA149 = np.array(imA149) / 255.0
 im_arrA150 = np.array(imA150) / 255.0
 im_arrA151 = np.array(imA151) / 255.0
 im_arrA152 = np.array(imA152) / 255.0
+#endregion
 
-
+#region
 image1 = im_arr1.flatten()
 image2 = im_arr2.flatten()
 image3 = im_arr3.flatten()
@@ -1438,7 +1441,7 @@ imageA149 = im_arrA149.flatten()
 imageA150 = im_arrA150.flatten()
 imageA151 = im_arrA151.flatten()
 imageA152 = im_arrA152.flatten()
-
+#endregion
 
 
 dataset = np.array([image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11,
@@ -1546,6 +1549,8 @@ for inputs_k in dataset:
     ))
 """
 
+iteration = 20000
+
 my_lib.linear_train_model_classification(
     model,
     flattened_Dataset.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
@@ -1553,12 +1558,12 @@ my_lib.linear_train_model_classification(
     dataset.shape[0],
     dataset.shape[1],
     0.001,
-    10000
+    iteration
 )
 
 
 
-print("Détection sous apprentissage:")
+print("DATASET DE TRAIN:")
 
 count = 0
 bad = 0
@@ -1581,8 +1586,9 @@ print(percentOfBadPrediction(dataset.shape[0], bad), "% de mauvaise prédiction"
 
 
 
-print("Et des photos non connnus ?")
+print("DATASET DE TEST")
 
+#region
 imTest = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/1.jpeg")
 imTest2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/2.jpeg")
 imTest3 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/3.jpeg")
@@ -1613,8 +1619,70 @@ imTest27 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Proje
 imTest28 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/28.jpeg")
 imTest29 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/29.jpeg")
 imTest30 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/30.jpeg")
+#NOT HAPPY
+imNTest = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/1.jpeg")
+imNTest2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/2.jpeg")
+imNTest3 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/3.jpeg")
+imNTest4 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/4.jpeg")
+imNTest5 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/5.jpeg")
+imNTest6 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/6.jpeg")
+imNTest7 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/7.jpeg")
+imNTest8 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/8.jpeg")
+imNTest9 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/9.jpeg")
+imNTest10 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/10.jpeg")
+imNTest11 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/11.jpeg")
+imNTest12 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/12.jpeg")
+imNTest13 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/13.jpeg")
+imNTest14 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/14.jpeg")
+imNTest15 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/15.jpeg")
+imNTest16 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/16.jpeg")
+imNTest17 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/17.jpeg")
+imNTest18 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/18.jpeg")
+imNTest19 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/19.jpeg")
+imNTest20 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/20.jpeg")
+imNTest21 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/21.jpeg")
+imNTest22 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/22.jpeg")
+imNTest23 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/23.jpeg")
+imNTest24 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/24.jpeg")
+imNTest25 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/25.jpeg")
+imNTest26 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/26.jpeg")
+imNTest27 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/27.jpeg")
+imNTest28 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/28.jpeg")
+imNTest29 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/29.jpeg")
+imNTest30 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/30.jpeg")
+imATest = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/1.jpeg")
+imATest2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/2.jpeg")
+imATest3 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/3.jpeg")
+imATest4 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/4.jpeg")
+imATest5 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/5.jpeg")
+imATest6 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/6.jpeg")
+imATest7 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/7.jpeg")
+imATest8 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/8.jpeg")
+imATest9 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/9.jpeg")
+imATest10 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/10.jpeg")
+imATest11 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/11.jpeg")
+imATest12 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/12.jpeg")
+imATest13 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/13.jpeg")
+imATest14 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/14.jpeg")
+imATest15 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/15.jpeg")
+imATest16 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/16.jpeg")
+imATest17 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/17.jpeg")
+imATest18 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/18.jpeg")
+imATest19 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/19.jpeg")
+imATest20 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/20.jpeg")
+imATest21 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/21.jpeg")
+imATest22 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/22.jpeg")
+imATest23 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/23.jpeg")
+imATest24 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/24.jpeg")
+imATest25 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/25.jpeg")
+imATest26 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/26.jpeg")
+imATest27 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/27.jpeg")
+imATest28 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/28.jpeg")
+imATest29 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/29.jpeg")
+imATest30 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/30.jpeg")
+#endregion
 
-
+#region
 im_arrTest = np.array(imTest) / 255.0
 im_arrTest2 = np.array(imTest2) / 255.0
 im_arrTest3 = np.array(imTest3) / 255.0
@@ -1645,7 +1713,70 @@ im_arrTest27 = np.array(imTest27) / 255.0
 im_arrTest28 = np.array(imTest28) / 255.0
 im_arrTest29 = np.array(imTest29) / 255.0
 im_arrTest30 = np.array(imTest30) / 255.0
+im_arrNTest = np.array(imNTest) / 255.0
+im_arrNTest2 = np.array(imNTest2) / 255.0
+im_arrNTest3 = np.array(imNTest3) / 255.0
+im_arrNTest4 = np.array(imNTest4) / 255.0
+im_arrNTest5 = np.array(imNTest5) / 255.0
+im_arrNTest6 = np.array(imNTest6) / 255.0
+im_arrNTest7 = np.array(imNTest7) / 255.0
+im_arrNTest8 = np.array(imNTest8) / 255.0
+im_arrNTest9 = np.array(imNTest9) / 255.0
+im_arrNTest10 = np.array(imNTest10) / 255.0
+im_arrNTest11 = np.array(imNTest11) / 255.0
+im_arrNTest12 = np.array(imNTest12) / 255.0
+im_arrNTest13 = np.array(imNTest13) / 255.0
+im_arrNTest14 = np.array(imNTest14) / 255.0
+im_arrNTest15 = np.array(imNTest15) / 255.0
+im_arrNTest16 = np.array(imNTest16) / 255.0
+im_arrNTest17 = np.array(imNTest17) / 255.0
+im_arrNTest18 = np.array(imNTest18) / 255.0
+im_arrNTest19 = np.array(imNTest19) / 255.0
+im_arrNTest20 = np.array(imNTest20) / 255.0
+im_arrNTest21 = np.array(imNTest21) / 255.0
+im_arrNTest22 = np.array(imNTest22) / 255.0
+im_arrNTest23 = np.array(imNTest23) / 255.0
+im_arrNTest24 = np.array(imNTest24) / 255.0
+im_arrNTest25 = np.array(imNTest25) / 255.0
+im_arrNTest26 = np.array(imNTest26) / 255.0
+im_arrNTest27 = np.array(imNTest27) / 255.0
+im_arrNTest28 = np.array(imNTest28) / 255.0
+im_arrNTest29 = np.array(imNTest29) / 255.0
+im_arrNTest30 = np.array(imNTest30) / 255.0
+im_arrATest = np.array(imATest) / 255.0
+im_arrATest2 = np.array(imATest2) / 255.0
+im_arrATest3 = np.array(imATest3) / 255.0
+im_arrATest4 = np.array(imATest4) / 255.0
+im_arrATest5 = np.array(imATest5) / 255.0
+im_arrATest6 = np.array(imATest6) / 255.0
+im_arrATest7 = np.array(imATest7) / 255.0
+im_arrATest8 = np.array(imATest8) / 255.0
+im_arrATest9 = np.array(imATest9) / 255.0
+im_arrATest10 = np.array(imATest10) / 255.0
+im_arrATest11 = np.array(imATest11) / 255.0
+im_arrATest12 = np.array(imATest12) / 255.0
+im_arrATest13 = np.array(imATest13) / 255.0
+im_arrATest14 = np.array(imATest14) / 255.0
+im_arrATest15 = np.array(imATest15) / 255.0
+im_arrATest16 = np.array(imATest16) / 255.0
+im_arrATest17 = np.array(imATest17) / 255.0
+im_arrATest18 = np.array(imATest18) / 255.0
+im_arrATest19 = np.array(imATest19) / 255.0
+im_arrATest20 = np.array(imATest20) / 255.0
+im_arrATest21 = np.array(imATest21) / 255.0
+im_arrATest22 = np.array(imATest22) / 255.0
+im_arrATest23 = np.array(imATest23) / 255.0
+im_arrATest24 = np.array(imATest24) / 255.0
+im_arrATest25 = np.array(imATest25) / 255.0
+im_arrATest26 = np.array(imATest26) / 255.0
+im_arrATest27 = np.array(imATest27) / 255.0
+im_arrATest28 = np.array(imATest28) / 255.0
+im_arrATest29 = np.array(imATest29) / 255.0
+im_arrATest30 = np.array(imATest30) / 255.0
+#endregion
 
+
+#region
 imageTest = im_arrTest.flatten()
 imageTest2 = im_arrTest2.flatten()
 imageTest3 = im_arrTest3.flatten()
@@ -1676,16 +1807,95 @@ imageTest27 = im_arrTest27.flatten()
 imageTest28 = im_arrTest28.flatten()
 imageTest29 = im_arrTest29.flatten()
 imageTest30 = im_arrTest30.flatten()
-
+imageNTest = im_arrNTest.flatten()
+imageNTest2 = im_arrNTest2.flatten()
+imageNTest3 = im_arrNTest3.flatten()
+imageNTest4 = im_arrNTest4.flatten()
+imageNTest5 = im_arrNTest5.flatten()
+imageNTest6 = im_arrNTest6.flatten()
+imageNTest7 = im_arrNTest7.flatten()
+imageNTest8 = im_arrNTest8.flatten()
+imageNTest9 = im_arrNTest9.flatten()
+imageNTest10 = im_arrNTest10.flatten()
+imageNTest11 = im_arrNTest11.flatten()
+imageNTest12 = im_arrNTest12.flatten()
+imageNTest13 = im_arrNTest13.flatten()
+imageNTest14 = im_arrNTest14.flatten()
+imageNTest15 = im_arrNTest15.flatten()
+imageNTest16 = im_arrNTest16.flatten()
+imageNTest17 = im_arrNTest17.flatten()
+imageNTest18 = im_arrNTest18.flatten()
+imageNTest19 = im_arrNTest19.flatten()
+imageNTest20 = im_arrNTest20.flatten()
+imageNTest21 = im_arrNTest21.flatten()
+imageNTest22 = im_arrNTest22.flatten()
+imageNTest23 = im_arrNTest23.flatten()
+imageNTest24 = im_arrNTest24.flatten()
+imageNTest25 = im_arrNTest25.flatten()
+imageNTest26 = im_arrNTest26.flatten()
+imageNTest27 = im_arrNTest27.flatten()
+imageNTest28 = im_arrNTest28.flatten()
+imageNTest29 = im_arrNTest29.flatten()
+imageNTest30 = im_arrNTest30.flatten()
+imageATest = im_arrATest.flatten()
+imageATest2 = im_arrATest2.flatten()
+imageATest3 = im_arrATest3.flatten()
+imageATest4 = im_arrATest4.flatten()
+imageATest5 = im_arrATest5.flatten()
+imageATest6 = im_arrATest6.flatten()
+imageATest7 = im_arrATest7.flatten()
+imageATest8 = im_arrATest8.flatten()
+imageATest9 = im_arrATest9.flatten()
+imageATest10 = im_arrATest10.flatten()
+imageATest11 = im_arrATest11.flatten()
+imageATest12 = im_arrATest12.flatten()
+imageATest13 = im_arrATest13.flatten()
+imageATest14 = im_arrATest14.flatten()
+imageATest15 = im_arrATest15.flatten()
+imageATest16 = im_arrATest16.flatten()
+imageATest17 = im_arrATest17.flatten()
+imageATest18 = im_arrATest18.flatten()
+imageATest19 = im_arrATest19.flatten()
+imageATest20 = im_arrATest20.flatten()
+imageATest21 = im_arrATest21.flatten()
+imageATest22 = im_arrATest22.flatten()
+imageATest23 = im_arrATest23.flatten()
+imageATest24 = im_arrATest24.flatten()
+imageATest25 = im_arrATest25.flatten()
+imageATest26 = im_arrATest26.flatten()
+imageATest27 = im_arrATest27.flatten()
+imageATest28 = im_arrATest28.flatten()
+imageATest29 = im_arrATest29.flatten()
+imageATest30 = im_arrATest30.flatten()
+#endregion
 
 
 datasetTest = np.array([imageTest, imageTest2, imageTest3, imageTest4, imageTest5, imageTest6, imageTest7, imageTest8, imageTest9, imageTest10,
                         imageTest11, imageTest12, imageTest13, imageTest14, imageTest15, imageTest16, imageTest17, imageTest18,imageTest19, imageTest20,
-                        imageTest21, imageTest22, imageTest23, imageTest24, imageTest25, imageTest26, imageTest27, imageTest28,imageTest29, imageTest30], dtype='float64')
+                        imageTest21, imageTest22, imageTest23, imageTest24, imageTest25, imageTest26, imageTest27, imageTest28,imageTest29, imageTest30,
+
+                        imageNTest, imageNTest2, imageNTest3, imageNTest4, imageNTest5, imageNTest6, imageNTest7, imageNTest8,imageNTest9, imageNTest10,
+                        imageNTest11, imageNTest12, imageNTest13, imageNTest14, imageNTest15, imageNTest16, imageNTest17,imageNTest18, imageNTest19, imageNTest20,
+                        imageNTest21, imageNTest22, imageNTest23, imageNTest24, imageNTest25, imageNTest26, imageNTest27,imageNTest28, imageNTest29, imageNTest30,
+
+                        imageATest, imageATest2, imageATest3, imageATest4, imageATest5, imageATest6, imageATest7, imageATest8, imageATest9, imageATest10,
+                        imageATest11, imageATest12, imageATest13, imageATest14, imageATest15, imageATest16, imageATest17, imageATest18, imageATest19, imageATest20,
+                        imageATest21, imageATest22, imageATest23, imageATest24, imageATest25, imageATest26, imageATest27, imageATest28, imageATest29, imageATest30
+
+                        ], dtype='float64')
 
 
 dataset_expected_outputTest = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1], dtype='float64')
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+
+                                    - 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
+
+                                        ], dtype='float64')
+
 
 
 
@@ -1701,8 +1911,8 @@ for inputs_k in datasetTest:
         bad = bad + 1
     count = count + 1
 
-print(percentOfGoodPrediction(dataset.shape[0], bad), "% de bonne prédiction")
-print(percentOfBadPrediction(dataset.shape[0], bad), "% de mauvaise prédiction")
+print(percentOfGoodPrediction(datasetTest.shape[0], bad), "% de bonne prédiction")
+print(percentOfBadPrediction(datasetTest.shape[0], bad), "% de mauvaise prédiction")
 
 
 my_lib.linear_dispose_model(model)
