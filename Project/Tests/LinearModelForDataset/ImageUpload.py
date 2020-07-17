@@ -1619,6 +1619,28 @@ imTest27 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Proje
 imTest28 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/28.jpeg")
 imTest29 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/29.jpeg")
 imTest30 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/30.jpeg")
+imTest100 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/100.jpeg")
+imTest101 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/101.jpg")
+imTest102 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/102.jpg")
+imTest103 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/103.jpg")
+imTest104 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/104.jpg")
+imTest105 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/105.jpg")
+imTest106 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/106.jpg")
+imTest107 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/107.jpg")
+imTest108 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/108.jpg")
+imTest109 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/109.jpg")
+imTest110 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/110.jpg")
+imTest200 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/200.jpg")
+imTest201 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/201.jpg")
+imTest202 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/202.jpg")
+imTest203 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/203.jpg")
+imTest204 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/204.jpg")
+imTest205 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/205.jpg")
+imTest206 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/206.jpg")
+imTest207 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/207.jpg")
+imTest208 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/208.jpg")
+imTest209 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/209.jpg")
+imTest210 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Happy/210.jpg")
 #NOT HAPPY
 imNTest = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/1.jpeg")
 imNTest2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/2.jpeg")
@@ -1713,6 +1735,29 @@ im_arrTest27 = np.array(imTest27) / 255.0
 im_arrTest28 = np.array(imTest28) / 255.0
 im_arrTest29 = np.array(imTest29) / 255.0
 im_arrTest30 = np.array(imTest30) / 255.0
+im_arrTest100 = np.array(imTest100) / 255.0
+im_arrTest101 = np.array(imTest101) / 255.0
+im_arrTest102 = np.array(imTest102) / 255.0
+im_arrTest103 = np.array(imTest103) / 255.0
+im_arrTest104 = np.array(imTest104) / 255.0
+im_arrTest105 = np.array(imTest105) / 255.0
+im_arrTest106 = np.array(imTest106) / 255.0
+im_arrTest107 = np.array(imTest107) / 255.0
+im_arrTest108 = np.array(imTest108) / 255.0
+im_arrTest109 = np.array(imTest109) / 255.0
+im_arrTest110 = np.array(imTest110) / 255.0
+im_arrTest200 = np.array(imTest200) / 255.0
+im_arrTest201 = np.array(imTest201) / 255.0
+im_arrTest202 = np.array(imTest202) / 255.0
+im_arrTest203 = np.array(imTest203) / 255.0
+im_arrTest204 = np.array(imTest204) / 255.0
+im_arrTest205 = np.array(imTest205) / 255.0
+im_arrTest206 = np.array(imTest206) / 255.0
+im_arrTest207 = np.array(imTest207) / 255.0
+im_arrTest208 = np.array(imTest208) / 255.0
+im_arrTest209 = np.array(imTest209) / 255.0
+im_arrTest210 = np.array(imTest210) / 255.0
+#NOT HAPPY
 im_arrNTest = np.array(imNTest) / 255.0
 im_arrNTest2 = np.array(imNTest2) / 255.0
 im_arrNTest3 = np.array(imNTest3) / 255.0
@@ -1807,6 +1852,29 @@ imageTest27 = im_arrTest27.flatten()
 imageTest28 = im_arrTest28.flatten()
 imageTest29 = im_arrTest29.flatten()
 imageTest30 = im_arrTest30.flatten()
+imageTest100 = im_arrTest100.flatten()
+imageTest101 = im_arrTest101.flatten()
+imageTest102 = im_arrTest102.flatten()
+imageTest103 = im_arrTest103.flatten()
+imageTest104 = im_arrTest104.flatten()
+imageTest105 = im_arrTest105.flatten()
+imageTest106 = im_arrTest106.flatten()
+imageTest107 = im_arrTest107.flatten()
+imageTest108 = im_arrTest108.flatten()
+imageTest109 = im_arrTest109.flatten()
+imageTest110 = im_arrTest110.flatten()
+imageTest200 = im_arrTest200.flatten()
+imageTest201 = im_arrTest201.flatten()
+imageTest202 = im_arrTest202.flatten()
+imageTest203 = im_arrTest203.flatten()
+imageTest204 = im_arrTest204.flatten()
+imageTest205 = im_arrTest205.flatten()
+imageTest206 = im_arrTest206.flatten()
+imageTest207 = im_arrTest207.flatten()
+imageTest208 = im_arrTest208.flatten()
+imageTest209 = im_arrTest209.flatten()
+imageTest210 = im_arrTest210.flatten()
+#NOT HAPPY
 imageNTest = im_arrNTest.flatten()
 imageNTest2 = im_arrNTest2.flatten()
 imageNTest3 = im_arrNTest3.flatten()
@@ -1873,6 +1941,8 @@ imageATest30 = im_arrATest30.flatten()
 datasetTest = np.array([imageTest, imageTest2, imageTest3, imageTest4, imageTest5, imageTest6, imageTest7, imageTest8, imageTest9, imageTest10,
                         imageTest11, imageTest12, imageTest13, imageTest14, imageTest15, imageTest16, imageTest17, imageTest18,imageTest19, imageTest20,
                         imageTest21, imageTest22, imageTest23, imageTest24, imageTest25, imageTest26, imageTest27, imageTest28,imageTest29, imageTest30,
+                        imageTest100, imageTest101, imageTest102, imageTest103, imageTest104, imageTest105, imageTest106, imageTest107,imageTest108,imageTest109,imageTest110,
+                        imageTest200, imageTest201, imageTest202, imageTest203, imageTest204, imageTest205, imageTest206, imageTest207,imageTest208,imageTest209,imageTest210,
 
                         imageNTest, imageNTest2, imageNTest3, imageNTest4, imageNTest5, imageNTest6, imageNTest7, imageNTest8,imageNTest9, imageNTest10,
                         imageNTest11, imageNTest12, imageNTest13, imageNTest14, imageNTest15, imageNTest16, imageNTest17,imageNTest18, imageNTest19, imageNTest20,
@@ -1886,13 +1956,13 @@ datasetTest = np.array([imageTest, imageTest2, imageTest3, imageTest4, imageTest
 
 
 dataset_expected_outputTest = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
 
-                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-
-                                    - 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
+                                        - 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
 
                                         ], dtype='float64')
 
