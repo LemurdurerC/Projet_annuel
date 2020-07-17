@@ -1546,26 +1546,27 @@ L = np.array([
 
 """
 X = np.array([
-    [0,0],
-    [0,1],
-    [1,0],
-    [1,1]
-], dtype='int32')
-
+    [1, 0],
+    [0, 1],
+    [0, 0],
+    [1, 1]
+], dtype='float64')
 
 Y = np.array([
+    -1,
     1,
-    -1,
-    -1,
-    1
-], dtype='int32')
-
+    1,
+    -1
+], dtype='float64')
 """
 
 model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
+
 flattened_Dataset = dataset.flatten()
 
+
+iteration = 10000
 
 my_lib.train_MLP_Classification(
     model,
@@ -1575,8 +1576,8 @@ my_lib.train_MLP_Classification(
     dataset_expected_output.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
     dataset.shape[0],
     dataset.shape[1],
-    0.01,
-    10000
+    0.1,
+    iteration
 )
 
 
@@ -1585,6 +1586,8 @@ print("DATASET DE TRAIN:")
 
 count = 0
 bad = 0
+error = 0.2
+
 for inputs_k in dataset:
     output = my_lib.predict_MLP_Classification(
         model,
@@ -1592,9 +1595,14 @@ for inputs_k in dataset:
         L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)),
         inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
     )
+    print(output[0])
+    print(dataset_expected_output[count])
     if output[0] != dataset_expected_output[count]:
-        bad = bad + 1
-    count = count + 1
+        if abs(output[0] - dataset_expected_output[count]) > error:
+            bad = bad + 1
+        count = count + 1
+
+
 
 print(percentOfGoodPrediction(dataset.shape[0], bad), "% de bonne prédiction")
 print(percentOfBadPrediction(dataset.shape[0], bad), "% de mauvaise prédiction")
