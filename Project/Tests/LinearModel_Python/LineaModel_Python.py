@@ -12,36 +12,19 @@ def percentOfBadPrediction(all,part):
 
 
 if __name__ == "__main__":
-    path_to_dll = "../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.dll"
+
+    path_to_dll = "../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.dll"
 
     my_lib = ctypes.CDLL(path_to_dll)
 
-    my_lib.create_MLP_model.argtypes = [ctypes.c_int, ctypes.POINTER(ctypes.c_int)]
-    my_lib.create_MLP_model.restype = ctypes.c_void_p
+    my_lib.linear_create_model.argtypes = [ctypes.c_int]
+    my_lib.linear_create_model.restype = ctypes.c_void_p
 
-    my_lib.dispose_MLP.argtypes = [ctypes.c_void_p]
-    my_lib.dispose_MLP.restype = None
+    my_lib.linear_dispose_model.argtypes = [ctypes.c_void_p]
+    my_lib.linear_dispose_model.restype = None
 
-    my_lib.predict_MLP_Classification.argtypes = [
+    my_lib.linear_train_model_classification.argtypes = [
         ctypes.c_void_p,
-        ctypes.c_int,
-        ctypes.POINTER(ctypes.c_int),
-        ctypes.POINTER(ctypes.c_double)
-    ]
-    my_lib.predict_MLP_Classification.restype = ctypes.POINTER(ctypes.c_double)
-
-    my_lib.predict_MLP_Regression.argtypes = [
-        ctypes.c_void_p,
-        ctypes.c_int,
-        ctypes.POINTER(ctypes.c_int),
-        ctypes.POINTER(ctypes.c_double)
-    ]
-    my_lib.predict_MLP_Regression.restype = ctypes.POINTER(ctypes.c_double)
-
-    my_lib.train_MLP_Classification.argtypes = [
-        ctypes.c_void_p,
-        ctypes.c_int,
-        ctypes.POINTER(ctypes.c_int),
         ctypes.POINTER(ctypes.c_double),
         ctypes.POINTER(ctypes.c_double),
         ctypes.c_int,
@@ -49,29 +32,38 @@ if __name__ == "__main__":
         ctypes.c_double,
         ctypes.c_int
     ]
-    my_lib.train_MLP_Classification.restype = None
+    my_lib.linear_train_model_classification.restype = None
 
-    my_lib.train_MLP_Regression.argtypes = [
+    my_lib.linear_train_model_regression.argtypes = [
         ctypes.c_void_p,
-        ctypes.c_int,
-        ctypes.POINTER(ctypes.c_int),
         ctypes.POINTER(ctypes.c_double),
         ctypes.POINTER(ctypes.c_double),
         ctypes.c_int,
         ctypes.c_int,
-        ctypes.c_double,
         ctypes.c_int
     ]
-    my_lib.train_MLP_Regression.restype = None
+    my_lib.linear_train_model_regression.restype = None
 
+    my_lib.linear_predict_model_classification.argtypes = [
+        ctypes.c_void_p,
+        ctypes.POINTER(ctypes.c_double),
+        ctypes.c_int
+    ]
+    my_lib.linear_predict_model_classification.restype = ctypes.c_double
+
+    my_lib.linear_predict_model_regression.argtypes = [
+        ctypes.c_void_p,
+        ctypes.POINTER(ctypes.c_double),
+        ctypes.c_int
+    ]
+    my_lib.linear_predict_model_regression.restype = ctypes.c_double
 
 
     #CLASSIFICATION
 
     # CAS DE TEST 1 : Linear Simple
     # 0.01
-    # 50000
-    # 2 1
+    # 1000
     A = np.array([
         [1, 1],
         [2, 3],
@@ -88,9 +80,8 @@ if __name__ == "__main__":
 
 
     #CAS DE TEST : LINEAR MULTIPLE
-    # 0.1
-    # 100000
-    # 2 1
+    # 0.01
+    # 1000
     C = np.concatenate(
         [np.random.random((50, 2)) * 0.9 + np.array([1, 1]), np.random.random((50, 2)) * 0.9 + np.array([2, 2])])
     D = np.concatenate([np.ones((50, 1)), np.ones((50, 1)) * -1.0])
@@ -101,8 +92,7 @@ if __name__ == "__main__":
 
     #CAS DE TEST : OU EXCLUSIF
     # 0.1
-    # 2000000
-    # 2 3 1
+    # 100
     E = np.array([
         [1, 0],
         [0, 1],
@@ -123,19 +113,18 @@ if __name__ == "__main__":
     #CAS DE TEST : CROSS
     # 1
     # 10000
-    # 2 4 1
     G = np.random.random((500, 2)) * 2.0 - 1.0
     H = np.array([1.0 if abs(p[0]) <= 0.3 or abs(p[1]) <= 0.3 else -1.0 for p in G])
 
 
 
 
-    #REGRESSION
 
-    #CAS DE TEST : Linear Simple 2D
+    # REGRESSION
+
+    # CAS DE TEST : Linear Simple 2D
     # 0.1
     # 10000
-    # 1 1
     I = np.array([
         [1],
         [2]
@@ -148,10 +137,10 @@ if __name__ == "__main__":
 
 
 
-    #CAS DE TEST : Non linear simple 2D
+
+    # CAS DE TEST : Non linear simple 2D
     # 0.1
     # 500000
-    # 1 3 1
     M = np.array([
         [1],
         [2],
@@ -166,10 +155,9 @@ if __name__ == "__main__":
 
 
 
-    #CAS DE TEST : Linear simple 3D
+    # CAS DE TEST : Linear simple 3D
     # 0.01
     # 500000
-    # 2 1
     O = np.array([
         [1, 1],
         [2, 2],
@@ -184,10 +172,10 @@ if __name__ == "__main__":
 
 
 
-    #CAS DE TEST : Linear Tricky 3D
+
+    # CAS DE TEST : Linear Tricky 3D
     # 0.01
     # 10000
-    # 2 1
     Q = np.array([
         [1, 1],
         [2, 2],
@@ -203,10 +191,9 @@ if __name__ == "__main__":
 
 
 
-    #CAS DE TEST : Non linear simple 3D
+    # CAS DE TEST : Non linear simple 3D
     # 1 ?
     # 100000 ?
-    # 2 2 1
     S = np.array([
         [1, 0],
         [0, 1],
@@ -223,49 +210,38 @@ if __name__ == "__main__":
 
 
 
-
-    L = np.array([
-        2,
-        3,
-        1
-    ], dtype='int32')
-
-    model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
-
-    enter = E
-    exit = F
-    alpha = 0.1
-    iteration = 2000000
-
+    enter = S
+    exit = T
+    alpha = 1
+    iteration = 10000
     flattened_X = enter.flatten()
 
-    my_lib.train_MLP_Classification(
+    model = my_lib.linear_create_model(ctypes.c_int(enter.shape[1]))
+
+    my_lib.linear_train_model_regression(
         model,
-        L.shape[0],
-        L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)),
         flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
         exit.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
         enter.shape[0],
         enter.shape[1],
-        alpha,
-        iteration
+        exit.shape[0]
+        #alpha,
+        #iteration
     )
-
 
     print("After Training...")
     count = 0
     bad = 0
     error = 0.2
     for inputs_k in enter:
-        result = my_lib.predict_MLP_Classification(
+        result = my_lib.linear_predict_model_regression(
             model,
-            L.shape[0],
-            L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)),
-            inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
+            inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
+            len(inputs_k)
         )
-        print(result[0])
-        if result[0] != exit[count]:
-            if abs(result[0] - exit[count]) > error:
+        print(result)
+        if result != exit[count]:
+            if abs(result - exit[count]) > error:
                 bad = bad + 1
         count = count + 1
 
@@ -273,6 +249,19 @@ if __name__ == "__main__":
     print(percentOfGoodPrediction(enter.shape[0], bad), "% de bonne prédiction")
     print(percentOfBadPrediction(enter.shape[0], bad), "% de mauvaise prédiction")
 
+    my_lib.linear_dispose_model(model)
 
-my_lib.dispose_MLP(model)
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
