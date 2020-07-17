@@ -222,7 +222,6 @@ ClusterRepresentative** algoOfLLoyd(int numberOfCluster, double *dataset, int da
             }
 
         }
-        printf("\n");
 
 
 

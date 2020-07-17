@@ -147,16 +147,30 @@ void train_MLP_InCommon(MLP *mlp,
         }
 
         //step 3 : deal with the other layers
-        for( int layer = nbLayers-2;layer>=2;layer-- ){
-            for(int k =1;k<nbNeuronPerLayers[layer-1]+1;k++){
-                double result = 0.0;
-                for(int j =1; j<nbNeuronPerLayers[layer]+1;j++){
-                    result += (*mlp).W[layer][k][j] * (*mlp).delta[layer][j];
+        if(nbLayers >= 4) {
+
+            for( int layer = nbLayers-2;layer>=2;layer-- ){
+                for(int k =1;k<nbNeuronPerLayers[layer-1]+1;k++){
+                    double result = 0.0;
+                    for(int j =1; j<nbNeuronPerLayers[layer]+1;j++){
+                        result += (*mlp).W[layer][k][j] * (*mlp).delta[layer][j];
+                    }
+                    result *= 1 - (*mlp).X[layer - 1][k] * (*mlp).X[layer - 1][k];
+                    (*mlp).delta[layer - 1][k] = result;
                 }
-                result *= 1 - (*mlp).X[layer - 1][k] * (*mlp).X[layer - 1][k];
-                (*mlp).delta[layer - 1][k] = result;
+            }
+        }else{
+            for (int k = 1; k < nbNeuronPerLayers[2 - 1] + 1; k++) {
+                double result = 0.0;
+                for (int j = 1; j < nbNeuronPerLayers[2] + 1; j++) {
+                    result += (*mlp).W[1][k][j] * (*mlp).delta[2][j];
+                }
+                //printf("RESULT :%f\n", result);
+                result *= 1 - (*mlp).X[2 - 1][k] * (*mlp).X[2 - 1][k];
+                (*mlp).delta[2 - 1][k] = result;
             }
         }
+
         //step 4 : update W
         for(int layer = 1; layer<nbLayers;layer++){
             for(int j = 0;j<nbNeuronPerLayers[layer-1]+1;j++) {
