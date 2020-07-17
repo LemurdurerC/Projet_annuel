@@ -226,16 +226,16 @@ if __name__ == "__main__":
 
     L = np.array([
         2,
-        3,
+        4,
         1
     ], dtype='int32')
 
     model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
-    enter = E
-    exit = F
+    enter = C
+    exit = D
     alpha = 0.1
-    iteration = 2000000
+    iteration = 100000
 
     flattened_X = enter.flatten()
 
@@ -263,7 +263,7 @@ if __name__ == "__main__":
             L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)),
             inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
         )
-        print(result[0])
+        #print(result[0])
         if result[0] != exit[count]:
             if abs(result[0] - exit[count]) > error:
                 bad = bad + 1

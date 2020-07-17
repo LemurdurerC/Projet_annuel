@@ -210,8 +210,8 @@ if __name__ == "__main__":
 
 
 
-    enter = S
-    exit = T
+    enter = O
+    exit = P
     alpha = 1
     iteration = 10000
     flattened_X = enter.flatten()
@@ -241,7 +241,7 @@ if __name__ == "__main__":
         )
         print(result)
         if result != exit[count]:
-            if abs(result - exit[count]) > error:
+            if abs(abs(result) - abs(exit[count])) > error:
                 bad = bad + 1
         count = count + 1
 
