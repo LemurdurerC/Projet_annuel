@@ -3,6 +3,14 @@ import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
 
+def percentOfGoodPrediction(all,part):
+    return 100 - ((100*part)/all)
+
+
+def percentOfBadPrediction(all,part):
+    return (100*part)/all
+
+
 if __name__ == "__main__":
     path_to_dll = "../../Lib/RBFLib/cmake-build-debug/RBFLib.dll"
 
@@ -130,9 +138,9 @@ if __name__ == "__main__":
     # max = 3
     E = np.concatenate(
         [np.random.random((50, 2)) * 0.9 + np.array([1, 1]), np.random.random((50, 2)) * 0.9 + np.array([2, 2])])
-    F = np.concatenate([np.ones((50, 1)), np.ones((50, 1)) * -1.0])
+    Ftemp = np.concatenate([np.ones((50, 1)), np.ones((50, 1)) * -1.0])
 
-    FFlat = F.flatten()
+    F = Ftemp.flatten()
 
 
 
@@ -226,12 +234,13 @@ if __name__ == "__main__":
 
 
     min = 0
-    max = 9
+    max = 3
     numberOfCluser = 2
-    gamma = 0.01
-    enter = A
-    exit = B
+    gamma = 0.1
+    enter = C
+    exit = D
     flattened_X = enter.flatten()
+
 
     KM = my_lib.KMeans(numberOfCluser, flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), enter.shape[0],
                        enter.shape[1], min, max)
@@ -239,10 +248,10 @@ if __name__ == "__main__":
 
     model = my_lib.create_RBF_model(ctypes.c_int(numberOfCluser))
 
-    """
+
     for i in range(numberOfCluser*2):
         print(KM[i])
-    """
+
 
     my_lib.RBF_train_model(
         model,
@@ -256,8 +265,12 @@ if __name__ == "__main__":
     )
 
     print("After Training the Model")
+    count = 0
+    bad = 0
+    error = 0.2
+
     for inputs_k in enter:
-        print(my_lib.RBF_predict_model_Classification(
+        result = (my_lib.RBF_predict_model_Classification(
             model,
             KM,
             numberOfCluser,
@@ -265,9 +278,17 @@ if __name__ == "__main__":
             inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
             len(inputs_k)
         ))
+        print(result)
+        if result != exit[count]:
+            if abs(result - exit[count]) > error:
+                bad = bad + 1
+        count = count + 1
 
+    print("Pourcentage")
+    print(percentOfGoodPrediction(enter.shape[0], bad), "% de bonne prédiction")
+    print(percentOfBadPrediction(enter.shape[0], bad), "% de mauvaise prédiction")
 
-    my_lib.disposeRBF(model,KM)
+my_lib.disposeRBF(model,KM)
 
 
 
