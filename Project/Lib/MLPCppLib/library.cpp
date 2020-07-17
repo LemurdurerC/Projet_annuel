@@ -222,7 +222,11 @@ extern  "C" {
 
     DLLEXPORT void dispose_MLP(MLP *mlp){//const double *model) {
         //delete[] model;
-        delete mlp;
+
+    delete mlp->delta;
+    delete mlp->W;
+    delete mlp->X;
+    delete mlp;
     }
 
 

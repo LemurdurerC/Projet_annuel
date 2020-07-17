@@ -11,7 +11,6 @@ def percentOfBadPrediction(all,part):
     return (100*part)/all
 
 
-
 if __name__ == "__main__":
     path_to_dll = "../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.dll"
 
@@ -1545,6 +1544,23 @@ L = np.array([
     1
 ], dtype='int32')
 
+"""
+X = np.array([
+    [0,0],
+    [0,1],
+    [1,0],
+    [1,1]
+], dtype='int32')
+
+
+Y = np.array([
+    1,
+    -1,
+    -1,
+    1
+], dtype='int32')
+
+"""
 
 model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
@@ -1559,8 +1575,8 @@ my_lib.train_MLP_Classification(
     dataset_expected_output.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
     dataset.shape[0],
     dataset.shape[1],
-    0.1,
-    1000
+    0.01,
+    10000
 )
 
 
@@ -1582,5 +1598,7 @@ for inputs_k in dataset:
 
 print(percentOfGoodPrediction(dataset.shape[0], bad), "% de bonne prédiction")
 print(percentOfBadPrediction(dataset.shape[0], bad), "% de mauvaise prédiction")
+
+
 
 my_lib.dispose_MLP(model)

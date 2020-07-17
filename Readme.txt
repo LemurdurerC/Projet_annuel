@@ -1,3 +1,16 @@
+Les tests sur le dataset sont faits dans les dossiers :
+- Tests/LinearModelForDataset
+- Tests/MLPForDataset
+Les tests sur les cas de test sont faits dans les dossier :
+- ...
+- Tests/MLP_Python
+
+
+
+
+
+
+
 A SAVOIR SUR LES DOSSIERS DU PROJET
 Le dossier "TestsDEV" contient les étapes de développement des modèles en C++.
 Les test sont également en C++.
@@ -16,3 +29,4 @@ Il faut bien choisir
 
 A SAVOIR SUR LE SVM
 - la matrice d'un exemple est de taille 2*1
+
