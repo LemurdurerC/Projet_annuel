@@ -1981,29 +1981,13 @@ dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
                                     ], dtype='float64')
 
-print(dataset.shape)
-print(dataset_expected_output.shape)
+
 L = np.array([
     2,
     2,
     1
 ], dtype='int32')
 
-"""
-X = np.array([
-    [1, 0],
-    [0, 1],
-    [0, 0],
-    [1, 1]
-], dtype='float64')
-
-Y = np.array([
-    -1,
-    1,
-    1,
-    -1
-], dtype='float64')
-"""
 
 model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
@@ -2011,8 +1995,9 @@ model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctyp
 flattened_Dataset = dataset.flatten()
 
 
-alpha = 0.1
-iteration = 500000
+
+alpha = 1
+iteration = 10000
 
 my_lib.train_MLP_Classification(
     model,
