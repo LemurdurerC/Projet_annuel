@@ -1544,19 +1544,9 @@ model = my_lib.linear_create_model(ctypes.c_int(dataset.shape[1]))
 
 flattened_Dataset = dataset.flatten()
 
-"""
-print("Before Training")
-
-for inputs_k in dataset:
-    print(my_lib.linear_predict_model_classification(
-        model,
-        inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
-        len(inputs_k)
-
-    ))
-"""
 
 iteration = 20000
+alpha = 0.001
 
 my_lib.linear_train_model_classification(
     model,
@@ -1564,7 +1554,7 @@ my_lib.linear_train_model_classification(
     dataset_expected_output.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
     dataset.shape[0],
     dataset.shape[1],
-    0.001,
+    alpha,
     iteration
 )
 
