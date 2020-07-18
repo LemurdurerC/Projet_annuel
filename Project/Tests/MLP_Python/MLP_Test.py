@@ -232,15 +232,15 @@ if __name__ == "__main__":
 
     model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
-    enter = A
-    exit = B
+    enter = E
+    exit = F
     alpha = 0.1
     iteration = 1000
 
     flattened_X = enter.flatten()
 
-    print(A)
-    print(B)
+    print(enter)
+    print(exit)
     print(alpha)
     print(iteration)
 

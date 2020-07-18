@@ -147,19 +147,21 @@ void train_MLP_InCommon(MLP *mlp,
         }
 
         //step 3 : deal with the other layers
-        if(nbLayers >= 4) {
-
-            for( int layer = nbLayers-2;layer>=2;layer-- ){
-                for(int k =1;k<nbNeuronPerLayers[layer-1]+1;k++){
+        if(nbLayers >= 3) {
+            for (int layer = nbLayers - 1; layer >= 2; layer--) {
+                for (int k = 1; k < nbNeuronPerLayers[layer - 1] + 1; k++) {
                     double result = 0.0;
-                    for(int j =1; j<nbNeuronPerLayers[layer]+1;j++){
+                    for (int j = 1; j < nbNeuronPerLayers[layer] + 1; j++) {
                         result += (*mlp).W[layer][k][j] * (*mlp).delta[layer][j];
                     }
+                    //printf("RESULT :%f\n", result);
                     result *= 1 - (*mlp).X[layer - 1][k] * (*mlp).X[layer - 1][k];
                     (*mlp).delta[layer - 1][k] = result;
                 }
             }
-        }else{
+
+        }else {
+            printf("here\n");
             for (int k = 1; k < nbNeuronPerLayers[2 - 1] + 1; k++) {
                 double result = 0.0;
                 for (int j = 1; j < nbNeuronPerLayers[2] + 1; j++) {
@@ -179,6 +181,7 @@ void train_MLP_InCommon(MLP *mlp,
                 }
             }
         }
+
 
     }
 
@@ -236,11 +239,7 @@ extern  "C" {
 
     DLLEXPORT void dispose_MLP(MLP *mlp){//const double *model) {
         //delete[] model;
-
-    delete mlp->delta;
-    delete mlp->W;
-    delete mlp->X;
-    delete mlp;
+        delete mlp;
     }
 
 

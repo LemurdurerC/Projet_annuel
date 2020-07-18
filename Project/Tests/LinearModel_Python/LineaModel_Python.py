@@ -212,12 +212,13 @@ if __name__ == "__main__":
 
     enter = O
     exit = P
-    alpha = 1
-    iteration = 10000
+    alpha = 0.01
+    iteration = 10
     flattened_X = enter.flatten()
 
     model = my_lib.linear_create_model(ctypes.c_int(enter.shape[1]))
 
+    print("iuiuiu")
     my_lib.linear_train_model_regression(
         model,
         flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
@@ -241,7 +242,7 @@ if __name__ == "__main__":
         )
         print(result)
         if result != exit[count]:
-            if abs(abs(result) - abs(exit[count])) > error:
+            if abs(result - exit[count]) > error:
                 bad = bad + 1
         count = count + 1
 

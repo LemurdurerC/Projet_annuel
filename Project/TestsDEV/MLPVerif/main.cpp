@@ -57,7 +57,7 @@ void MLP::initialise(int nbLayers, int *nbNeuronPerLayers) {
 
     X = new double*[nbLayers];
     for(int i=0; i<nbLayers;i++) {
-        X[i] = new double[nbNeuronPerLayers[i]];
+        X[i] = new double[nbNeuronPerLayers[i]+1];//add +1
     }
     for(int i=0; i<nbLayers;i++) {
         for(int j = 0;j<nbNeuronPerLayers[i]+1;j++){
@@ -110,9 +110,11 @@ double *predict_MLP_InCommon(MLP *mlp,int nbLayers, int *nbNeuronPerLayers, doub
     }
 
     double *exit = new double[nbNeuronPerLayers[nbLayers-1]];
+
     for(int i = 1;i<nbNeuronPerLayers[nbLayers-1]+1;i++){
         exit[i-1] = (*mlp).X[nbLayers-1][i];
     }
+
 
     return exit;
 
@@ -131,6 +133,17 @@ void train_MLP_InCommon(MLP *mlp,
                         int iteration_count,
                         bool classif_or_not) {
 
+
+    printf("\n");
+    //afficher les W
+    printf("Voici les W\n");
+    for(int layer = 1; layer<nbLayers;layer++){
+        for(int j = 0;j<nbNeuronPerLayers[layer-1]+1;j++) {
+            for (int k = 1; k < nbNeuronPerLayers[layer] + 1; k++) {
+                printf("%f\n",(*mlp).W[layer][j][k]);
+            }
+        }
+    }
 
 
     for (int i = 0; i<iteration_count; i++) {
@@ -158,16 +171,32 @@ void train_MLP_InCommon(MLP *mlp,
         }
 
         //step 3 : deal with the other layers
-        for( int layer = nbLayers-2;layer>=2;layer-- ){
-            for(int k =1;k<nbNeuronPerLayers[layer-1]+1;k++){
-                double result = 0.0;
-                for(int j =1; j<nbNeuronPerLayers[layer]+1;j++){
-                    result += (*mlp).W[layer][k][j] * (*mlp).delta[layer][j];
+        if(nbLayers >= 3) {
+            for (int layer = nbLayers - 1; layer >= 2; layer--) {
+                for (int k = 1; k < nbNeuronPerLayers[layer - 1] + 1; k++) {
+                    double result = 0.0;
+                    for (int j = 1; j < nbNeuronPerLayers[layer] + 1; j++) {
+                        result += (*mlp).W[layer][k][j] * (*mlp).delta[layer][j];
+                    }
+                    //printf("RESULT :%f\n", result);
+                    result *= 1 - (*mlp).X[layer - 1][k] * (*mlp).X[layer - 1][k];
+                    (*mlp).delta[layer - 1][k] = result;
                 }
-                result *= 1 - (*mlp).X[layer - 1][k] * (*mlp).X[layer - 1][k];
-                (*mlp).delta[layer - 1][k] = result;
+            }
+
+        }else {
+            printf("here\n");
+            for (int k = 1; k < nbNeuronPerLayers[2 - 1] + 1; k++) {
+                double result = 0.0;
+                for (int j = 1; j < nbNeuronPerLayers[2] + 1; j++) {
+                    result += (*mlp).W[1][k][j] * (*mlp).delta[2][j];
+                }
+                //printf("RESULT :%f\n", result);
+                result *= 1 - (*mlp).X[2 - 1][k] * (*mlp).X[2 - 1][k];
+                (*mlp).delta[2 - 1][k] = result;
             }
         }
+
         //step 4 : update W
         for(int layer = 1; layer<nbLayers;layer++){
             for(int j = 0;j<nbNeuronPerLayers[layer-1]+1;j++) {
@@ -178,6 +207,20 @@ void train_MLP_InCommon(MLP *mlp,
         }
 
     }
+
+
+    printf("\n");
+    //afficher les W
+    printf("\n");
+    printf("Voici les W\n");
+    for(int layer = 1; layer<nbLayers;layer++){
+        for(int j = 0;j<nbNeuronPerLayers[layer-1]+1;j++) {
+            for (int k = 1; k < nbNeuronPerLayers[layer] + 1; k++) {
+                printf("%f\n",(*mlp).W[layer][j][k]);
+            }
+        }
+    }
+    printf("\n");
 
 }
 
@@ -229,11 +272,7 @@ MLP* create_MLP_model(int nbLayers, int *nbNeuronPerLayers) {
 
  void dispose_MLP(MLP *mlp){//const double *model) {
     //delete[] model;
-    delete mlp->delta;
-     delete mlp->W;
-     delete mlp->X;
-     delete []mlp;
-
+     delete mlp;
  }
 
 
@@ -254,14 +293,15 @@ int main() {
 
 
     const int nbreFeature = 2;
-    const int nbreEnter  = 4;
+    const int nbreEnter  = 3;
 
-
+/*
     double X[nbreFeature*nbreEnter] = {
+            1.0, 0,
+            0, 1.0,
             1.0, 1.0,
-            2.0, 2.0,
-            3.0, 3.0,
-            4.0, 4.0
+            0.0, 0.0
+
     };
 
     double Y[nbreEnter] = {
@@ -269,8 +309,24 @@ int main() {
             1,
             -1,
             -1
+
     };
 
+*/
+
+    double X[nbreFeature*nbreEnter] = {
+            1.0, 1.0,
+            2.0, 3.0,
+            3.0, 3.0
+
+    };
+
+    double Y[nbreEnter] = {
+            1,
+            -1,
+            -1
+
+    };
 
 
     const int nbLayer = 3;
@@ -279,18 +335,19 @@ int main() {
 
     MLP *mlp = create_MLP_model(nbLayer,tabLayer);
 
-
+/*
     for(int i = 0; i<nbreEnter*nbreFeature;i=i+nbreFeature){
-        double *exit = predict_MLP_Classification(mlp,nbLayer,tabLayer,getPartsOfTab(i,(i+nbreFeature-1),X));
+        double *exit = predict_MLP_Regression(mlp,nbLayer,tabLayer,getPartsOfTab(i,(i+nbreFeature-1),X));
         printf("%f\n",exit[0]);
     }
+    */
 
 
-    train_MLP_Classification(mlp,nbLayer,tabLayer,X,Y,nbreEnter,nbreFeature,0.001,80000);
+    train_MLP_Regression(mlp,nbLayer,tabLayer,X,Y,nbreEnter,nbreFeature,0.1,1000);
 
     printf("after training\n");
     for(int i = 0; i<nbreEnter*nbreFeature;i=i+nbreFeature) {
-        double *exit = predict_MLP_Classification(mlp, nbLayer, tabLayer, getPartsOfTab(i, (i + nbreFeature - 1), X));
+        double *exit = predict_MLP_Regression(mlp, nbLayer, tabLayer, getPartsOfTab(i, (i + nbreFeature - 1), X));
         printf("%f\n", exit[0]);
 
     }
