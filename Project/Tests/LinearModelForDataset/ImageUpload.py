@@ -60,6 +60,13 @@ if __name__ == "__main__":
     ]
     my_lib.linear_predict_model_regression.restype = ctypes.c_double
 
+    my_lib.ecriture.argtypes = [ctypes.c_void_p,
+                                ctypes.c_int]
+    my_lib.ecriture.restype = None
+
+    my_lib.lecture.argtypes = [ctypes.c_int]
+    my_lib.lecture.restype = ctypes.POINTER(ctypes.c_double)
+
 #region
 im = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/1.jpg")
 im2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/2.jpg")
@@ -1561,7 +1568,7 @@ my_lib.linear_train_model_classification(
     iteration
 )
 
-
+my_lib.ecriture(model, ctypes.c_int(dataset.shape[1]))
 
 print("DATASET DE TRAIN:")
 

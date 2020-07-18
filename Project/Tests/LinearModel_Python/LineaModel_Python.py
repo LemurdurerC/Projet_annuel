@@ -58,6 +58,12 @@ if __name__ == "__main__":
     ]
     my_lib.linear_predict_model_regression.restype = ctypes.c_double
 
+    my_lib.ecriture.argtypes = [ctypes.c_void_p,
+                                ctypes.c_int]
+    my_lib.ecriture.restype = None
+
+    my_lib.lecture.argtypes = [ctypes.c_int]
+    my_lib.lecture.restype = ctypes.POINTER(ctypes.c_double)
 
     #CLASSIFICATION
 
@@ -210,32 +216,33 @@ if __name__ == "__main__":
 
 
 
-    enter = O
-    exit = P
-    alpha = 0.01
-    iteration = 10
+    enter = A
+    exit = B
+    alpha = 0.1
+    iteration = 1000
     flattened_X = enter.flatten()
 
     model = my_lib.linear_create_model(ctypes.c_int(enter.shape[1]))
 
-    print("iuiuiu")
-    my_lib.linear_train_model_regression(
+    my_lib.linear_train_model_classification(
         model,
         flattened_X.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
         exit.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
         enter.shape[0],
         enter.shape[1],
-        exit.shape[0]
-        #alpha,
-        #iteration
+        #exit.shape[0]
+        alpha,
+        iteration
     )
 
+    my_lib.ecriture(model, ctypes.c_int(enter.shape[1]))
+    
     print("After Training...")
     count = 0
     bad = 0
     error = 0.2
     for inputs_k in enter:
-        result = my_lib.linear_predict_model_regression(
+        result = my_lib.linear_predict_model_classification(
             model,
             inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
             len(inputs_k)
