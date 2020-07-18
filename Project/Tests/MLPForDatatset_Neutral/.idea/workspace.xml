@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5885ed6-3edc-46ae-bb02-2700364c9b92" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../Docs/Slides/PA_Presentation.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Docs/Slides/PA_Presentation.pptx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/CMakeFiles/LinearModelCppLib.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/CMakeFiles/LinearModelCppLib.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.exp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.exp" afterDir="false" />
@@ -9,17 +10,9 @@
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.lib" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.lib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/library.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../All_Models_Python/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../All_Models_Python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../All_Models_Python/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinearModel_Python/LineaModel_Python.py" beforeDir="false" afterPath="$PROJECT_DIR$/../LinearModel_Python/LineaModel_Python.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinearModel_Python/model_linear.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../LinearModel_Python/model_linear.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset/.idea/MLPForDatatset.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset/ImageUpload.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LinearModelForDataset_Angry/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LinearModelForDataset_Angry/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LinearModelForDataset_Neutral/.idea/LinearModelForDataset_Neutral.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../LinearModelForDataset_Neutral/.idea/LinearModelForDataset_Neutral.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LinearModelForDataset_Neutral/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LinearModelForDataset_Neutral/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +39,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -58,6 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1595092975504</updated>
       <workItem from="1595092976684" duration="32000" />
+      <workItem from="1595106976315" duration="16000" />
     </task>
     <servers />
   </component>

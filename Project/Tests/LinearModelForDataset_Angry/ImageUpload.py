@@ -1,3 +1,4 @@
+# -- coding: utf-8 --
 from PIL import Image
 import numpy as np
 import ctypes
@@ -2020,8 +2021,8 @@ for inputs_k in dataset:
         bad = bad + 1
     count = count + 1
 
-print(percentOfGoodPrediction(dataset.shape[0], bad), "% de bonne prédiction")
-print(percentOfBadPrediction(dataset.shape[0], bad), "% de mauvaise prédiction")
+print(percentOfGoodPrediction(dataset.shape[0], bad), "% de bonne prï¿½diction")
+print(percentOfBadPrediction(dataset.shape[0], bad), "% de mauvaise prï¿½diction")
 
 
 
@@ -2753,8 +2754,8 @@ for inputs_k in datasetTest:
         bad = bad + 1
     count = count + 1
 
-print(percentOfGoodPrediction(datasetTest.shape[0], bad), "% de bonne prédiction")
-print(percentOfBadPrediction(datasetTest.shape[0], bad), "% de mauvaise prédiction")
+print(percentOfGoodPrediction(datasetTest.shape[0], bad), "% de bonne prï¿½diction")
+print(percentOfBadPrediction(datasetTest.shape[0], bad), "% de mauvaise prï¿½diction")
 
 
 my_lib.linear_dispose_model(model)
