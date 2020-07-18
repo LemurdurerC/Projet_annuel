@@ -64,7 +64,6 @@ if __name__ == "__main__":
     ]
     my_lib.train_MLP_Regression.restype = None
 
-
 #region
 im = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/1.jpg")
 im2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/2.jpg")
@@ -219,6 +218,53 @@ im150 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/
 im151 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/151.jpg")
 im152 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/152.jpg")
 im153 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/153.jpg")
+im154 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/154.jpg")
+im155 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/155.jpg")
+im156 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/156.jpg")
+im157 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/157.jpg")
+im158 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/158.jpg")
+im159 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/159.jpg")
+im160 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/160.jpg")
+im161 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/161.jpg")
+im162 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/162.jpg")
+im163 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/163.jpg")
+im164 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/164.jpg")
+im165 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/165.jpg")
+im166 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/166.jpg")
+im167 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/167.jpg")
+im168 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/168.jpg")
+im169 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/169.jpg")
+im170 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/170.jpg")
+im171 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/171.jpg")
+im172 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/172.jpg")
+im173 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/173.jpg")
+im174 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/174.jpg")
+im175 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/175.jpg")
+im176 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/176.jpg")
+im177 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/177.jpg")
+im178 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/178.jpg")
+im179 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/179.jpg")
+im180 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/180.jpg")
+im181 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/181.jpg")
+im182 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/182.jpg")
+im183 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/183.jpg")
+im184 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/184.jpg")
+im185 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/185.jpg")
+im186 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/186.jpg")
+im187 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/187.jpg")
+im188 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/188.jpg")
+im189 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/189.jpg")
+im190 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/190.jpg")
+im191 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/191.jpg")
+im192 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/192.jpg")
+im193 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/193.jpg")
+im194 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/194.jpg")
+im195 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/195.jpg")
+im196 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/196.jpg")
+im197 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/197.jpg")
+im198 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/198.jpg")
+im199 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/199.jpg")
+im200 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/200.jpg")
 #NOT HAPPY
 imN1 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/1.jpg")
 imN2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/2.jpg")
@@ -372,6 +418,54 @@ imN149 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project
 imN150 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/150.jpg")
 imN151 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/151.jpg")
 imN152 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/152.jpg")
+imN153 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/153.jpg")
+imN154 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/154.jpg")
+imN155 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/155.jpg")
+imN156 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/156.jpg")
+imN157 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/157.jpg")
+imN158 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/158.jpg")
+imN159 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/159.jpg")
+imN160 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/160.jpg")
+imN161 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/161.jpg")
+imN162 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/162.jpg")
+imN163 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/163.jpg")
+imN164 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/164.jpg")
+imN165 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/165.jpg")
+imN166 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/166.jpg")
+imN167 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/167.jpg")
+imN168 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/168.jpg")
+imN169 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/169.jpg")
+imN170 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/170.jpg")
+imN171 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/171.jpg")
+imN172 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/172.jpg")
+imN173 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/173.jpg")
+imN174 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/174.jpg")
+imN175 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/175.jpg")
+imN176 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/176.jpg")
+imN177 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/177.jpg")
+imN178 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/178.jpg")
+imN179 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/179.jpg")
+imN180 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/180.jpg")
+imN181 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/181.jpg")
+imN182 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/182.jpg")
+imN183 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/183.jpg")
+imN184 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/184.jpg")
+imN185 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/185.jpg")
+imN186 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/186.jpg")
+imN187 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/187.jpg")
+imN188 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/188.jpg")
+imN189 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/189.jpg")
+imN190 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/190.jpg")
+imN191 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/191.jpg")
+imN192 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/192.jpg")
+imN193 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/193.jpg")
+imN194 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/194.jpg")
+imN195 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/195.jpg")
+imN196 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/196.jpg")
+imN197 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/197.jpg")
+imN198 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/198.jpg")
+imN199 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/199.jpg")
+imN200 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Neutral/200.jpg")
 imA1 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/1.jpg")
 imA2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/2.jpg")
 imA3 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/3.jpg")
@@ -524,6 +618,55 @@ imA149 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project
 imA150 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/150.jpg")
 imA151 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/151.jpg")
 imA152 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/152.jpg")
+imA153 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/153.jpg")
+imA154 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/154.jpg")
+imA155 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/155.jpg")
+imA156 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/156.jpg")
+imA157 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/157.jpg")
+imA158 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/158.jpg")
+imA159 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/159.jpg")
+imA160 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/160.jpg")
+imA161 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/161.jpg")
+imA162 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/162.jpg")
+imA163 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/163.jpg")
+imA164 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/164.jpg")
+imA165 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/165.jpg")
+imA166 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/166.jpg")
+imA167 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/167.jpg")
+imA168 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/168.jpg")
+imA169 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/169.jpg")
+imA170 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/170.jpg")
+imA171 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/171.jpg")
+imA172 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/172.jpg")
+imA173 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/173.jpg")
+imA174 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/174.jpg")
+imA175 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/175.jpg")
+imA176 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/176.jpg")
+imA177 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/177.jpg")
+imA178 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/178.jpg")
+imA179 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/179.jpg")
+imA180 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/180.jpg")
+imA181 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/181.jpg")
+imA182 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/182.jpg")
+imA183 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/183.jpg")
+imA184 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/184.jpg")
+imA185 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/185.jpg")
+imA186 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/186.jpg")
+imA187 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/187.jpg")
+imA188 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/188.jpg")
+imA189 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/189.jpg")
+imA190 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/190.jpg")
+imA191 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/191.jpg")
+imA192 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/192.jpg")
+imA193 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/193.jpg")
+imA194 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/194.jpg")
+imA195 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/195.jpg")
+imA196 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/196.jpg")
+imA197 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/197.jpg")
+imA198 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/198.jpg")
+imA199 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/199.jpg")
+imA200 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Angry/200.jpg")
+
 #endregion
 
 #region
@@ -680,6 +823,53 @@ im_arr150 = np.array(im150) / 255.0
 im_arr151 = np.array(im151) / 255.0
 im_arr152 = np.array(im152) / 255.0
 im_arr153 = np.array(im153) / 255.0
+im_arr154 = np.array(im154) / 255.0
+im_arr155 = np.array(im155) / 255.0
+im_arr156 = np.array(im156) / 255.0
+im_arr157 = np.array(im157) / 255.0
+im_arr158 = np.array(im158) / 255.0
+im_arr159 = np.array(im159) / 255.0
+im_arr160 = np.array(im160) / 255.0
+im_arr161 = np.array(im161) / 255.0
+im_arr162 = np.array(im162) / 255.0
+im_arr163 = np.array(im163) / 255.0
+im_arr164 = np.array(im164) / 255.0
+im_arr165 = np.array(im165) / 255.0
+im_arr166 = np.array(im166) / 255.0
+im_arr167 = np.array(im167) / 255.0
+im_arr168 = np.array(im168) / 255.0
+im_arr169 = np.array(im169) / 255.0
+im_arr170 = np.array(im170) / 255.0
+im_arr171 = np.array(im171) / 255.0
+im_arr172 = np.array(im172) / 255.0
+im_arr173 = np.array(im173) / 255.0
+im_arr174 = np.array(im174) / 255.0
+im_arr175 = np.array(im175) / 255.0
+im_arr176 = np.array(im176) / 255.0
+im_arr177 = np.array(im177) / 255.0
+im_arr178 = np.array(im178) / 255.0
+im_arr179 = np.array(im179) / 255.0
+im_arr180 = np.array(im180) / 255.0
+im_arr181 = np.array(im181) / 255.0
+im_arr182 = np.array(im182) / 255.0
+im_arr183 = np.array(im183) / 255.0
+im_arr184 = np.array(im184) / 255.0
+im_arr185 = np.array(im185) / 255.0
+im_arr186 = np.array(im186) / 255.0
+im_arr187 = np.array(im187) / 255.0
+im_arr188 = np.array(im188) / 255.0
+im_arr189 = np.array(im189) / 255.0
+im_arr190 = np.array(im190) / 255.0
+im_arr191 = np.array(im191) / 255.0
+im_arr192 = np.array(im192) / 255.0
+im_arr193 = np.array(im193) / 255.0
+im_arr194 = np.array(im194) / 255.0
+im_arr195 = np.array(im195) / 255.0
+im_arr196 = np.array(im196) / 255.0
+im_arr197 = np.array(im197) / 255.0
+im_arr198 = np.array(im198) / 255.0
+im_arr199 = np.array(im199) / 255.0
+im_arr200 = np.array(im200) / 255.0
 #NOT HAPPY
 im_arrN1 = np.array(imN1) / 255.0
 im_arrN2 = np.array(imN2) / 255.0
@@ -833,6 +1023,54 @@ im_arrN149 = np.array(imN149) / 255.0
 im_arrN150 = np.array(imN150) / 255.0
 im_arrN151 = np.array(imN151) / 255.0
 im_arrN152 = np.array(imN152) / 255.0
+im_arrN153 = np.array(imN153) / 255.0
+im_arrN154 = np.array(imN154) / 255.0
+im_arrN155 = np.array(imN155) / 255.0
+im_arrN156 = np.array(imN156) / 255.0
+im_arrN157 = np.array(imN157) / 255.0
+im_arrN158 = np.array(imN158) / 255.0
+im_arrN159 = np.array(imN159) / 255.0
+im_arrN160 = np.array(imN160) / 255.0
+im_arrN161 = np.array(imN161) / 255.0
+im_arrN162 = np.array(imN162) / 255.0
+im_arrN163 = np.array(imN163) / 255.0
+im_arrN164 = np.array(imN164) / 255.0
+im_arrN165 = np.array(imN165) / 255.0
+im_arrN166 = np.array(imN166) / 255.0
+im_arrN167 = np.array(imN167) / 255.0
+im_arrN168 = np.array(imN168) / 255.0
+im_arrN169 = np.array(imN169) / 255.0
+im_arrN170 = np.array(imN170) / 255.0
+im_arrN171 = np.array(imN171) / 255.0
+im_arrN172 = np.array(imN172) / 255.0
+im_arrN173 = np.array(imN173) / 255.0
+im_arrN174 = np.array(imN174) / 255.0
+im_arrN175 = np.array(imN175) / 255.0
+im_arrN176 = np.array(imN176) / 255.0
+im_arrN177 = np.array(imN177) / 255.0
+im_arrN178 = np.array(imN178) / 255.0
+im_arrN179 = np.array(imN179) / 255.0
+im_arrN180 = np.array(imN180) / 255.0
+im_arrN181 = np.array(imN181) / 255.0
+im_arrN182 = np.array(imN182) / 255.0
+im_arrN183 = np.array(imN183) / 255.0
+im_arrN184 = np.array(imN184) / 255.0
+im_arrN185 = np.array(imN185) / 255.0
+im_arrN186 = np.array(imN186) / 255.0
+im_arrN187 = np.array(imN187) / 255.0
+im_arrN188 = np.array(imN188) / 255.0
+im_arrN189 = np.array(imN189) / 255.0
+im_arrN190 = np.array(imN190) / 255.0
+im_arrN191 = np.array(imN191) / 255.0
+im_arrN192 = np.array(imN192) / 255.0
+im_arrN193 = np.array(imN193) / 255.0
+im_arrN194 = np.array(imN194) / 255.0
+im_arrN195 = np.array(imN195) / 255.0
+im_arrN196 = np.array(imN196) / 255.0
+im_arrN197 = np.array(imN197) / 255.0
+im_arrN198 = np.array(imN198) / 255.0
+im_arrN199 = np.array(imN199) / 255.0
+im_arrN200 = np.array(imN200) / 255.0
 im_arrA1 = np.array(imA1) / 255.0
 im_arrA2 = np.array(imA2) / 255.0
 im_arrA3 = np.array(imA3) / 255.0
@@ -985,6 +1223,55 @@ im_arrA149 = np.array(imA149) / 255.0
 im_arrA150 = np.array(imA150) / 255.0
 im_arrA151 = np.array(imA151) / 255.0
 im_arrA152 = np.array(imA152) / 255.0
+im_arrA153 = np.array(imA153) / 255.0
+im_arrA154 = np.array(imA154) / 255.0
+im_arrA155 = np.array(imA155) / 255.0
+im_arrA156 = np.array(imA156) / 255.0
+im_arrA157 = np.array(imA157) / 255.0
+im_arrA158 = np.array(imA158) / 255.0
+im_arrA159 = np.array(imA159) / 255.0
+im_arrA160 = np.array(imA160) / 255.0
+im_arrA161 = np.array(imA161) / 255.0
+im_arrA162 = np.array(imA162) / 255.0
+im_arrA163 = np.array(imA163) / 255.0
+im_arrA164 = np.array(imA164) / 255.0
+im_arrA165 = np.array(imA165) / 255.0
+im_arrA166 = np.array(imA166) / 255.0
+im_arrA167 = np.array(imA167) / 255.0
+im_arrA168 = np.array(imA168) / 255.0
+im_arrA169 = np.array(imA169) / 255.0
+im_arrA170 = np.array(imA170) / 255.0
+im_arrA171 = np.array(imA171) / 255.0
+im_arrA172 = np.array(imA172) / 255.0
+im_arrA173 = np.array(imA173) / 255.0
+im_arrA174 = np.array(imA174) / 255.0
+im_arrA175 = np.array(imA175) / 255.0
+im_arrA176 = np.array(imA176) / 255.0
+im_arrA177 = np.array(imA177) / 255.0
+im_arrA178 = np.array(imA178) / 255.0
+im_arrA179 = np.array(imA179) / 255.0
+im_arrA180 = np.array(imA180) / 255.0
+im_arrA181 = np.array(imA181) / 255.0
+im_arrA182 = np.array(imA182) / 255.0
+im_arrA183 = np.array(imA183) / 255.0
+im_arrA184 = np.array(imA184) / 255.0
+im_arrA185 = np.array(imA185) / 255.0
+im_arrA186 = np.array(imA186) / 255.0
+im_arrA187 = np.array(imA187) / 255.0
+im_arrA188 = np.array(imA188) / 255.0
+im_arrA189 = np.array(imA189) / 255.0
+im_arrA190 = np.array(imA190) / 255.0
+im_arrA191 = np.array(imA191) / 255.0
+im_arrA192 = np.array(imA192) / 255.0
+im_arrA193 = np.array(imA193) / 255.0
+im_arrA194 = np.array(imA194) / 255.0
+im_arrA195 = np.array(imA195) / 255.0
+im_arrA196 = np.array(imA196) / 255.0
+im_arrA197 = np.array(imA197) / 255.0
+im_arrA198 = np.array(imA198) / 255.0
+im_arrA199 = np.array(imA199) / 255.0
+im_arrA200 = np.array(imA200) / 255.0
+
 #endregion
 
 #region
@@ -1141,6 +1428,53 @@ image150 = im_arr150.flatten()
 image151 = im_arr151.flatten()
 image152 = im_arr152.flatten()
 image153 = im_arr153.flatten()
+image154 = im_arr154.flatten()
+image155 = im_arr155.flatten()
+image156 = im_arr156.flatten()
+image157 = im_arr157.flatten()
+image158 = im_arr158.flatten()
+image159 = im_arr159.flatten()
+image160 = im_arr160.flatten()
+image161 = im_arr161.flatten()
+image162 = im_arr162.flatten()
+image163 = im_arr163.flatten()
+image164 = im_arr164.flatten()
+image165 = im_arr165.flatten()
+image166 = im_arr166.flatten()
+image167 = im_arr167.flatten()
+image168 = im_arr168.flatten()
+image169 = im_arr169.flatten()
+image170 = im_arr170.flatten()
+image171 = im_arr171.flatten()
+image172 = im_arr172.flatten()
+image173 = im_arr173.flatten()
+image174 = im_arr174.flatten()
+image175 = im_arr175.flatten()
+image176 = im_arr176.flatten()
+image177 = im_arr177.flatten()
+image178 = im_arr178.flatten()
+image179 = im_arr179.flatten()
+image180 = im_arr180.flatten()
+image181 = im_arr181.flatten()
+image182 = im_arr182.flatten()
+image183 = im_arr183.flatten()
+image184 = im_arr184.flatten()
+image185 = im_arr185.flatten()
+image186 = im_arr186.flatten()
+image187 = im_arr187.flatten()
+image188 = im_arr188.flatten()
+image189 = im_arr189.flatten()
+image190 = im_arr190.flatten()
+image191 = im_arr191.flatten()
+image192 = im_arr192.flatten()
+image193 = im_arr193.flatten()
+image194 = im_arr194.flatten()
+image195 = im_arr195.flatten()
+image196 = im_arr196.flatten()
+image197 = im_arr197.flatten()
+image198 = im_arr198.flatten()
+image199 = im_arr199.flatten()
+image200 = im_arr200.flatten()
 #NOT HAPPY
 imageN1 = im_arrN1.flatten()
 imageN2 = im_arrN2.flatten()
@@ -1294,6 +1628,54 @@ imageN149 = im_arrN149.flatten()
 imageN150 = im_arrN150.flatten()
 imageN151 = im_arrN151.flatten()
 imageN152 = im_arrN152.flatten()
+imageN153 = im_arrN153.flatten()
+imageN154 = im_arrN154.flatten()
+imageN155 = im_arrN155.flatten()
+imageN156 = im_arrN156.flatten()
+imageN157 = im_arrN157.flatten()
+imageN158 = im_arrN158.flatten()
+imageN159 = im_arrN159.flatten()
+imageN160 = im_arrN160.flatten()
+imageN161 = im_arrN161.flatten()
+imageN162 = im_arrN162.flatten()
+imageN163 = im_arrN163.flatten()
+imageN164 = im_arrN164.flatten()
+imageN165 = im_arrN165.flatten()
+imageN166 = im_arrN166.flatten()
+imageN167 = im_arrN167.flatten()
+imageN168 = im_arrN168.flatten()
+imageN169 = im_arrN169.flatten()
+imageN170 = im_arrN170.flatten()
+imageN171 = im_arrN171.flatten()
+imageN172 = im_arrN172.flatten()
+imageN173 = im_arrN173.flatten()
+imageN174 = im_arrN174.flatten()
+imageN175 = im_arrN175.flatten()
+imageN176 = im_arrN176.flatten()
+imageN177 = im_arrN177.flatten()
+imageN178 = im_arrN178.flatten()
+imageN179 = im_arrN179.flatten()
+imageN180 = im_arrN180.flatten()
+imageN181 = im_arrN181.flatten()
+imageN182 = im_arrN182.flatten()
+imageN183 = im_arrN183.flatten()
+imageN184 = im_arrN184.flatten()
+imageN185 = im_arrN185.flatten()
+imageN186 = im_arrN186.flatten()
+imageN187 = im_arrN187.flatten()
+imageN188 = im_arrN188.flatten()
+imageN189 = im_arrN189.flatten()
+imageN190 = im_arrN190.flatten()
+imageN191 = im_arrN191.flatten()
+imageN192 = im_arrN192.flatten()
+imageN193 = im_arrN193.flatten()
+imageN194 = im_arrN194.flatten()
+imageN195 = im_arrN195.flatten()
+imageN196 = im_arrN196.flatten()
+imageN197 = im_arrN197.flatten()
+imageN198 = im_arrN198.flatten()
+imageN199 = im_arrN199.flatten()
+imageN200 = im_arrN200.flatten()
 imageA1 = im_arrA1.flatten()
 imageA2 = im_arrA2.flatten()
 imageA3 = im_arrA3.flatten()
@@ -1446,6 +1828,55 @@ imageA149 = im_arrA149.flatten()
 imageA150 = im_arrA150.flatten()
 imageA151 = im_arrA151.flatten()
 imageA152 = im_arrA152.flatten()
+imageA153 = im_arrA153.flatten()
+imageA154 = im_arrA154.flatten()
+imageA155 = im_arrA155.flatten()
+imageA156 = im_arrA156.flatten()
+imageA157 = im_arrA157.flatten()
+imageA158 = im_arrA158.flatten()
+imageA159 = im_arrA159.flatten()
+imageA160 = im_arrA160.flatten()
+imageA161 = im_arrA161.flatten()
+imageA162 = im_arrA162.flatten()
+imageA163 = im_arrA163.flatten()
+imageA164 = im_arrA164.flatten()
+imageA165 = im_arrA165.flatten()
+imageA166 = im_arrA166.flatten()
+imageA167 = im_arrA167.flatten()
+imageA168 = im_arrA168.flatten()
+imageA169 = im_arrA169.flatten()
+imageA170 = im_arrA170.flatten()
+imageA171 = im_arrA171.flatten()
+imageA172 = im_arrA172.flatten()
+imageA173 = im_arrA173.flatten()
+imageA174 = im_arrA174.flatten()
+imageA175 = im_arrA175.flatten()
+imageA176 = im_arrA176.flatten()
+imageA177 = im_arrA177.flatten()
+imageA178 = im_arrA178.flatten()
+imageA179 = im_arrA179.flatten()
+imageA180 = im_arrA180.flatten()
+imageA181 = im_arrA181.flatten()
+imageA182 = im_arrA182.flatten()
+imageA183 = im_arrA183.flatten()
+imageA184 = im_arrA184.flatten()
+imageA185 = im_arrA185.flatten()
+imageA186 = im_arrA186.flatten()
+imageA187 = im_arrA187.flatten()
+imageA188 = im_arrA188.flatten()
+imageA189 = im_arrA189.flatten()
+imageA190 = im_arrA190.flatten()
+imageA191 = im_arrA191.flatten()
+imageA192 = im_arrA192.flatten()
+imageA193 = im_arrA193.flatten()
+imageA194 = im_arrA194.flatten()
+imageA195 = im_arrA195.flatten()
+imageA196 = im_arrA196.flatten()
+imageA197 = im_arrA197.flatten()
+imageA198 = im_arrA198.flatten()
+imageA199 = im_arrA199.flatten()
+imageA200 = im_arrA200.flatten()
+
 #endregion
 
 
@@ -1464,7 +1895,11 @@ dataset = np.array([image1, image2, image3, image4, image5, image6, image7, imag
                     image122, image123, image124, image125, image126, image127, image128, image129, image130, image131,
                     image132, image133, image134, image135, image136, image137, image138, image139, image140, image141,
                     image142, image143, image144, image145, image146, image147, image148, image149, image150, image151,
-                    image152, image153,
+                    image152, image153, image154, image155, image156, image157, image158, image159, image160, image161,
+                    image162, image163, image164, image165, image166, image167, image168, image169, image170, image171,
+                    image172, image173, image174, image175, image176, image177, image178, image179, image180, image181,
+                    image182, image183, image184, image185, image186, image187, image188, image189, image190, image191,
+                    image192, image193, image194, image195, image196, image197, image198, image199, image200,
 
                     imageN1, imageN2, imageN3, imageN4, imageN5, imageN6, imageN7, imageN8, imageN9, imageN10, imageN11,
                     imageN12, imageN13, imageN14, imageN15, imageN16, imageN17, imageN18, imageN19, imageN20,  imageN21,
@@ -1481,7 +1916,12 @@ dataset = np.array([image1, image2, image3, image4, image5, image6, image7, imag
                     imageN122, imageN123, imageN124, imageN125, imageN126, imageN127, imageN128, imageN129, imageN130, imageN131,
                     imageN132, imageN133, imageN134, imageN135, imageN136, imageN137, imageN138, imageN139, imageN140, imageN141,
                     imageN142, imageN143, imageN144, imageN145, imageN146, imageN147, imageN148, imageN149, imageN150, imageN151,
-                    imageN152,
+                    imageN152, imageN153, imageN154, imageN155, imageN156, imageN157, imageN158, imageN159, imageN160, imageN161,
+                    imageN162, imageN163, imageN164, imageN165, imageN166, imageN167, imageN168, imageN169, imageN170, imageN171,
+                    imageN172, imageN173, imageN174, imageN175, imageN176, imageN177, imageN178, imageN179, imageN180, imageN181,
+                    imageN182, imageN183, imageN184, imageN185, imageN186, imageN187, imageN188, imageN189, imageN190, imageN191,
+                    imageN192, imageN193, imageN194, imageN195, imageN196, imageN197, imageN198, imageN199, imageN200,
+
 
                     imageA1, imageA2, imageA3, imageA4, imageA5, imageA6, imageA7, imageA8, imageA9, imageA10, imageA11,
                     imageA12, imageA13, imageA14, imageA15, imageA16, imageA17, imageA18, imageA19, imageA20, imageA21,
@@ -1492,19 +1932,17 @@ dataset = np.array([image1, image2, image3, image4, image5, image6, image7, imag
                     imageA62, imageA63, imageA64, imageA65, imageA66, imageA67, imageA68, imageA69, imageA70, imageA71,
                     imageA72, imageA73, imageA74, imageA75, imageA76, imageA77, imageA78, imageA79, imageA80, imageA81,
                     imageA82, imageA83, imageA84, imageA85, imageA86, imageA87, imageA88, imageA89, imageA90, imageA91,
-                    imageA92, imageA93, imageA94, imageA95, imageA96, imageA97, imageA98, imageA99, imageA100,
-                    imageA101,
-                    imageA102, imageA103, imageA104, imageA105, imageA106, imageA107, imageA108, imageA109, imageA110,
-                    imageA111,
-                    imageA112, imageA113, imageA114, imageA115, imageA116, imageA117, imageA118, imageA119, imageA120,
-                    imageA121,
-                    imageA122, imageA123, imageA124, imageA125, imageA126, imageA127, imageA128, imageA129, imageA130,
-                    imageA131,
-                    imageA132, imageA133, imageA134, imageA135, imageA136, imageA137, imageA138, imageA139, imageA140,
-                    imageA141,
-                    imageA142, imageA143, imageA144, imageA145, imageA146, imageA147, imageA148, imageA149, imageA150,
-                    imageA151,
-                    imageA152], dtype='float64')
+                    imageA92, imageA93, imageA94, imageA95, imageA96, imageA97, imageA98, imageA99, imageA100,imageA101,
+                    imageA102, imageA103, imageA104, imageA105, imageA106, imageA107, imageA108, imageA109, imageA110,imageA111,
+                    imageA112, imageA113, imageA114, imageA115, imageA116, imageA117, imageA118, imageA119, imageA120,imageA121,
+                    imageA122, imageA123, imageA124, imageA125, imageA126, imageA127, imageA128, imageA129, imageA130,imageA131,
+                    imageA132, imageA133, imageA134, imageA135, imageA136, imageA137, imageA138, imageA139, imageA140,imageA141,
+                    imageA142, imageA143, imageA144, imageA145, imageA146, imageA147, imageA148, imageA149, imageA150,imageA151,
+                    imageA152, imageA153, imageA154, imageA155, imageA156, imageA157, imageA158, imageA159, imageA160, imageA161,
+                    imageA162, imageA163, imageA164, imageA165, imageA166, imageA167, imageA168, imageA169, imageA170, imageA171,
+                    imageA172, imageA173, imageA174, imageA175, imageA176, imageA177, imageA178, imageA179, imageA180, imageA181,
+                    imageA182, imageA183, imageA184, imageA185, imageA186, imageA187, imageA188, imageA189, imageA190, imageA191,
+                    imageA192, imageA193, imageA194, imageA195, imageA196, imageA197, imageA198, imageA199, imageA200], dtype='float64')
 
 
 
@@ -1516,7 +1954,9 @@ dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -1525,19 +1965,24 @@ dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
 
-                                    - 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
                                     ], dtype='float64')
 
-
+print(dataset.shape)
+print(dataset_expected_output.shape)
 L = np.array([
     2,
     2,
@@ -1596,8 +2041,8 @@ for inputs_k in dataset:
         L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)),
         inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
     )
-    print(output[0])
-    print(dataset_expected_output[count])
+    #print(output[0])
+    #print(dataset_expected_output[count])
     if output[0] != dataset_expected_output[count]:
         if abs(output[0] - dataset_expected_output[count]) > error:
             bad = bad + 1
