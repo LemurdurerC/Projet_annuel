@@ -216,8 +216,8 @@ if __name__ == "__main__":
 
 
 
-    enter = A
-    exit = B
+    enter = E
+    exit = F
     alpha = 0.1
     iteration = 1000
     flattened_X = enter.flatten()

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="643fb0c3-36fb-45fc-9976-76bfb8cad01c" name="Default Changelist" comment="">
+    <list default="true" id="3f490ace-f9ef-4668-8436-d0608b0b933a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/CMakeFiles/LinearModelCppLib.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/CMakeFiles/LinearModelCppLib.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.exp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.exp" afterDir="false" />
@@ -9,8 +9,10 @@
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.lib" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.lib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/library.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../All_Models_Python/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../All_Models_Python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../All_Models_Python/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LinearModel_Python/LineaModel_Python.py" beforeDir="false" afterPath="$PROJECT_DIR$/../LinearModel_Python/LineaModel_Python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LinearModel_Python/model_linear.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../LinearModel_Python/model_linear.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MLPForDatatset/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../MLPForDatatset/.idea/MLPForDatatset.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../MLPForDatatset/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
@@ -24,10 +26,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1eB0hox6PDEXTCDCfiSg2FZdztm" />
+  <component name="ProjectId" id="1erwPhr9ts9cXtGyS6TEdP872gB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,36 +45,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LinearModel_Python" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="643fb0c3-36fb-45fc-9976-76bfb8cad01c" name="Default Changelist" comment="" />
-      <created>1593779800191</created>
+      <changelist id="3f490ace-f9ef-4668-8436-d0608b0b933a" name="Default Changelist" comment="" />
+      <created>1595092996259</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1593779800191</updated>
-      <workItem from="1593779801630" duration="2670000" />
-      <workItem from="1593976516092" duration="778000" />
-      <workItem from="1594025327209" duration="64000" />
-      <workItem from="1594025408632" duration="101000" />
-      <workItem from="1594985397799" duration="64000" />
-      <workItem from="1595092880608" duration="30000" />
+      <updated>1595092996259</updated>
+      <workItem from="1595092997421" duration="10000" />
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1595092909425">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595092909425" />
   </component>
 </project>
