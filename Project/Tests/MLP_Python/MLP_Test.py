@@ -232,12 +232,17 @@ if __name__ == "__main__":
 
     model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
-    enter = C
-    exit = D
+    enter = A
+    exit = B
     alpha = 0.1
-    iteration = 100000
+    iteration = 1000
 
     flattened_X = enter.flatten()
+
+    print(A)
+    print(B)
+    print(alpha)
+    print(iteration)
 
     my_lib.train_MLP_Classification(
         model,
@@ -263,7 +268,7 @@ if __name__ == "__main__":
             L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)),
             inputs_k.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
         )
-        #print(result[0])
+        print(result[0])
         if result[0] != exit[count]:
             if abs(result[0] - exit[count]) > error:
                 bad = bad + 1
@@ -274,5 +279,5 @@ if __name__ == "__main__":
     print(percentOfBadPrediction(enter.shape[0], bad), "% de mauvaise prédiction")
 
 
-my_lib.dispose_MLP(model)
+    my_lib.dispose_MLP(model)
     

@@ -1672,6 +1672,28 @@ imNTest27 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Proj
 imNTest28 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/28.jpeg")
 imNTest29 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/29.jpeg")
 imNTest30 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/30.jpeg")
+imTestN100 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/100.jpeg")
+imTestN101 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/101.jpeg")
+imTestN102 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/102.jpg")
+imTestN103 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/103.jpg")
+imTestN104 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/104.jpg")
+imTestN105 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/105.jpg")
+imTestN106 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/106.jpg")
+imTestN107 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/107.jpg")
+imTestN108 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/108.jpg")
+imTestN109 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/109.jpg")
+imTestN110 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/110.jpg")
+imTestN200 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/200.jpg")
+imTestN201 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/201.jpg")
+imTestN202 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/202.jpg")
+imTestN203 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/203.jpg")
+imTestN204 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/204.jpg")
+imTestN205 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/205.jpg")
+imTestN206 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/206.jpg")
+imTestN207 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/207.jpg")
+imTestN208 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/208.jpg")
+imTestN209 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/209.jpg")
+imTestN210 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Neutral/210.jpg")
 imATest = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/1.jpeg")
 imATest2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/2.jpeg")
 imATest3 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/3.jpeg")
@@ -1702,6 +1724,29 @@ imATest27 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Proj
 imATest28 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/28.jpeg")
 imATest29 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/29.jpeg")
 imATest30 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/30.jpeg")
+imTestA100 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/100.jpeg")
+imTestA101 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/101.jpg")
+imTestA102 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/102.jpg")
+imTestA103 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/103.jpg")
+imTestA104 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/104.jpg")
+imTestA105 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/105.jpg")
+imTestA106 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/106.jpg")
+imTestA107 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/107.jpg")
+imTestA108 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/108.jpg")
+imTestA109 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/109.jpg")
+imTestA110 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/110.jpg")
+imTestA200 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/200.jpg")
+imTestA201 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/201.jpg")
+imTestA202 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/202.jpg")
+imTestA203 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/203.jpg")
+imTestA204 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/204.jpg")
+imTestA205 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/205.jpg")
+imTestA206 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/206.jpg")
+imTestA207 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/207.jpg")
+imTestA208 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/208.jpg")
+imTestA209 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/209.jpg")
+imTestA210 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Test/Angry/210.jpg")
+
 #endregion
 
 #region
@@ -1788,6 +1833,28 @@ im_arrNTest27 = np.array(imNTest27) / 255.0
 im_arrNTest28 = np.array(imNTest28) / 255.0
 im_arrNTest29 = np.array(imNTest29) / 255.0
 im_arrNTest30 = np.array(imNTest30) / 255.0
+im_arrNTest100 = np.array(imTestN100) / 255.0
+im_arrNTest101 = np.array(imTestN101) / 255.0
+im_arrNTest102 = np.array(imTestN102) / 255.0
+im_arrNTest103 = np.array(imTestN103) / 255.0
+im_arrNTest104 = np.array(imTestN104) / 255.0
+im_arrNTest105 = np.array(imTestN105) / 255.0
+im_arrNTest106 = np.array(imTestN106) / 255.0
+im_arrNTest107 = np.array(imTestN107) / 255.0
+im_arrNTest108 = np.array(imTestN108) / 255.0
+im_arrNTest109 = np.array(imTestN109) / 255.0
+im_arrNTest110 = np.array(imTestN110) / 255.0
+im_arrNTest200 = np.array(imTestN200) / 255.0
+im_arrNTest201 = np.array(imTestN201) / 255.0
+im_arrNTest202 = np.array(imTestN202) / 255.0
+im_arrNTest203 = np.array(imTestN203) / 255.0
+im_arrNTest204 = np.array(imTestN204) / 255.0
+im_arrNTest205 = np.array(imTestN205) / 255.0
+im_arrNTest206 = np.array(imTestN206) / 255.0
+im_arrNTest207 = np.array(imTestN207) / 255.0
+im_arrNTest208 = np.array(imTestN208) / 255.0
+im_arrNTest209 = np.array(imTestN209) / 255.0
+im_arrNTest210 = np.array(imTestN210) / 255.0
 im_arrATest = np.array(imATest) / 255.0
 im_arrATest2 = np.array(imATest2) / 255.0
 im_arrATest3 = np.array(imATest3) / 255.0
@@ -1818,6 +1885,28 @@ im_arrATest27 = np.array(imATest27) / 255.0
 im_arrATest28 = np.array(imATest28) / 255.0
 im_arrATest29 = np.array(imATest29) / 255.0
 im_arrATest30 = np.array(imATest30) / 255.0
+im_arrATest100 = np.array(imTestA100) / 255.0
+im_arrATest101 = np.array(imTestA101) / 255.0
+im_arrATest102 = np.array(imTestA102) / 255.0
+im_arrATest103 = np.array(imTestA103) / 255.0
+im_arrATest104 = np.array(imTestA104) / 255.0
+im_arrATest105 = np.array(imTestA105) / 255.0
+im_arrATest106 = np.array(imTestA106) / 255.0
+im_arrATest107 = np.array(imTestA107) / 255.0
+im_arrATest108 = np.array(imTestA108) / 255.0
+im_arrATest109 = np.array(imTestA109) / 255.0
+im_arrATest110 = np.array(imTestA110) / 255.0
+im_arrATest200 = np.array(imTestA200) / 255.0
+im_arrATest201 = np.array(imTestA201) / 255.0
+im_arrATest202 = np.array(imTestA202) / 255.0
+im_arrATest203 = np.array(imTestA203) / 255.0
+im_arrATest204 = np.array(imTestA204) / 255.0
+im_arrATest205 = np.array(imTestA205) / 255.0
+im_arrATest206 = np.array(imTestA206) / 255.0
+im_arrATest207 = np.array(imTestA207) / 255.0
+im_arrATest208 = np.array(imTestA208) / 255.0
+im_arrATest209 = np.array(imTestA209) / 255.0
+im_arrATest210 = np.array(imTestA210) / 255.0
 #endregion
 
 
@@ -1905,6 +1994,28 @@ imageNTest27 = im_arrNTest27.flatten()
 imageNTest28 = im_arrNTest28.flatten()
 imageNTest29 = im_arrNTest29.flatten()
 imageNTest30 = im_arrNTest30.flatten()
+imageNTest100 = im_arrNTest100.flatten()
+imageNTest101 = im_arrNTest101.flatten()
+imageNTest102 = im_arrNTest102.flatten()
+imageNTest103 = im_arrNTest103.flatten()
+imageNTest104 = im_arrNTest104.flatten()
+imageNTest105 = im_arrNTest105.flatten()
+imageNTest106 = im_arrNTest106.flatten()
+imageNTest107 = im_arrNTest107.flatten()
+imageNTest108 = im_arrNTest108.flatten()
+imageNTest109 = im_arrNTest109.flatten()
+imageNTest110 = im_arrNTest110.flatten()
+imageNTest200 = im_arrNTest200.flatten()
+imageNTest201 = im_arrNTest201.flatten()
+imageNTest202 = im_arrNTest202.flatten()
+imageNTest203 = im_arrNTest203.flatten()
+imageNTest204 = im_arrNTest204.flatten()
+imageNTest205 = im_arrNTest205.flatten()
+imageNTest206 = im_arrNTest206.flatten()
+imageNTest207 = im_arrNTest207.flatten()
+imageNTest208 = im_arrNTest208.flatten()
+imageNTest209 = im_arrNTest209.flatten()
+imageNTest210 = im_arrNTest210.flatten()
 imageATest = im_arrATest.flatten()
 imageATest2 = im_arrATest2.flatten()
 imageATest3 = im_arrATest3.flatten()
@@ -1935,6 +2046,28 @@ imageATest27 = im_arrATest27.flatten()
 imageATest28 = im_arrATest28.flatten()
 imageATest29 = im_arrATest29.flatten()
 imageATest30 = im_arrATest30.flatten()
+imageATest100 = im_arrATest100.flatten()
+imageATest101 = im_arrATest101.flatten()
+imageATest102 = im_arrATest102.flatten()
+imageATest103 = im_arrATest103.flatten()
+imageATest104 = im_arrATest104.flatten()
+imageATest105 = im_arrATest105.flatten()
+imageATest106 = im_arrATest106.flatten()
+imageATest107 = im_arrATest107.flatten()
+imageATest108 = im_arrATest108.flatten()
+imageATest109 = im_arrATest109.flatten()
+imageATest110 = im_arrATest110.flatten()
+imageATest200 = im_arrATest200.flatten()
+imageATest201 = im_arrATest201.flatten()
+imageATest202 = im_arrATest202.flatten()
+imageATest203 = im_arrATest203.flatten()
+imageATest204 = im_arrATest204.flatten()
+imageATest205 = im_arrATest205.flatten()
+imageATest206 = im_arrATest206.flatten()
+imageATest207 = im_arrATest207.flatten()
+imageATest208 = im_arrATest208.flatten()
+imageATest209 = im_arrATest209.flatten()
+imageATest210 = im_arrATest210.flatten()
 #endregion
 
 
@@ -1947,10 +2080,14 @@ datasetTest = np.array([imageTest, imageTest2, imageTest3, imageTest4, imageTest
                         imageNTest, imageNTest2, imageNTest3, imageNTest4, imageNTest5, imageNTest6, imageNTest7, imageNTest8,imageNTest9, imageNTest10,
                         imageNTest11, imageNTest12, imageNTest13, imageNTest14, imageNTest15, imageNTest16, imageNTest17,imageNTest18, imageNTest19, imageNTest20,
                         imageNTest21, imageNTest22, imageNTest23, imageNTest24, imageNTest25, imageNTest26, imageNTest27,imageNTest28, imageNTest29, imageNTest30,
+                        imageNTest100, imageNTest101, imageNTest102, imageNTest103, imageNTest104, imageNTest105, imageNTest106, imageNTest107,imageNTest108,imageNTest109,imageNTest110,
+                        imageNTest200, imageNTest201, imageNTest202, imageNTest203, imageNTest204, imageNTest205, imageNTest206, imageNTest207,imageNTest208,imageNTest209,imageNTest210,
 
                         imageATest, imageATest2, imageATest3, imageATest4, imageATest5, imageATest6, imageATest7, imageATest8, imageATest9, imageATest10,
                         imageATest11, imageATest12, imageATest13, imageATest14, imageATest15, imageATest16, imageATest17, imageATest18, imageATest19, imageATest20,
-                        imageATest21, imageATest22, imageATest23, imageATest24, imageATest25, imageATest26, imageATest27, imageATest28, imageATest29, imageATest30
+                        imageATest21, imageATest22, imageATest23, imageATest24, imageATest25, imageATest26, imageATest27, imageATest28, imageATest29, imageATest30,
+                        imageATest100, imageATest101, imageATest102, imageATest103, imageATest104, imageATest105, imageATest106, imageATest107,imageATest108,imageATest109,imageATest110,
+                        imageATest200, imageATest201, imageATest202, imageATest203, imageATest204, imageATest205, imageATest206, imageATest207,imageATest208,imageATest209,imageATest210
 
                         ], dtype='float64')
 
@@ -1959,10 +2096,12 @@ dataset_expected_outputTest = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
                                         1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
 
-                                        - 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
+                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
 
                                         ], dtype='float64')
 

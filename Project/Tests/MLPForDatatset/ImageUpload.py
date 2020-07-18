@@ -1540,7 +1540,7 @@ dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
 L = np.array([
     2,
-    2,
+    4,
     1
 ], dtype='int32')
 
@@ -1566,6 +1566,7 @@ model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctyp
 flattened_Dataset = dataset.flatten()
 
 
+alpha = 0.1
 iteration = 10000
 
 my_lib.train_MLP_Classification(
@@ -1576,7 +1577,7 @@ my_lib.train_MLP_Classification(
     dataset_expected_output.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),
     dataset.shape[0],
     dataset.shape[1],
-    0.1,
+    alpha,
     iteration
 )
 
