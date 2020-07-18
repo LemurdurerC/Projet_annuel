@@ -1540,7 +1540,7 @@ dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
 L = np.array([
     2,
-    4,
+    2,
     1
 ], dtype='int32')
 
@@ -1567,7 +1567,7 @@ flattened_Dataset = dataset.flatten()
 
 
 alpha = 0.1
-iteration = 10000
+iteration = 500000
 
 my_lib.train_MLP_Classification(
     model,
