@@ -1883,7 +1883,28 @@ imageA200 = im_arrA200.flatten()
 #endregion
 
 
-dataset = np.array([imageN1, imageN2, imageN3, imageN4, imageN5, imageN6, imageN7, imageN8, imageN9, imageN10, imageN11,
+dataset = np.array([image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11,
+                    image12, image13, image14, image15, image16, image17, image18, image19, image20, image21,
+                    image22, image23, image24, image25, image26, image27, image28, image29, image30, image31,
+                    image32, image33, image34, image35, image36, image37, image38, image39, image40, image41,
+                    image42, image43, image44, image45, image46, image47, image48, image49, image50, image51,
+                    image52, image53, image54, image55, image56, image57, image58, image59, image60, image61,
+                    image62, image63, image64, image65, image66, image67, image68, image69, image70, image71,
+                    image72, image73, image74, image75, image76, image77, image78, image79, image80, image81,
+                    image82, image83, image84, image85, image86, image87, image88, image89, image90, image91,
+                    image92, image93, image94, image95, image96, image97, image98, image99, image100, image101,
+                    image102, image103, image104, image105, image106, image107, image108, image109, image110, image111,
+                    image112, image113, image114, image115, image116, image117, image118, image119, image120, image121,
+                    image122, image123, image124, image125, image126, image127, image128, image129, image130, image131,
+                    image132, image133, image134, image135, image136, image137, image138, image139, image140, image141,
+                    image142, image143, image144, image145, image146, image147, image148, image149, image150, image151,
+                    image152, image153, image154, image155, image156, image157, image158, image159, image160, image161,
+                    image162, image163, image164, image165, image166, image167, image168, image169, image170, image171,
+                    image172, image173, image174, image175, image176, image177, image178, image179, image180, image181,
+                    image182, image183, image184, image185, image186, image187, image188, image189, image190, image191,
+                    image192, image193, image194, image195, image196, image197, image198, image199, image200,
+
+                    imageN1, imageN2, imageN3, imageN4, imageN5, imageN6, imageN7, imageN8, imageN9, imageN10, imageN11,
                     imageN12, imageN13, imageN14, imageN15, imageN16, imageN17, imageN18, imageN19, imageN20,  imageN21,
                     imageN22, imageN23, imageN24, imageN25, imageN26, imageN27, imageN28, imageN29, imageN30, imageN31,
                     imageN32, imageN33, imageN34, imageN35, imageN36, imageN37, imageN38, imageN39, imageN40, imageN41,
@@ -1904,26 +1925,6 @@ dataset = np.array([imageN1, imageN2, imageN3, imageN4, imageN5, imageN6, imageN
                     imageN182, imageN183, imageN184, imageN185, imageN186, imageN187, imageN188, imageN189, imageN190, imageN191,
                     imageN192, imageN193, imageN194, imageN195, imageN196, imageN197, imageN198, imageN199, imageN200,
 
-                    image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11,
-                    image12, image13, image14, image15, image16, image17, image18, image19, image20, image21,
-                    image22, image23, image24, image25, image26, image27, image28, image29, image30, image31,
-                    image32, image33, image34, image35, image36, image37, image38, image39, image40, image41,
-                    image42, image43, image44, image45, image46, image47, image48, image49, image50, image51,
-                    image52, image53, image54, image55, image56, image57, image58, image59, image60, image61,
-                    image62, image63, image64, image65, image66, image67, image68, image69, image70, image71,
-                    image72, image73, image74, image75, image76, image77, image78, image79, image80, image81,
-                    image82, image83, image84, image85, image86, image87, image88, image89, image90, image91,
-                    image92, image93, image94, image95, image96, image97, image98, image99, image100, image101,
-                    image102, image103, image104, image105, image106, image107, image108, image109, image110, image111,
-                    image112, image113, image114, image115, image116, image117, image118, image119, image120, image121,
-                    image122, image123, image124, image125, image126, image127, image128, image129, image130, image131,
-                    image132, image133, image134, image135, image136, image137, image138, image139, image140, image141,
-                    image142, image143, image144, image145, image146, image147, image148, image149, image150, image151,
-                    image152, image153, image154, image155, image156, image157, image158, image159, image160, image161,
-                    image162, image163, image164, image165, image166, image167, image168, image169, image170, image171,
-                    image172, image173, image174, image175, image176, image177, image178, image179, image180, image181,
-                    image182, image183, image184, image185, image186, image187, image188, image189, image190, image191,
-                    image192, image193, image194, image195, image196, image197, image198, image199, image200,
 
                     imageA1, imageA2, imageA3, imageA4, imageA5, imageA6, imageA7, imageA8, imageA9, imageA10, imageA11,
                     imageA12, imageA13, imageA14, imageA15, imageA16, imageA17, imageA18, imageA19, imageA20, imageA21,
@@ -1949,18 +1950,7 @@ dataset = np.array([imageN1, imageN2, imageN3, imageN4, imageN5, imageN6, imageN
 
 
 
-dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-
-                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+dataset_expected_output = np.array([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -1971,7 +1961,18 @@ dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
 
-                                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+									
+									-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -2724,16 +2725,17 @@ dataset_expected_outputTest = np.array([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
                                         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-
-                                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+									
+										1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-
+										
                                         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
+                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,                   
+										
 
                                         ], dtype='float64')
 

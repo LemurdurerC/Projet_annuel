@@ -1,4 +1,3 @@
-# -- coding: utf-8 --
 from PIL import Image
 import numpy as np
 import ctypes
@@ -1972,8 +1971,8 @@ dataset_expected_output = np.array([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-
-                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+									
+									1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -2021,8 +2020,8 @@ for inputs_k in dataset:
         bad = bad + 1
     count = count + 1
 
-print(percentOfGoodPrediction(dataset.shape[0], bad), "% de bonne pr�diction")
-print(percentOfBadPrediction(dataset.shape[0], bad), "% de mauvaise pr�diction")
+print(percentOfGoodPrediction(dataset.shape[0], bad), "% de bonne prédiction")
+print(percentOfBadPrediction(dataset.shape[0], bad), "% de mauvaise prédiction")
 
 
 
@@ -2730,9 +2729,9 @@ dataset_expected_outputTest = np.array([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
                                         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-
-                                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,                   
+										
+										1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
@@ -2754,8 +2753,8 @@ for inputs_k in datasetTest:
         bad = bad + 1
     count = count + 1
 
-print(percentOfGoodPrediction(datasetTest.shape[0], bad), "% de bonne pr�diction")
-print(percentOfBadPrediction(datasetTest.shape[0], bad), "% de mauvaise pr�diction")
+print(percentOfGoodPrediction(datasetTest.shape[0], bad), "% de bonne prédiction")
+print(percentOfBadPrediction(datasetTest.shape[0], bad), "% de mauvaise prédiction")
 
 
 my_lib.linear_dispose_model(model)
