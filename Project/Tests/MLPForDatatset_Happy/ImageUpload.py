@@ -2016,7 +2016,7 @@ flattened_Dataset = dataset.flatten()
 
 
 alpha = 1
-iteration = 50000
+iteration = 10000
 
 my_lib.train_MLP_Classification(
     model,

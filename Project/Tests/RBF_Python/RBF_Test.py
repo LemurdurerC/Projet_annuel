@@ -234,11 +234,11 @@ if __name__ == "__main__":
 
 
     min = 0
-    max = 3
+    max = 9
     numberOfCluser = 2
-    gamma = 0.1
-    enter = C
-    exit = D
+    gamma = 0.01
+    enter = A
+    exit = B
     flattened_X = enter.flatten()
 
 
