@@ -1,0 +1,29 @@
+Les tests des modèles sont à lancer dans le dossier "Project\Tests":
+
+"LinearModel_Python" contient le modèle linéaire avec tous les cas de test
+"LinearModelForDataset_Happy" contient le modèle linéaire avec tout le dataset et prédit la classe Happy
+"LinearModelForDataset_Neutral" contient le modèle linéaire avec tout le dataset et prédit la classe Neutral
+"LinearModelForDataset_Angry" contient le modèle linéaire avec tout le dataset et prédit la classe Angry
+
+"MLP_Python" contient le MLP avec tous les cas de test
+"MLPForDataset_Happy" contient le MLP avec tout le dataset et prédit la classe Happy
+"MLPForDataset_Neutral" contient le MLP avec tout le dataset et prédit la classe Neutral
+"MLPForDataset_Angry" contient le MLP avec tout le dataset et prédit la classe Angry
+
+"RBF_Python" contient le RBF avec les KMeans avec tous les cas de test
+
+
+
+
+
+Les tests des modèles avec le Framework sont à lancer dans le dossier "Docs\Rapport":
+
+"Modele_lineaire_CasDeTest" contient le modèle linéaire avec tous les cas de test
+"MLP_CasDeTest" contient le MLP avec tous les cas de test
+
+
+
+
+
+Les tests de l'application sont à lancer dans le dossier "Project\App":
+ 

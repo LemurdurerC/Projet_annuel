@@ -6,11 +6,12 @@
 
 #include "library.h"
 #include <iostream>
+#include <fstream>
 #include <cstdlib>
 #include <random>
 #include <Eigen/Dense>
 using Eigen::MatrixXd;
-
+using namespace std;
 
 MatrixXd tabToMatrix( double *tab, int tabSize, int exampleCount_or_ROW, int inputsSize_or_COL) {
 
@@ -180,9 +181,34 @@ extern  "C"{
 
     matriceToTab(W_mat, model, dataset_sample_features_count+1, dataset_sample_features_count+1, 1);
 
-}
+    }
 
 
+    DLLEXPORT void ecriture(double *model, int nbFeatures){
+        ofstream flux;
+        flux.open("model_linear.txt");
+        if (flux)
+        {
+            for (auto i = 0; i < nbFeatures + 1; i++) {
+                flux << model[i] << endl;
+            }
+        }
+        else{
+            cout << "Erreur : Fichier impossible à ouvrir" << endl;
+        }
+    }
 
+    DLLEXPORT double * lecture(int nbFeatures) {
+    double *W = new double[nbFeatures+1];
+    ifstream fichier("model_linear.txt", ios::in);
+    if (fichier) {
+        for (auto i = 0; i < nbFeatures + 1; i++) {
+            fichier >> W[i];
+        }
+    } else {
+        cout << "Erreur";
+    }
+    return W;
 
+    }
 }

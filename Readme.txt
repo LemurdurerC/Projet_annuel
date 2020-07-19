@@ -1,13 +1,4 @@
-Les tests sur le dataset sont faits dans les dossiers :
-- Tests/LinearModelForDataset
-- Tests/MLPForDataset
-Les tests sur les cas de test sont faits dans les dossier :
-- ...
-- Tests/MLP_Python
-
-
-
-
+Les étapes des tests sont spécifiés dans "Todo"
 
 
 
