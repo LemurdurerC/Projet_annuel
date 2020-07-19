@@ -216,8 +216,8 @@ if __name__ == "__main__":
 
 
 
-    enter = E
-    exit = F
+    enter = O
+    exit = P
     alpha = 0.1
     iteration = 1000
     flattened_X = enter.flatten()
@@ -240,7 +240,7 @@ if __name__ == "__main__":
     print("After Training...")
     count = 0
     bad = 0
-    error = 0.2
+    error = 0.3
     for inputs_k in enter:
         result = my_lib.linear_predict_model_classification(
             model,

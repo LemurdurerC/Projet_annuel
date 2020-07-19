@@ -234,12 +234,12 @@ if __name__ == "__main__":
 
 
 
-    enter = E
-    exit = F
+    enter = A
+    exit = B
 
     L = np.array([
         enter.shape[1],
-        4,
+        2,
         1
     ], dtype='int32')
 
@@ -250,10 +250,6 @@ if __name__ == "__main__":
 
     flattened_X = enter.flatten()
 
-    print(enter)
-    print(exit)
-    print(alpha)
-    print(iteration)
 
     my_lib.train_MLP_Classification(
         model,
@@ -272,7 +268,7 @@ if __name__ == "__main__":
     print("After Training...")
     count = 0
     bad = 0
-    error = 0.2
+    error = 0.3
     for inputs_k in enter:
         result = my_lib.predict_MLP_Classification(
             model,
