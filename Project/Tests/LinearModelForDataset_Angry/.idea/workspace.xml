@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e186f27c-ca1d-4caf-904a-ae378f4fe776" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Docs/Slides/PA_Presentation.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Docs/Slides/PA_Presentation.pptx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/CMakeFiles/LinearModelCppLib.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/CMakeFiles/LinearModelCppLib.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.exp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.lib" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.lib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/cmake-build-debug/LinearModelCppLib.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/LinearModelCppLib/library.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LinearModelForDataset_Angry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LinearModelForDataset_Angry.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageUpload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinearModelForDataset_Neutral/.idea/LinearModelForDataset_Neutral.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../LinearModelForDataset_Neutral/.idea/LinearModelForDataset_Neutral.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinearModelForDataset_Neutral/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LinearModelForDataset_Neutral/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Neutral/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Neutral/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/library.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/library.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/vc140.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.exp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.lib" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/library.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Happy/ImageUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Happy/ImageUpload.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LinearModelForDataset_Happy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -90,6 +85,7 @@
       <workItem from="1595106618255" duration="6000" />
       <workItem from="1595106794272" duration="18000" />
       <workItem from="1595110641175" duration="526000" />
+      <workItem from="1595185171074" duration="13000" />
     </task>
     <servers />
   </component>

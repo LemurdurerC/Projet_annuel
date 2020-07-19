@@ -64,7 +64,17 @@ if __name__ == "__main__":
     ]
     my_lib.train_MLP_Regression.restype = None
 
-
+    my_lib.deserialize.argtypes = [
+        ctypes.c_int,
+        ctypes.POINTER(ctypes.c_int)
+    ]
+    my_lib.deserialize.restype = ctypes.POINTER(ctypes.POINTER(ctypes.POINTER(ctypes.c_double)))
+    my_lib.serialize.argtypes = [
+        ctypes.c_void_p,
+        ctypes.c_int,
+        ctypes.POINTER(ctypes.c_int)
+    ]
+    my_lib.serialize.restype = None
 
     #CLASSIFICATION
 
@@ -224,16 +234,17 @@ if __name__ == "__main__":
 
 
 
+    enter = E
+    exit = F
+
     L = np.array([
-        2,
+        enter.shape[1],
         4,
         1
     ], dtype='int32')
 
     model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
-    enter = E
-    exit = F
     alpha = 0.1
     iteration = 1000
 
@@ -256,6 +267,7 @@ if __name__ == "__main__":
         iteration
     )
 
+    my_lib.serialize(model,L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
     print("After Training...")
     count = 0

@@ -64,6 +64,22 @@ if __name__ == "__main__":
     ]
     my_lib.train_MLP_Regression.restype = None
 
+    my_lib.deserialize.argtypes = [
+
+    ]
+
+    my_lib.deserialize.argtypes = [
+        ctypes.c_int,
+        ctypes.POINTER(ctypes.c_int)
+    ]
+    my_lib.deserialize.restype = ctypes.POINTER(ctypes.POINTER(ctypes.POINTER(ctypes.c_double)))
+    my_lib.serialize.argtypes = [
+        ctypes.c_void_p,
+        ctypes.c_int,
+        ctypes.POINTER(ctypes.c_int)
+    ]
+    my_lib.serialize.restype = None
+
 #region
 im = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/1.jpg")
 im2 = Image.open("C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Dataset/Train/Happy/2.jpg")
@@ -1982,8 +1998,10 @@ dataset_expected_output = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                     ], dtype='float64')
 
 
+Lenter = dataset.shape[1]
+
 L = np.array([
-    2,
+    Lenter,
     2,
     1
 ], dtype='int32')
@@ -1992,12 +2010,13 @@ L = np.array([
 model = my_lib.create_MLP_model(L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
 
 
+
 flattened_Dataset = dataset.flatten()
 
 
 
 alpha = 1
-iteration = 10000
+iteration = 50000
 
 my_lib.train_MLP_Classification(
     model,
@@ -2010,6 +2029,10 @@ my_lib.train_MLP_Classification(
     alpha,
     iteration
 )
+
+
+my_lib.serialize(model, L.shape[0], L.ctypes.data_as(ctypes.POINTER(ctypes.c_int)))
+
 
 
 
