@@ -24,5 +24,6 @@ Les tests des modèles avec le Framework sont à lancer dans le dossier "Docs\Ra
 
 
 Les tests de l'application sont à lancer dans le dossier "Project\App\electron":
+Extraire electron.rar -> electron
 Lancez le CMD dans le repertoire, et lancez la commande npm start
 Saisir le chemin absolu de l'image à tester ainsi que le modèle voulu et cliquer sur power.
