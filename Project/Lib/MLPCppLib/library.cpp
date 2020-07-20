@@ -282,7 +282,6 @@ DLLEXPORT double *** deserialize(int nbLayers, int *nbNeuronPerLayers) {
                 for (int k = 1; k < nbNeuronPerLayers[i] + 1; k++) {
                     fichier >> val;
                     W[i][j][k]= val;
-                    //cout << i << " " << j << " " << k << " " << val << endl;
                 }
             }
         }
@@ -303,7 +302,6 @@ DLLEXPORT void serialize (MLP *mlp,int nbLayers, int *nbNeuronPerLayers) {
                 for (int k = 1; k < nbNeuronPerLayers[i] + 1; k++) {
 
                     val = (*mlp).W[i][j][k];
-                    //cout << i << " " << j << " " << k << " "<< val<< endl;
                     fichier << val << endl;
                 }
             }
