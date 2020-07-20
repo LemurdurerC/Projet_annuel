@@ -12,7 +12,7 @@ def percentOfBadPrediction(all,part):
 
 
 if __name__ == "__main__":
-    path_to_dll = "../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.dll"
+    path_to_dll = "C:/Users/hejar/OneDrive/Bureau/PA_Git/Projet_annuel/Project/Lib/MLPModelForApp/cmake-build-debug/MLPCppLib.dll"
 
     my_lib = ctypes.CDLL(path_to_dll)
 

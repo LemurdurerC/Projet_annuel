@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d5885ed6-3edc-46ae-bb02-2700364c9b92" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/library.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/library.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/CMakeFiles/MLPCppLib.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.exp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.lib" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.lib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/library.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinearModelForDataset_Happy/model_linear.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../LinearModelForDataset_Happy/model_linear.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Angry/.idea/MLPForDatatset_Angry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Angry/.idea/MLPForDatatset_Angry.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Angry/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Angry/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../App/electron" beforeDir="false" afterPath="$PROJECT_DIR$/../../App/electron" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Angry/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Angry/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Angry/ImageUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Angry/ImageUpload.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Happy/ImageUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Happy/ImageUpload.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Happy/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Happy/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MLPForDatatset_Neutral.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MLPForDatatset_Neutral.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageUpload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RBF_Python/RBF_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RBF_Python/RBF_Test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -49,7 +44,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MLPForDatatset_Angry" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -96,6 +92,8 @@
       <workItem from="1595197619643" duration="583000" />
       <workItem from="1595198428282" duration="94000" />
       <workItem from="1595198609602" duration="364000" />
+      <workItem from="1595204796093" duration="197000" />
+      <workItem from="1595205048347" duration="93000" />
     </task>
     <servers />
   </component>
@@ -127,8 +125,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1595197935438" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MLPForDatatset_Neutral$ImageUpload.coverage" NAME="ImageUpload Coverage Results" MODIFIED="1595198995228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

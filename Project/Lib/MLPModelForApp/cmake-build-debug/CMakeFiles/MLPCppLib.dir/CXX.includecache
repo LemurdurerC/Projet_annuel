@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Claudomir/Desktop/JUSTWATCH/Projet_annuel/Project/Lib/MLPModelForApp/library.cpp
+library.h
+C:/Users/Claudomir/Desktop/JUSTWATCH/Projet_annuel/Project/Lib/MLPModelForApp/library.h
+iostream
+-
+cstdlib
+-
+random
+-
+fstream
+-
+
+C:/Users/Claudomir/Desktop/JUSTWATCH/Projet_annuel/Project/Lib/MLPModelForApp/library.h
+
