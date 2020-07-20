@@ -26,4 +26,4 @@ Les tests des modèles avec le Framework sont à lancer dans le dossier "Docs\Ra
 
 
 Les tests de l'application sont à lancer dans le dossier "Project\App":
- 
+CLAUDOMIR 

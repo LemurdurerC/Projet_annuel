@@ -234,8 +234,8 @@ if __name__ == "__main__":
 
 
 
-    enter = A
-    exit = B
+    enter = E
+    exit = F
 
     L = np.array([
         enter.shape[1],

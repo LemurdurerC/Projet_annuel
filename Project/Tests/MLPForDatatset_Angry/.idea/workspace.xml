@@ -11,18 +11,12 @@
       <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.lib" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.lib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/cmake-build-debug/MLPCppLib.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lib/MLPCppLib/library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lib/MLPCppLib/library.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinearModelForDataset_Happy/model_linear.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../LinearModelForDataset_Happy/model_linear.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MLPForDatatset_Angry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MLPForDatatset_Angry.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageUpload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Happy/ImageUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Happy/ImageUpload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Happy/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Happy/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Neutral/.idea/MLPForDatatset_Neutral.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Neutral/.idea/MLPForDatatset_Neutral.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Neutral/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Neutral/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Neutral/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Neutral/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Neutral/ImageUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Neutral/ImageUpload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RBF_Python/RBF_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RBF_Python/RBF_Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MLP_Python/MLP_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MLP_Python/MLP_Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MLP_Python/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MLP_Python/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +88,8 @@
       <workItem from="1595092997421" duration="10000" />
       <workItem from="1595198051011" duration="403000" />
       <workItem from="1595198778809" duration="210000" />
+      <workItem from="1595200143658" duration="14000" />
+      <workItem from="1595206920381" duration="536000" />
     </task>
     <servers />
   </component>
@@ -101,32 +97,32 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1595198606666">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1595200156196">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595198606666" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1595199041496">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595200156196" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1595207456562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595199041496" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1595199041496">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595207456562" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1595207456562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595199041496" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1595199041495">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595207456562" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1595207456562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595199041495" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1595199041496">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595207456562" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1595207456562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595199041496" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595207456562" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1595198184111">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1595198184111" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MLPForDatatset_Angry$ImageUpload.coverage" NAME="ImageUpload Coverage Results" MODIFIED="1595198796432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MLPForDatatset_Angry$ImageUpload.coverage" NAME="ImageUpload Coverage Results" MODIFIED="1595206928439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

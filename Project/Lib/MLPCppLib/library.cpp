@@ -8,6 +8,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <random>
+#include <fstream>
+using namespace std;
 
 
 struct MLP{
@@ -178,12 +180,16 @@ void train_MLP_InCommon(MLP *mlp,
             for(int j = 0;j<nbNeuronPerLayers[layer-1]+1;j++) {
                 for (int k = 1; k < nbNeuronPerLayers[layer] + 1; k++) {
                     (*mlp).W[layer][j][k] -= alpha * (*mlp).X[layer - 1][j] * (*mlp).delta[layer][k];
+
                 }
             }
         }
 
 
     }
+
+
+
 
 }
 
@@ -243,6 +249,70 @@ extern  "C" {
     }
 
 
+
+DLLEXPORT double *** deserialize(int nbLayers, int *nbNeuronPerLayers) {
+    double ***W;
+
+    W = new double**[nbLayers];
+
+    for(int i=1; i<nbLayers;i++){
+        W[i] = new double*[nbNeuronPerLayers[i-1]+1];
+    }
+
+    for(int i=1; i<nbLayers;i++){
+        for(int j = 0;j<nbNeuronPerLayers[i-1]+1;j++){
+            W[i][j] = new double[nbNeuronPerLayers[i] + 1];
+        }
+    }
+
+    for(int i=1; i<nbLayers;i++){
+        for(int j = 0;j<nbNeuronPerLayers[i-1]+1;j++){
+            for(int k = 1;k<nbNeuronPerLayers[i]+1;k++) {
+                W[i][j][k] = 0;
+            }
+        }
+    }
+
+
+    ifstream fichier("test.txt", ios::in);
+    if(fichier) {
+        double val;
+        for (int i = 1; i < nbLayers; i++) {
+            for (int j = 0; j < nbNeuronPerLayers[i - 1] + 1; j++) {
+                for (int k = 1; k < nbNeuronPerLayers[i] + 1; k++) {
+                    fichier >> val;
+                    W[i][j][k]= val;
+                    //cout << i << " " << j << " " << k << " " << val << endl;
+                }
+            }
+        }
+    }
+    else{
+        cerr << "Impossible d'ouvrir le fichier !" << endl;
+    }
+    return W;
+
+}
+
+DLLEXPORT void serialize (MLP *mlp,int nbLayers, int *nbNeuronPerLayers) {
+    ofstream fichier("test.txt", ios::out | ios::trunc);
+    if (fichier) {
+        double val;
+        for (int i = 1; i < nbLayers; i++) {
+            for (int j = 0; j < nbNeuronPerLayers[i - 1] + 1; j++) {
+                for (int k = 1; k < nbNeuronPerLayers[i] + 1; k++) {
+
+                    val = (*mlp).W[i][j][k];
+                    //cout << i << " " << j << " " << k << " "<< val<< endl;
+                    fichier << val << endl;
+                }
+            }
+        }
+    }
+    else {
+        cerr << "erreur";
+    }
+}
 
 
 }
