@@ -10,14 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f490ace-f9ef-4668-8436-d0608b0b933a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../.idea/Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lib/LinearModelForApp/.idea/LinearModelCppLib.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lib/MLPModelForApp/.idea/MLPCppLib.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../App/electron" beforeDir="false" afterPath="$PROJECT_DIR$/../../App/electron" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Happy/ImageUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Happy/ImageUpload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Happy/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Happy/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MLPForDatatset_Neutral/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MLPForDatatset_Neutral/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageUpload.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +54,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="D:\Users\Claudomir\miniconda3\envs\esgi_2020\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -95,6 +90,7 @@
       <workItem from="1595198778809" duration="210000" />
       <workItem from="1595204794752" duration="197000" />
       <workItem from="1595205032665" duration="184000" />
+      <workItem from="1595207098979" duration="374000" />
     </task>
     <servers />
   </component>
@@ -102,29 +98,40 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595207111593">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595207111593" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1595198606666">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595198606666" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1595199041496">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1595207554854">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595199041496" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1595199041496">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595207554854" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1595207554854">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595199041496" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1595199041495">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595207554854" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1595207554854">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595199041495" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1595199041496">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595207554854" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1595207554854">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595199041496" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595207554854" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1595198184111">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1595198184111" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MLPForDatatset_Angry$ImageUpload.coverage" NAME="ImageUpload Coverage Results" MODIFIED="1595207239920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -65,15 +65,7 @@ if __name__ == "__main__":
     ]
     my_lib.train_MLP_Regression.restype = None
 
-    my_lib.deserialize.argtypes = [
 
-    ]
-
-    my_lib.deserialize.argtypes = [
-        ctypes.c_int,
-        ctypes.POINTER(ctypes.c_int)
-    ]
-    my_lib.deserialize.restype = ctypes.POINTER(ctypes.POINTER(ctypes.POINTER(ctypes.c_double)))
     my_lib.serialize.argtypes = [
         ctypes.c_void_p,
         ctypes.c_int,
